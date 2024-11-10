@@ -7,11 +7,13 @@ public class GrabMechanics : MonoBehaviour
     public float rayDistance = 5f;      // The maximum distance for the raycast
     public LayerMask interactableLayer; // Layer of the interactable objects
     public Transform holdPosition;      // The position where the object will be held
-    public GameObject grabbedObject;   // The object currently being held
+    public GameObject grabbedObject;    // The object currently being held
     private Rigidbody grabbedObjectRb;  // Rigidbody of the held object
+    private MeshCollider grabbedObjectCollider; // MeshCollider of the held object
     private PlayerController playerController;
     public float currentSpeed;
     public float slowedSpeed;
+    public float throwForce = 8f; // Adjust this value as needed for throw strength
 
     private void Start()
     {
@@ -19,26 +21,32 @@ public class GrabMechanics : MonoBehaviour
         currentSpeed = playerController.speed;
         slowedSpeed = playerController.speed - 1.5f;
     }
-    void Update()
-    {
-        
-    }
+    
+
     public void GrabIngredient()
     {
         Vector3 rayOrigin = transform.position + new Vector3(0, -0.5f, 0);
-        if(Physics.Raycast(rayOrigin, transform.forward, out RaycastHit hit, rayDistance, interactableLayer))
-        Grab(hit.collider.gameObject);
+        if (Physics.Raycast(rayOrigin, transform.forward, out RaycastHit hit, rayDistance, interactableLayer))
+            Grab(hit.collider.gameObject);
     }
+
     public void Grab(GameObject objectToGrab)
     {
         grabbedObject = objectToGrab;
         grabbedObjectRb = grabbedObject.GetComponent<Rigidbody>();
+        grabbedObjectCollider = grabbedObject.GetComponent<MeshCollider>();
 
         if (grabbedObjectRb != null)
         {
             // Disable physics for holding
             grabbedObjectRb.useGravity = false;
             grabbedObjectRb.isKinematic = true;
+        }
+
+        if (grabbedObjectCollider != null)
+        {
+            // Disable the collider for holding
+            grabbedObjectCollider.enabled = false;
         }
 
         // Set the object's position to the hold position
@@ -53,12 +61,22 @@ public class GrabMechanics : MonoBehaviour
             // Re-enable physics for release
             grabbedObjectRb.useGravity = true;
             grabbedObjectRb.isKinematic = false;
+
+            // Apply a forward force to simulate a throw
+            grabbedObjectRb.AddForce(transform.forward * throwForce, ForceMode.VelocityChange);
+        }
+
+        if (grabbedObjectCollider != null)
+        {
+            // Re-enable the collider when released
+            grabbedObjectCollider.enabled = true;
         }
 
         // Clear references and reset parent
         grabbedObject.transform.parent = null;
         grabbedObject = null;
         grabbedObjectRb = null;
+        grabbedObjectCollider = null;
     }
 
     // Method to draw the ray in the Scene view

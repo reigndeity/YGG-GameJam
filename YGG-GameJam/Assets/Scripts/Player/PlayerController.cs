@@ -12,13 +12,13 @@ public class PlayerController : MonoBehaviour
     public bool canPush;
 
     [Header("Script References")]
-    private GrabMechanics _grabMechanics;
-    private Animator animator;
+    public GrabMechanics _grabMechanics;
+    private Animator _animator;
 
     void Start()
     {
-        _grabMechanics = GetComponent<GrabMechanics>();
-        animator = GetComponent<Animator>();
+        _grabMechanics = GetComponentInChildren<GrabMechanics>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F) && canPush)
             {
                 canPush = false;
-                animator.SetTrigger("Push");
+                _animator.SetTrigger("Push");
             }
 
             if (Input.GetButtonDown("Keyboard_X")) // "J" key
@@ -75,16 +75,23 @@ public class PlayerController : MonoBehaviour
             moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
 
             // Controller Button Inputs
-            if (Input.GetButtonDown("Jump" + playerID)) // "A" button
+            if (Input.GetButtonDown("Jump" + playerID)) // "X" button
             {
                 Debug.Log("Player " + playerID + " A button (controller) pressed");
             }
 
-            if (Input.GetButtonDown("Fire1_" + playerID)) // "X" button
+            if (Input.GetButtonDown("Fire1_" + playerID)) // "A" button
             {
                 Debug.Log("Player " + playerID + " X button (controller) pressed");
+                if (_grabMechanics.grabbedObject == null)
+                {
+                    _grabMechanics.GrabIngredient();
+                }
+                else
+                {
+                    _grabMechanics.Release();
+                }  
             }
-
             if (Input.GetButtonDown("Fire2_" + playerID)) // "B" button
             {
                 Debug.Log("Player " + playerID + " B button (controller) pressed");
@@ -104,6 +111,11 @@ public class PlayerController : MonoBehaviour
         {
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            _animator.SetInteger("animState", 1);
+        }
+        else
+        {
+            _animator.SetInteger("animState", 0);
         }
     }
 }

@@ -9,11 +9,22 @@ public class GrabMechanics : MonoBehaviour
     public Transform holdPosition;      // The position where the object will be held
     private GameObject grabbedObject;   // The object currently being held
     private Rigidbody grabbedObjectRb;  // Rigidbody of the held object
+    private PlayerController playerController;
+    public float currentSpeed;
+    public float slowedSpeed;
 
+    private void Start()
+    {
+        playerController = GetComponent<PlayerController>();
+        currentSpeed = playerController.speed;
+        slowedSpeed = playerController.speed - 1.5f;
+    }
     void Update()
     {
         if (grabbedObject == null)
         {
+            playerController.speed = currentSpeed; //Normal player speed if not holding anything
+
             // Check for an object to grab
             Vector3 rayOrigin = transform.position + new Vector3(0, -0.5f, 0);
             if (Physics.Raycast(rayOrigin, transform.forward, out RaycastHit hit, rayDistance, interactableLayer))
@@ -26,6 +37,8 @@ public class GrabMechanics : MonoBehaviour
         }
         else
         {
+            playerController.speed = slowedSpeed; //Slows player if holding an ingredient
+
             // If already holding an object, check to release it
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -41,8 +54,7 @@ public class GrabMechanics : MonoBehaviour
 
     void Grab(GameObject objectToGrab)
     {
-        //Ingredients ingr = objectToGrab.GetComponent<Ingredients>();
-        grabbedObject = objectToGrab;//ingr.ingrHolder;
+        grabbedObject = objectToGrab;
         grabbedObjectRb = grabbedObject.GetComponent<Rigidbody>();
 
         if (grabbedObjectRb != null)

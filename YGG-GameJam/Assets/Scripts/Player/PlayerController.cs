@@ -5,9 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Properties")]
-    [SerializeField] private float speed = 5f; // Speed of the player movement
+    [SerializeField] public float speed = 5f; // Speed of the player movement
     [SerializeField] private int playerID = 1; // Player ID (1, 2, 3, or 4)
     [SerializeField] private bool isKeyboard;  // Toggle to use keyboard or controller
+    [SerializeField] private float rotationSpeed = 10f; // Speed of rotation towards the movement direction
 
     private void Update()
     {
@@ -72,5 +73,12 @@ public class PlayerController : MonoBehaviour
 
         // Move the player based on the selected input method
         transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
+
+        // Rotate the player to face the movement direction if there is movement
+        if (moveDirection != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
     }
 }

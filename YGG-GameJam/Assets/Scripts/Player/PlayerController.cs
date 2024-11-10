@@ -10,6 +10,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isKeyboard;  // Toggle to use keyboard or controller
     [SerializeField] private float rotationSpeed = 10f; // Speed of rotation towards the movement direction
 
+    [Header("Script References")]
+    private GrabMechanics _grabMechanics;
+
+    void Start()
+    {
+        _grabMechanics = GetComponent<GrabMechanics>();
+    }
+
     private void Update()
     {
         Vector3 moveDirection = Vector3.zero;
@@ -25,6 +33,15 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonDown("Keyboard_A")) // "H" key
             {
                 Debug.Log("Keyboard A button (H key) pressed");
+                if (_grabMechanics.grabbedObject == null)
+                {
+                    _grabMechanics.GrabIngredient();
+                }
+                else
+                {
+                    _grabMechanics.Release();
+                }
+                
             }
 
             if (Input.GetButtonDown("Keyboard_X")) // "J" key

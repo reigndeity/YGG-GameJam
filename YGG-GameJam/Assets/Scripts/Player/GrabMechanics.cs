@@ -7,7 +7,7 @@ public class GrabMechanics : MonoBehaviour
     public float rayDistance = 5f;      // The maximum distance for the raycast
     public LayerMask interactableLayer; // Layer of the interactable objects
     public Transform holdPosition;      // The position where the object will be held
-    private GameObject grabbedObject;   // The object currently being held
+    public GameObject grabbedObject;   // The object currently being held
     private Rigidbody grabbedObjectRb;  // Rigidbody of the held object
     private PlayerController playerController;
     public float currentSpeed;
@@ -52,7 +52,7 @@ public class GrabMechanics : MonoBehaviour
         }
     }
 
-    void Grab(GameObject objectToGrab)
+    public void Grab(GameObject objectToGrab)
     {
         grabbedObject = objectToGrab;
         grabbedObjectRb = grabbedObject.GetComponent<Rigidbody>();
@@ -69,7 +69,7 @@ public class GrabMechanics : MonoBehaviour
         grabbedObject.transform.parent = holdPosition;
     }
 
-    void Release()
+    public void Release()
     {
         if (grabbedObjectRb != null)
         {
@@ -96,5 +96,12 @@ public class GrabMechanics : MonoBehaviour
 
         // Optional: Draw a sphere at the end of the ray to indicate the maximum reach
         Gizmos.DrawWireSphere(rayOrigin + transform.forward * rayDistance, 0.2f);
+    }
+
+    public void GrabIngredient()
+    {
+        Vector3 rayOrigin = transform.position + new Vector3(0, -0.5f, 0);
+        Physics.Raycast(rayOrigin, transform.forward, out RaycastHit hit, rayDistance, interactableLayer);
+        Grab(hit.collider.gameObject);
     }
 }

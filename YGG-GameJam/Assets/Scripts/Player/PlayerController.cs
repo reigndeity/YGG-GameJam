@@ -9,13 +9,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int playerID = 1; // Player ID (1, 2, 3, or 4)
     [SerializeField] private bool isKeyboard;  // Toggle to use keyboard or controller
     [SerializeField] private float rotationSpeed = 10f; // Speed of rotation towards the movement direction
+    public bool canPush;
 
     [Header("Script References")]
     private GrabMechanics _grabMechanics;
+    private Animator animator;
 
     void Start()
     {
         _grabMechanics = GetComponent<GrabMechanics>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -40,8 +43,13 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     _grabMechanics.Release();
-                }
-                
+                }                
+            }
+
+            if (Input.GetKeyDown(KeyCode.F) && canPush)
+            {
+                canPush = false;
+                animator.SetTrigger("Push");
             }
 
             if (Input.GetButtonDown("Keyboard_X")) // "J" key

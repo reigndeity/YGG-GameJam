@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Ingredients : MonoBehaviour
 {
-    public GameObject ingrHolder;
+    public string ingrName;
 }

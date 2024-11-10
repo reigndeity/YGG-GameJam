@@ -21,37 +21,14 @@ public class GrabMechanics : MonoBehaviour
     }
     void Update()
     {
-        if (grabbedObject == null)
-        {
-            playerController.speed = currentSpeed; //Normal player speed if not holding anything
-
-            // Check for an object to grab
-            Vector3 rayOrigin = transform.position + new Vector3(0, -0.5f, 0);
-            if (Physics.Raycast(rayOrigin, transform.forward, out RaycastHit hit, rayDistance, interactableLayer))
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    Grab(hit.collider.gameObject);
-                }
-            }
-        }
-        else
-        {
-            playerController.speed = slowedSpeed; //Slows player if holding an ingredient
-
-            // If already holding an object, check to release it
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Release();
-            }
-            else
-            {
-                // Keep the grabbed object at the hold position
-                grabbedObject.transform.position = holdPosition.position;
-            }
-        }
+        
     }
-
+    public void GrabIngredient()
+    {
+        Vector3 rayOrigin = transform.position + new Vector3(0, -0.5f, 0);
+        if(Physics.Raycast(rayOrigin, transform.forward, out RaycastHit hit, rayDistance, interactableLayer))
+        Grab(hit.collider.gameObject);
+    }
     public void Grab(GameObject objectToGrab)
     {
         grabbedObject = objectToGrab;
@@ -96,12 +73,5 @@ public class GrabMechanics : MonoBehaviour
 
         // Optional: Draw a sphere at the end of the ray to indicate the maximum reach
         Gizmos.DrawWireSphere(rayOrigin + transform.forward * rayDistance, 0.2f);
-    }
-
-    public void GrabIngredient()
-    {
-        Vector3 rayOrigin = transform.position + new Vector3(0, -0.5f, 0);
-        Physics.Raycast(rayOrigin, transform.forward, out RaycastHit hit, rayDistance, interactableLayer);
-        Grab(hit.collider.gameObject);
-    }
+    } 
 }

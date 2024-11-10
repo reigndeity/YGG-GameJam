@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6759070993783573589}
   - component: {fileID: 9217728082672388254}
   - component: {fileID: 3924338035157303641}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,11 +95,11 @@ GameObject:
   - component: {fileID: 1635179273169680185}
   - component: {fileID: 3761739077065044324}
   - component: {fileID: 1013458907613203589}
-  - component: {fileID: 5841414876650841462}
   - component: {fileID: 2184831819053103645}
-  m_Layer: 0
+  - component: {fileID: -2679204842022313508}
+  m_Layer: 3
   m_Name: Burger_Buns
-  m_TagString: Untagged
+  m_TagString: Burger_Buns
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,19 +193,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6174762191901520263, guid: 01d3710861108bb4fb53636e7a136db6, type: 3}
---- !u!114 &5841414876650841462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5896456554038683048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aec4573f1c70c247a163d3da88b7e26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ingrHolder: {fileID: 0}
 --- !u!54 &2184831819053103645
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -233,6 +220,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &-2679204842022313508
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5896456554038683048}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.36233, y: 1.071337, z: 2.5}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &7176860661899006639
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +252,7 @@ GameObject:
   - component: {fileID: 6632757319459578285}
   - component: {fileID: 5356800612906249289}
   - component: {fileID: 2206808486826294544}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Seeds
   m_TagString: Untagged
   m_Icon: {fileID: 0}

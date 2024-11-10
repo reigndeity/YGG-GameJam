@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Burger_Buns
+  - Burger_Cheese
+  - Burger_Patty
+  - Sandwich_Bread
+  - Sadnwich_Ham
+  - Sandwich_Lettuce
   layers:
   - Default
   - TransparentFX

@@ -461,8 +461,6 @@ MonoBehaviour:
   players:
   - {fileID: 1590938201}
   - {fileID: 2138929392}
-  - {fileID: 0}
-  - {fileID: 0}
   offset: {x: -30, y: 26, z: -30}
   minZoom: 20
   maxZoom: 5

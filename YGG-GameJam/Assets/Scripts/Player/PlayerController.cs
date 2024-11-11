@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Input.GetButtonDown("Keyboard_X") && canPush) // "J" key
+            if (Input.GetButtonDown("Keyboard_X") && _jumpMechanic.isGrounded && !isGrabbing && !isCarrying && canPush) // "J" key
             {
                 Debug.Log("Keyboard X button (J key) pressed");
 
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Keyboard B button (K key) pressed");
             }
 
-            if (Input.GetButtonDown("Keyboard_Y")) // "L" key
+            if (Input.GetButtonDown("Keyboard_Y") && !isGrabbing && !isCarrying) // "L" key
             {
                 Debug.Log("Keyboard Y button (L key) pressed");
                 _jumpMechanic.Jump();
@@ -171,11 +171,13 @@ public class PlayerController : MonoBehaviour
     public void IsGrabbingReset()
     {
         isGrabbing = false;
+        canPush = true;
     }
     public void CanThrowReset()
     {
 
         isCarrying = false;
+        canPush = true;
         _grabMechanic.Release();
     }
 
@@ -184,6 +186,7 @@ public class PlayerController : MonoBehaviour
         if (_grabMechanic.grabbedObject == null && canThrow == false)
         {
             _grabMechanic.GrabIngredient();
+            canPush = false;
         }
     }
     public void ReleaseIngredient()
@@ -192,6 +195,7 @@ public class PlayerController : MonoBehaviour
         {
             _animator.SetInteger("animState", 5);
             canThrow = false;
+            canPush = true;
         }
     }
 

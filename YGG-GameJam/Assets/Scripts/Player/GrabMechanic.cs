@@ -70,19 +70,25 @@ public class GrabMechanic : MonoBehaviour
 
             // Apply a forward force to simulate a throw
             grabbedObjectRb.AddForce(transform.forward * throwForce, ForceMode.VelocityChange);
+
+            grabbedObject.transform.parent = null;
+            grabbedObject = null;
+            grabbedObjectRb = null;
         }
 
         if (grabbedObjectCollider != null)
         {
             // Re-enable the collider when released
             grabbedObjectCollider.enabled = true;
+
+            grabbedObjectCollider = null;
         }
 
         // Clear references and reset parent
-        grabbedObject.transform.parent = null;
+        /*grabbedObject.transform.parent = null;
         grabbedObject = null;
         grabbedObjectRb = null;
-        grabbedObjectCollider = null;
+        grabbedObjectCollider = null;*/
 
         playerController.speed = currentSpeed;
     }

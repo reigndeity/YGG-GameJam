@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class DynamicCamera : MonoBehaviour
 {
-    public Transform[] players; // Array to hold the players' transforms
+    public List<Transform> players = new List<Transform>(); //public Transform[] players; // Array to hold the players' transforms
     public Vector3 offset; // Offset to position the camera behind the players
     public float minZoom = 5f; // Minimum orthographic size (closer zoom)
     public float maxZoom = 20f; // Maximum orthographic size (further zoom)
@@ -22,7 +23,10 @@ public class DynamicCamera : MonoBehaviour
 
     void LateUpdate()
     {
-        if (players.Length == 0) return;
+        if (players.Count == 0) return; //from players.Length
+
+        // Update the list of players (you can opt to add more logic to detect new player spawn)
+        UpdatePlayerList(); // Changes
 
         MoveCamera();
         ZoomCamera();
@@ -55,14 +59,14 @@ public class DynamicCamera : MonoBehaviour
 
     Vector3 GetCenterPoint()
     {
-        if (players.Length == 1)
+        if (players.Count == 1)// from players.Length
         {
             return players[0].position;
         }
 
         // Calculate the bounding box that encapsulates all players
         var bounds = new Bounds(players[0].position, Vector3.zero);
-        for (int i = 1; i < players.Length; i++)
+        for (int i = 1; i < players.Count; i++)// from players.Length
         {
             bounds.Encapsulate(players[i].position);
         }
@@ -74,12 +78,29 @@ public class DynamicCamera : MonoBehaviour
     {
         // Calculate the bounding box that encapsulates all players
         var bounds = new Bounds(players[0].position, Vector3.zero);
-        for (int i = 1; i < players.Length; i++)
+        for (int i = 1; i < players.Count; i++)// from players.Length
         {
             bounds.Encapsulate(players[i].position);
         }
 
         // Return the largest dimension of the bounding box
         return bounds.size.x > bounds.size.z ? bounds.size.x : bounds.size.z;
+    }
+
+    //===============Changes==========================
+    void UpdatePlayerList()
+    {
+        // Find and add any new players that aren't in the list yet
+        PlayerController[] playerControllers = FindObjectsOfType<PlayerController>();
+        foreach (var playerController in playerControllers)
+        {
+            if (!players.Contains(playerController.transform))
+            {
+                players.Add(playerController.transform);
+            }
+        }
+
+        // Remove destroyed players (those who are no longer in the scene)
+        players.RemoveAll(player => player == null);
     }
 }

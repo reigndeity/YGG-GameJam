@@ -12,12 +12,14 @@ public class PushMechanic : MonoBehaviour
             Debug.Log("Pushed");
 
             Rigidbody targetRigidbody = collision.gameObject.GetComponent<Rigidbody>();
-            GrabMechanic targetGrabMechanic = collision.gameObject.GetComponent<GrabMechanic>();
+            PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
+            GrabMechanic targetGrabMechanic = collision.gameObject.GetComponentInChildren<GrabMechanic>();
 
             // Calculate the push direction based on where the player is facing
             //Vector3 pushDirection = (targetRigidbody.transform.position - transform.position).normalized;
             targetRigidbody.AddForce(transform.forward * pushForce, ForceMode.VelocityChange);
-            targetGrabMechanic.Release();
+            playerController.ReleaseIngredient(); 
+            targetGrabMechanic.Release();   
         }
         
     }

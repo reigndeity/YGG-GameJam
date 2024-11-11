@@ -2873,7 +2873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cfdbfbc9f642ab448878c494af741e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayDistance: 5
+  rayDistance: 2.5
   interactableLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -4687,7 +4687,7 @@ MonoBehaviour:
   playerID: 1
   isKeyboard: 0
   rotationSpeed: 10
-  canPush: 0
+  canPush: 1
   pushObject: {fileID: 0}
   isGrabbing: 0
   isCarrying: 0

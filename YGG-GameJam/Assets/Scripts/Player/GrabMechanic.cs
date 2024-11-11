@@ -43,6 +43,7 @@ public class GrabMechanic : MonoBehaviour
 
             playerController.isCarrying = true;
             playerController.canThrow = true;
+            playerController.speed = slowedSpeed;
         }
 
         if (grabbedObjectCollider != null)
@@ -82,6 +83,8 @@ public class GrabMechanic : MonoBehaviour
         grabbedObject = null;
         grabbedObjectRb = null;
         grabbedObjectCollider = null;
+
+        playerController.speed = currentSpeed;
     }
 
     // Method to draw the ray in the Scene view

@@ -10,6 +10,7 @@ TagManager:
   - Sandwich_Bread
   - Sadnwich_Ham
   - Sandwich_Lettuce
+  - Ground
   layers:
   - Default
   - TransparentFX

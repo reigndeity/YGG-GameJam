@@ -5,19 +5,26 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Properties")]
-    [SerializeField] public float speed = 5f; // Speed of the player movement
+    public float speed = 5f; // Speed of the player movement
     [SerializeField] private int playerID = 1; // Player ID (1, 2, 3, or 4)
     [SerializeField] private bool isKeyboard;  // Toggle to use keyboard or controller
     [SerializeField] private float rotationSpeed = 10f; // Speed of rotation towards the movement direction
     public bool canPush;
 
+    [Header("Animator Properties")]
+    [SerializeField] bool isGrabbing;
+    public bool isCarrying;
+    public bool canThrow;
+
     [Header("Script References")]
-    public GrabMechanics _grabMechanics;
+    public GrabMechanic _grabMechanic;
+    public JumpMechanic _jumpMechanic;
     private Animator _animator;
 
     void Start()
     {
-        _grabMechanics = GetComponentInChildren<GrabMechanics>();
+        _grabMechanic = GetComponentInChildren<GrabMechanic>();
+        _jumpMechanic = GetComponentInChildren<JumpMechanic>();
         _animator = GetComponent<Animator>();
     }
 
@@ -33,17 +40,19 @@ public class PlayerController : MonoBehaviour
             moveDirection = new Vector3(horizontalKeyboard, 0, verticalKeyboard).normalized;
 
             // Keyboard Button Inputs (HJKL for AXBY)
-            if (Input.GetButtonDown("Keyboard_A")) // "H" key
-            {
+            if (Input.GetButtonDown("Keyboard_A") && _jumpMechanic.isGrounded == true) // "H" key
+            {   
                 Debug.Log("Keyboard A button (H key) pressed");
-                if (_grabMechanics.grabbedObject == null)
+                if (canThrow == false && isCarrying == false)
                 {
-                    _grabMechanics.GrabIngredient();
+                    isGrabbing = true;
+                    _animator.SetInteger("animState", 3); 
                 }
-                else
+                if (canThrow == true && isCarrying == true)
                 {
-                    _grabMechanics.Release();
-                }                
+                    ReleaseIngredient();
+                    Debug.Log("player is throwing");
+                }            
             }
 
             if (Input.GetKeyDown(KeyCode.F) && canPush)
@@ -65,57 +74,126 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonDown("Keyboard_Y")) // "L" key
             {
                 Debug.Log("Keyboard Y button (L key) pressed");
+                _jumpMechanic.Jump();
+                _animator.SetInteger("animState", 2);
             }
         }
-        else
+        else // Joystick Movement (Controller)===============================
         {
-            // Joystick Movement (Controller)
+            
             float horizontalInput = Input.GetAxis("Horizontal" + playerID);
             float verticalInput = Input.GetAxis("Vertical" + playerID);
             moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
 
             // Controller Button Inputs
-            if (Input.GetButtonDown("Jump" + playerID)) // "X" button
+            if (Input.GetButtonDown("Jump" + playerID) && isCarrying == false) // "Y" button
             {
-                Debug.Log("Player " + playerID + " A button (controller) pressed");
+                Debug.Log("Player " + playerID + " Y button (controller) pressed");
+                _jumpMechanic.Jump();
+                _animator.SetInteger("animState", 2);
             }
 
-            if (Input.GetButtonDown("Fire1_" + playerID)) // "A" button
+            if (Input.GetButtonDown("Fire1_" + playerID) && _jumpMechanic.isGrounded == true) // "A" button
             {
-                Debug.Log("Player " + playerID + " X button (controller) pressed");
-                if (_grabMechanics.grabbedObject == null)
+                Debug.Log("Player " + playerID + " A button (controller) pressed");
+                if (canThrow == false && isCarrying == false)
                 {
-                    _grabMechanics.GrabIngredient();
+                    isGrabbing = true;
+                    _animator.SetInteger("animState", 3); 
                 }
-                else
+                if (canThrow == true && isCarrying == true)
                 {
-                    _grabMechanics.Release();
-                }  
+                    ReleaseIngredient();
+                    Debug.Log("player is throwing");
+                }
+                
             }
             if (Input.GetButtonDown("Fire2_" + playerID)) // "B" button
             {
                 Debug.Log("Player " + playerID + " B button (controller) pressed");
             }
 
-            if (Input.GetButtonDown("Fire3_" + playerID)) // "Y" button
+            if (Input.GetButtonDown("Fire3_" + playerID)) // "X" button
             {
-                Debug.Log("Player " + playerID + " Y button (controller) pressed");
+                Debug.Log("Player " + playerID + " X button (controller) pressed");
             }
         }
 
         // Move the player based on the selected input method
         transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
 
-        // Rotate the player to face the movement direction if there is movement
-        if (moveDirection != Vector3.zero)
+        // Idle
+        if (moveDirection == Vector3.zero && _jumpMechanic.isGrounded == true && isGrabbing == false && isCarrying == false)
+        {
+            _animator.SetInteger("animState", 0);
+        }
+        // Running
+        if (moveDirection != Vector3.zero && _jumpMechanic.isGrounded == true && isGrabbing == false && isCarrying == false)
         {
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             _animator.SetInteger("animState", 1);
-        }
-        else
+        } 
+        // Jump while Running
+        if (moveDirection != Vector3.zero && _jumpMechanic.isGrounded == false)
         {
-            _animator.SetInteger("animState", 0);
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            _animator.SetInteger("animState", 2);
+        }
+        // Grabbing while Running
+        if (moveDirection != Vector3.zero && _jumpMechanic.isGrounded == true && isGrabbing == true && isCarrying == false)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            _animator.SetInteger("animState", 3);
+        }
+        // Idle with Item
+        if (moveDirection == Vector3.zero && _jumpMechanic.isGrounded == true && isGrabbing == false && isCarrying == true)
+        {
+            if (canThrow == true)
+            {
+                _animator.SetInteger("animState", 4);
+            }
+            else
+            {
+                _animator.SetInteger("animState", 5);
+            } 
+        }
+        // Running with Item
+        if (moveDirection != Vector3.zero && _jumpMechanic.isGrounded == true && isGrabbing == false && isCarrying == true && canThrow == true)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            _animator.SetInteger("animState", 6);
+        } 
+    }
+
+    // UNITY EVENT SYSTEM: DO NOT ALTER/CHANGE
+    public void IsGrabbingReset()
+    {
+        isGrabbing = false;
+    }
+    public void CanThrowReset()
+    {
+        
+        isCarrying = false;
+        _grabMechanic.Release();
+    }
+
+    public void GrabIngredient()
+    {
+        if (_grabMechanic.grabbedObject == null && canThrow == false)
+        {
+            _grabMechanic.GrabIngredient();    
+        }
+    }
+    public void ReleaseIngredient()
+    {
+        if (_grabMechanic.grabbedObject != null && canThrow == true)
+        {
+            _animator.SetInteger("animState", 5);
+            canThrow = false;
         }
     }
 }

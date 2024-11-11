@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrabMechanics : MonoBehaviour
+public class GrabMechanic : MonoBehaviour
 {
     public float rayDistance = 5f;      // The maximum distance for the raycast
     public LayerMask interactableLayer; // Layer of the interactable objects
@@ -10,14 +10,14 @@ public class GrabMechanics : MonoBehaviour
     public GameObject grabbedObject;    // The object currently being held
     private Rigidbody grabbedObjectRb;  // Rigidbody of the held object
     private MeshCollider grabbedObjectCollider; // MeshCollider of the held object
-    private PlayerController playerController;
+    public PlayerController playerController;
     public float currentSpeed;
     public float slowedSpeed;
     public float throwForce = 8f; // Adjust this value as needed for throw strength
 
     private void Start()
     {
-        playerController = GetComponent<PlayerController>();
+        playerController = GetComponentInParent<PlayerController>();
         currentSpeed = playerController.speed;
         slowedSpeed = playerController.speed - 1.5f;
     }
@@ -35,12 +35,14 @@ public class GrabMechanics : MonoBehaviour
         grabbedObject = objectToGrab;
         grabbedObjectRb = grabbedObject.GetComponent<Rigidbody>();
         grabbedObjectCollider = grabbedObject.GetComponent<MeshCollider>();
-
         if (grabbedObjectRb != null)
         {
             // Disable physics for holding
             grabbedObjectRb.useGravity = false;
             grabbedObjectRb.isKinematic = true;
+
+            playerController.isCarrying = true;
+            playerController.canThrow = true;
         }
 
         if (grabbedObjectCollider != null)
@@ -49,9 +51,12 @@ public class GrabMechanics : MonoBehaviour
             grabbedObjectCollider.enabled = false;
         }
 
-        // Set the object's position to the hold position
-        grabbedObject.transform.position = holdPosition.position;
+        // Set the object's parent to the hold position
         grabbedObject.transform.parent = holdPosition;
+
+        // Lock the local position and rotation to zero relative to holdPosition
+        grabbedObject.transform.localPosition = Vector3.zero;
+        grabbedObject.transform.localRotation = Quaternion.identity;
     }
 
     public void Release()

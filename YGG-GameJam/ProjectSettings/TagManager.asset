@@ -11,6 +11,8 @@ TagManager:
   - Sadnwich_Ham
   - Sandwich_Lettuce
   - Ground
+  - Border
+  - Mop
   layers:
   - Default
   - TransparentFX

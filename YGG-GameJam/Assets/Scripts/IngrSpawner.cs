@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class IngrSpawner : MonoBehaviour
 {
-    public string ingrName;
-    public GameObject ingrSpawner;
+    //public string ingrName;
+    //public GameObject ingrSpawner;
     public GameObject[] ingrPrefab;
     public int ingrCount;
     public int totalIngrCount;

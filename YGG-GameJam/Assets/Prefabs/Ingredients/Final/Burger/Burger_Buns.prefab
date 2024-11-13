@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6759070993783573589}
   - component: {fileID: 9217728082672388254}
   - component: {fileID: 3924338035157303641}
+  - component: {fileID: 3833019163165201480}
   m_Layer: 3
   m_Name: Bun
   m_TagString: Untagged
@@ -83,6 +84,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3833019163165201480
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968940383303360159}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1509197194148330228, guid: 01d3710861108bb4fb53636e7a136db6, type: 3}
 --- !u!1 &5896456554038683048
 GameObject:
   m_ObjectHideFlags: 0

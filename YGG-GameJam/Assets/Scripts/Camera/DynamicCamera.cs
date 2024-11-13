@@ -91,12 +91,12 @@ public class DynamicCamera : MonoBehaviour
     void UpdatePlayerList()
     {
         // Find and add any new players that aren't in the list yet
-        PlayerController[] playerControllers = FindObjectsOfType<PlayerController>();
-        foreach (var playerController in playerControllers)
+        PlayerMovement[] playerMovements = FindObjectsOfType<PlayerMovement>();
+        foreach (var playerMovement in playerMovements)
         {
-            if (!players.Contains(playerController.transform))
+            if (!players.Contains(playerMovement.transform))
             {
-                players.Add(playerController.transform);
+                players.Add(playerMovement.transform);
             }
         }
 

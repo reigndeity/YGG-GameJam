@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Vector3 moveDirection = Vector3.zero;
-
         if (isKeyboard)
         {
             // Keyboard Movement (WASD)
@@ -67,6 +66,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonDown("Keyboard_B")) // "K" key
             {
                 Debug.Log("Keyboard B button (K key) pressed");
+                
             }
 
             if (Input.GetButtonDown("Keyboard_Y") && !isGrabbing && !isCarrying) // "L" key
@@ -106,9 +106,10 @@ public class PlayerController : MonoBehaviour
                 }
 
             }
-            if (Input.GetButtonDown("Fire2_" + playerID)) // "B" button
+            if (Input.GetButtonDown("Fire2_" + playerID) && canPush == true) // "B" button
             {
                 Debug.Log("Player " + playerID + " B button (controller) pressed");
+                canPush = false;
             }
 
             if (Input.GetButtonDown("Fire3_" + playerID)) // "X" button

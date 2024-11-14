@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [Header("Game Properties")]
     public bool canMove;
+    [SerializeField] GameObject[] gamepadCharacters;
+    [SerializeField] GameObject[] keyboardCharacters;
 
     void Awake()
     {

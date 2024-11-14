@@ -13,6 +13,7 @@ TagManager:
   - Ground
   - Border
   - Mop
+  - Ingredient_Checker
   layers:
   - Default
   - TransparentFX

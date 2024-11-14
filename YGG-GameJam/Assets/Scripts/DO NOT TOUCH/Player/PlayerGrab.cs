@@ -14,6 +14,7 @@ public class PlayerGrab : MonoBehaviour
     [Header("Display Properties")]
     [SerializeField] GameObject grabbedObject;    // The object currently being held
     private MeshCollider grabbedObjectCollider; // MeshCollider of the held object
+    private BoxCollider grabbedBoxCollider;
     
     [SerializeField] float currentSpeed;
     [SerializeField] float slowedSpeed;
@@ -42,6 +43,7 @@ public class PlayerGrab : MonoBehaviour
         grabbedObject = objectToGrab;
         _rigidbody = grabbedObject.GetComponent<Rigidbody>();
         grabbedObjectCollider = grabbedObject.GetComponent<MeshCollider>();
+        grabbedBoxCollider = grabbedObject.GetComponent<BoxCollider>();
         if (_rigidbody != null)
         {
             // Disable physics for holding
@@ -57,6 +59,7 @@ public class PlayerGrab : MonoBehaviour
         {
             // Disable the collider for holding
             grabbedObjectCollider.enabled = false;
+            grabbedBoxCollider.enabled = false;
         }
 
         // Set the object's parent to the hold position
@@ -87,7 +90,7 @@ public class PlayerGrab : MonoBehaviour
         {
             // Re-enable the collider when released
             grabbedObjectCollider.enabled = true;
-
+            grabbedBoxCollider.enabled = true;
             grabbedObjectCollider = null;
         }
 

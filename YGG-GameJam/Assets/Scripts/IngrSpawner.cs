@@ -7,6 +7,7 @@ public class IngrSpawner : MonoBehaviour
     //public string ingrName;
     //public GameObject ingrSpawner;
     public GameObject[] ingrPrefab;
+    public GameObject[] ingrSpawnPoints;
     public int ingrCount;
     public int totalIngrCount;
     public bool canSpawn;
@@ -23,10 +24,8 @@ public class IngrSpawner : MonoBehaviour
     {
         canSpawn = false;
         ingrCount++;
-        float xSpawn = Random.Range(-10, 10);
-        float zSpawn = Random.Range(-10, 10);
-        Vector3 spawnPoint = new Vector3(xSpawn, 10, zSpawn);
-        Instantiate(ingrPrefab[Random.Range(0,ingrPrefab.Length)], spawnPoint, Quaternion.identity);
+        GameObject whereToSpawn = ingrSpawnPoints[Random.Range(0, ingrSpawnPoints.Length)];
+        Instantiate(ingrPrefab[Random.Range(0,ingrPrefab.Length)], whereToSpawn.transform.position, Quaternion.identity);
         yield return new WaitForSeconds(3f);
         canSpawn = true;
     }

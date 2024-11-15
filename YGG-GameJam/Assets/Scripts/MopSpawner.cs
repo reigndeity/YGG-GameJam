@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class MopSpawner : MonoBehaviour
 {
-    /*private int xMinSpawn;
-    private int xMaxSpawn;
-    private int zMinSpawn;
-    private int zMaxSpawn;*/
-
     public GameObject mopObstacle;
-    public GameObject[] spawners;
-    // 45 = Going Upper Right, 1-5
-    // 135 = Going Lower Right 6-10
-    // 225 = Going Lower Left 11-15
-    // 315 = Going Upper Left 16-20
     public bool mopSpawn;
-    public float mopSpawnTime;
+    public float mopMaxSpawnTime;
+    public float mopMinSpawnTime;
+
+    [Header("Spawners")]
+    public GameObject[] upperRightSpawners;
+    public GameObject[] lowerRightSpawners;
+    public GameObject[] lowerLeftSpawners;
+    public GameObject[] upperLeftSpawners;
 
     private void Update()
     {
@@ -29,33 +26,42 @@ public class MopSpawner : MonoBehaviour
     IEnumerator MopSpawn()
     {
         mopSpawn = false;
-        yield return new WaitForSeconds(mopSpawnTime);
+        yield return new WaitForSeconds(Random.Range(mopMinSpawnTime, mopMinSpawnTime));
 
-        int randomSpawner = Random.Range(1, spawners.Length + 1);
-        int rotationAngle = 0;
-
-        if (randomSpawner >= 1 && randomSpawner <= 5) //From Upper Right, should go Lower Left
-        {
-            rotationAngle = 225;
-        } 
-        else if (randomSpawner >= 6 && randomSpawner <= 10) // From Lower Right, should go Upper Left
-        {
-            rotationAngle = 315;
-        }
-        else if (randomSpawner >= 11 && randomSpawner <= 15) // From Lower Left, should go Upper Right
-        {
-            rotationAngle = 45;
-        }
-        else if (randomSpawner >= 16 && randomSpawner <= 20) // From Upper Left, should go Lower Right
-        {
-            rotationAngle = 135;
-        }
-
-        Quaternion rotation = Quaternion.Euler(0, rotationAngle, 0);
-        GameObject mop = Instantiate(mopObstacle, spawners[randomSpawner - 1].transform.position, rotation);
+        RandomSpawner();
 
         mopSpawn = true;
-        Debug.Log(rotation);
-        Debug.Log("Spawned at " + randomSpawner);
+    }
+
+    public void RandomSpawner()
+    {
+        int randomSpawn = Random.Range(0, 4);
+        int rotationAngle = 0;
+        GameObject toSpawn;
+
+        if (randomSpawn == 0 && upperRightSpawners[Random.Range(0, upperRightSpawners.Length)] != null) //Go Upper Right
+        {
+            toSpawn = upperRightSpawners[Random.Range(0, upperRightSpawners.Length)];
+            rotationAngle = 45;
+        }
+        else if (randomSpawn == 1 && lowerRightSpawners[Random.Range(0, lowerRightSpawners.Length)] != null) //Go Lower Right
+        {
+            toSpawn = lowerRightSpawners[Random.Range(0, lowerRightSpawners.Length)];
+            rotationAngle = 135;
+        }
+        else if (randomSpawn == 2 && lowerLeftSpawners[Random.Range(0, lowerLeftSpawners.Length)] != null) //Go Lower Left
+        {
+            toSpawn = lowerLeftSpawners[Random.Range(0, lowerLeftSpawners.Length)];
+            rotationAngle = 225;
+        }
+        else if (randomSpawn == 3 && upperLeftSpawners[Random.Range(0, upperLeftSpawners.Length)] != null) //Go Upper Left
+        {
+            toSpawn = upperLeftSpawners[Random.Range(0, upperLeftSpawners.Length)];
+            rotationAngle = 315;
+        }
+        else return;
+
+        Quaternion rotation = Quaternion.Euler(0, rotationAngle, 0);
+        GameObject mop = Instantiate(mopObstacle, toSpawn.transform.position, rotation);
     }
 }

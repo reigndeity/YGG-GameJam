@@ -6,10 +6,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [Header("Game Properties")]
+    public bool gameStart;
     public bool canMove;
     [SerializeField] GameObject[] gamepadCharacters;
     [SerializeField] GameObject[] keyboardCharacters;
     public int gameModeType;
+    public int recipeChosen;
+    [Header("---------------------------------")]
 
     [Header("Player Score Properties")]
     public int playerOneScore;

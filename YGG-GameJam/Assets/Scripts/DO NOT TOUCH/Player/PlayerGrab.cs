@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,18 +16,15 @@ public class PlayerGrab : MonoBehaviour
     private MeshCollider grabbedObjectCollider; // MeshCollider of the held object
     private BoxCollider grabbedBoxCollider;
     
-    [SerializeField] float currentSpeed;
-    [SerializeField] float slowedSpeed;
     
     [Header("Components")]
     private PlayerMovement _playerMovement;
     private Rigidbody _rigidbody;  // Rigidbody of the held object
+    private IngredientBehavior _ingredientBehavior;
 
     private void Start()
     {
         _playerMovement = GetComponentInParent<PlayerMovement>();
-        currentSpeed = _playerMovement.speed;
-        slowedSpeed = _playerMovement.speed - 1.5f;
     }
     
 
@@ -41,73 +38,60 @@ public class PlayerGrab : MonoBehaviour
             
     }
 
-    public void Grab(GameObject objectToGrab)
+public void Grab(GameObject objectToGrab)
+{
+    grabbedObject = objectToGrab;
+    _rigidbody = grabbedObject.GetComponent<Rigidbody>();
+    grabbedObjectCollider = grabbedObject.GetComponent<MeshCollider>();
+    grabbedBoxCollider = grabbedObject.GetComponent<BoxCollider>();
+    _ingredientBehavior = grabbedObject.GetComponent<IngredientBehavior>();
+
+    if (_rigidbody != null)
     {
-        grabbedObject = objectToGrab;
-        _rigidbody = grabbedObject.GetComponent<Rigidbody>();
-        grabbedObjectCollider = grabbedObject.GetComponent<MeshCollider>();
-        grabbedBoxCollider = grabbedObject.GetComponent<BoxCollider>();
-        if (_rigidbody != null)
-        {
-            // Disable physics for holding
-            _rigidbody.useGravity = false;
-            _rigidbody.isKinematic = true;
+        _rigidbody.useGravity = false;
+        _rigidbody.isKinematic = true;
 
-            _playerMovement.isCarrying = true;
-            _playerMovement.canThrow = true;
-            _playerMovement.speed = slowedSpeed;
-        }
-
-        if (grabbedObjectCollider != null)
-        {
-            // Disable the collider for holding
-            grabbedObjectCollider.enabled = false;
-            grabbedBoxCollider.enabled = false;
-        }
-
-        // Set the object's parent to the hold position
-        grabbedObject.transform.parent = holdPosition;
-
-        // Lock the local position and rotation to zero relative to holdPosition
-        grabbedObject.transform.localPosition = Vector3.zero;
-        grabbedObject.transform.localRotation = Quaternion.identity;
-
-
-
+        _playerMovement.isCarrying = true;
+        _playerMovement.canThrow = true;
     }
 
-    public void Release()
+    if (grabbedObjectCollider != null)
     {
-        if (_rigidbody != null)
-        {
-            // Re-enable physics for release
-            _rigidbody.useGravity = true;
-            _rigidbody.isKinematic = false;
+        grabbedObjectCollider.enabled = false;
+        grabbedBoxCollider.enabled = false;
+    }
 
-            // Apply a forward force to simulate a throw
-            _rigidbody.AddForce(transform.forward * throwForce, ForceMode.VelocityChange);
+    grabbedObject.transform.parent = holdPosition;
+    grabbedObject.transform.localPosition = Vector3.zero;
+    grabbedObject.transform.localRotation = Quaternion.identity;
 
-            grabbedObject.transform.parent = null;
-            grabbedObject = null;
-            _rigidbody = null;
-        }
+    // Notify the IngredientBehavior script that the object has been grabbed
+    _ingredientBehavior.OnGrabbed();
+}
 
-        if (grabbedObjectCollider != null)
-        {
-            // Re-enable the collider when released
-            grabbedObjectCollider.enabled = true;
-            grabbedBoxCollider.enabled = true;
-            grabbedObjectCollider = null;
-        }
+public void Release()
+{
+    if (_rigidbody != null)
+    {
+        _rigidbody.useGravity = true;
+        _rigidbody.isKinematic = false;
+        _rigidbody.AddForce(transform.forward * throwForce, ForceMode.VelocityChange);
 
-        // Clear references and reset parent
-        /*grabbedObject.transform.parent = null;
+        grabbedObject.transform.parent = null;
         grabbedObject = null;
-        grabbedObjectRb = null;
-        grabbedObjectCollider = null;*/
-
-        _playerMovement.speed = currentSpeed;
+        _rigidbody = null;
     }
+
+    if (grabbedObjectCollider != null)
+    {
+        grabbedObjectCollider.enabled = true;
+        grabbedBoxCollider.enabled = true;
+        grabbedObjectCollider = null;
+    }
+
+    // Notify the IngredientBehavior script that the object has been released
+    _ingredientBehavior.OnReleased();
+}
 
     // Method to draw the ray in the Scene view
     void OnDrawGizmos()

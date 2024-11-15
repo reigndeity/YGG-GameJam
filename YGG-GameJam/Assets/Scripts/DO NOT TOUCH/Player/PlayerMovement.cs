@@ -36,12 +36,13 @@ public class PlayerMovement : MonoBehaviour
         _animator = GetComponent<Animator>();
         _playerJump = GetComponentInChildren<PlayerJump>();
         _playerGrab = GetComponentInChildren<PlayerGrab>();
-        gamepadManager = FindObjectOfType<GamepadManager>(); // Find GamepadManager in the scene
+        gamepadManager = FindObjectOfType<GamepadManager>();
         canPush = true;
     }
 
     private void Update()
     {
+        
         // Decide input method based on GamepadManager assignment
         bool useController = gamepadManager != null && gamepadManager.IsControllerAssignedToPlayer(playerID);
         
@@ -120,13 +121,21 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         
-        // Apply movement
+
         transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
 
         // ANIMATOR =================================
         UpdateAnimator(moveDirection);
 
 
+        if (isCarrying == true)
+        {
+            speed = 3f;
+        }
+        else
+        {
+            speed = 5f;
+        }
         
     }
 

@@ -19,7 +19,7 @@ public class PlayerPush : MonoBehaviour
             //Vector3 pushDirection = (targetRigidbody.transform.position - transform.position).normalized;
             _targetRigidbody.AddForce(transform.forward * pushForce, ForceMode.VelocityChange);
             _playerMovement.ReleaseIngredient(); 
-            _playerGrab.Release();   
+            _playerGrab.Release();
         }
         
     }

@@ -9,6 +9,13 @@ public class GameManager : MonoBehaviour
     public bool canMove;
     [SerializeField] GameObject[] gamepadCharacters;
     [SerializeField] GameObject[] keyboardCharacters;
+    public int gameModeType;
+
+    [Header("Player Score Properties")]
+    public int playerOneScore;
+    public int playerTwoScore;
+    public int playerThreeScore;
+    public int playerFourScore;
 
     void Awake()
     {
@@ -21,4 +28,6 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
     }
+
+    
 }

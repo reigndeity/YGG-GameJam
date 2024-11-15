@@ -197,7 +197,11 @@ public class PlayerMovement : MonoBehaviour
     // UNITY EVENT SYSTEM METHODS
     public void ResetGrab() => isGrabbing = false;
     public void ResetCarrying() => isCarrying = false;
-    public void GrabItem() => _playerGrab.GrabIngredient();
+    public void GrabItem()
+    {
+        _playerGrab.GrabIngredient();
+        AdjustItemPosition();
+    } 
     public void ReleaseItem() => _playerGrab.Release();
     public void ReleaseIngredient()
     {
@@ -211,5 +215,9 @@ public class PlayerMovement : MonoBehaviour
     {
         pushObject.SetActive(false);
         canPush = true;
+    }
+    public void AdjustItemPosition()
+    {
+        _playerGrab.AdjustIngredientPosition();
     }
 }

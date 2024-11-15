@@ -33,6 +33,10 @@ public class PlayerJump : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
+        if (other.gameObject.tag == "Ground")
+        {
+            _playerMovement.isGrounded = true;
+        }
         if (other.gameObject.layer == 3)
         {
             _playerMovement.isGrounded = true;
@@ -41,6 +45,10 @@ public class PlayerJump : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Ground")
+        {
+            _playerMovement.isGrounded = false;
+        }
+        if (other.gameObject.layer == 3)
         {
             _playerMovement.isGrounded = false;
         }

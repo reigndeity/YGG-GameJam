@@ -7,13 +7,16 @@ TagManager:
   - Burger_Buns
   - Burger_Cheese
   - Burger_Patty
-  - Sandwich_Bread
-  - Sadnwich_Ham
-  - Sandwich_Lettuce
   - Ground
   - Border
   - Mop
   - Ingredient_Checker
+  - Hotdog_Buns
+  - Hotdog_Mustard
+  - Hotdog_Sausage
+  - Sandwich_Ham
+  - Sandwich_Bread
+  - Sandwich_Lettuce
   layers:
   - Default
   - TransparentFX

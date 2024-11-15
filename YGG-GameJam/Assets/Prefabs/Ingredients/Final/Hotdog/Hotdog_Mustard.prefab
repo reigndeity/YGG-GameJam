@@ -169,3 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64898d3546f3884b9f18ea26201fb44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBeforeDestroyed: 0
+  timer: 0
+  isGrabbed: 0

@@ -31,6 +31,19 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
     }
+    void Start()
+    {
+        gameStart = false;
+        StartCoroutine(GameBegins());
+    }
+
+    IEnumerator GameBegins()
+    {
+        recipeChosen = Random.Range (0,3);
+        yield return new WaitForSeconds(3);
+        gameStart = true;
+
+    }
 
     
 }

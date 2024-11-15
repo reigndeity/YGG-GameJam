@@ -13,7 +13,7 @@ public class IngredientSpawner : MonoBehaviour
 
     void Update()
     {
-        if (canIngredientSpawn == true)
+        if (canIngredientSpawn == true && GameManager.instance.gameStart == true)
         {
             SpawnIngredient();
             Invoke("SpawnTimeInterval", currentSpawnTimeInterval);

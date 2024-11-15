@@ -38,103 +38,104 @@ public class PlayerMovement : MonoBehaviour
         _playerGrab = GetComponentInChildren<PlayerGrab>();
         gamepadManager = FindObjectOfType<GamepadManager>();
         canPush = true;
+
     }
 
     private void Update()
     {
-        
-        // Decide input method based on GamepadManager assignment
-        bool useController = gamepadManager != null && gamepadManager.IsControllerAssignedToPlayer(playerID);
-        
-        Vector3 moveDirection = Vector3.zero;
-        
-        if (useController)
+        if (GameManager.instance.gameStart == true)
         {
-            // GAMEPAD CONTROLS =================================
-            float horizontalInput = Input.GetAxis("Horizontal" + playerID);
-            float verticalInput = Input.GetAxis("Vertical" + playerID);
-            moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
-            if (horizontalInput != 0 || verticalInput != 0)
+            // Decide input method based on GamepadManager assignment
+            bool useController = gamepadManager != null && gamepadManager.IsControllerAssignedToPlayer(playerID);
+            
+            Vector3 moveDirection = Vector3.zero;
+            
+            if (useController)
             {
-                Debug.Log("Player " + playerID + " is moving with controller input.");
-            }
-            // Controller Button Inputs
-            if (Input.GetButtonDown("Jump" + playerID) && isGrounded && !isCarrying && !isGrabbing && canPush) // "Y" button
-            {
-                Debug.Log("Player " + playerID + " Y button (controller) pressed");
-                _playerJump.Jump();
-            }
-            if (Input.GetButtonDown("Fire1_" + playerID) && isGrounded && !isGrabbing && canPush) // "A" button
-            {
-                Debug.Log("Player " + playerID + " A button (controller) pressed");
-                if (!isCarrying)
+                // GAMEPAD CONTROLS =================================
+                float horizontalInput = Input.GetAxis("Horizontal" + playerID);
+                float verticalInput = Input.GetAxis("Vertical" + playerID);
+                moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
+                if (horizontalInput != 0 || verticalInput != 0)
                 {
-                    isGrabbing = true;
+                    Debug.Log("Player " + playerID + " is moving with controller input.");
                 }
-                else
+                // Controller Button Inputs
+                if (Input.GetButtonDown("Jump" + playerID) && isGrounded && !isCarrying && !isGrabbing && canPush) // "Y" button
                 {
-                    canThrow = false;
-                } 
-            }
-            if (Input.GetButtonDown("Fire2_" + playerID) && isGrounded && !isGrabbing && !isCarrying && canPush) // "B" button
-            {
-                Debug.Log("Player " + playerID + " B button (controller) pressed");
-                canPush = false;
-            }
-            if (Input.GetButtonDown("Fire3_" + playerID)) // "X" button
-            {
-                Debug.Log("Player " + playerID + " X button (controller) pressed");
-            }
-        }
-        else if (isKeyboard)
-        {
-            // KEYBOARD CONTROLS =================================
-            float horizontalKeyboard = Input.GetAxis("HorizontalKeyboard");
-            float verticalKeyboard = Input.GetAxis("VerticalKeyboard");
-            moveDirection = new Vector3(horizontalKeyboard, 0, verticalKeyboard).normalized;
+                    Debug.Log("Player " + playerID + " Y button (controller) pressed");
+                    _playerJump.Jump();
+                }
+                if (Input.GetButtonDown("Fire1_" + playerID) && isGrounded && !isGrabbing && canPush) // "A" button
+                {
+                    Debug.Log("Player " + playerID + " A button (controller) pressed");
+                    if (!isCarrying)
+                    {
+                        isGrabbing = true;
+                    }
+                    else
+                    {
+                        canThrow = false;
+                    } 
+                }
+                if (Input.GetButtonDown("Fire2_" + playerID) && isGrounded && !isGrabbing && !isCarrying && canPush) // "B" button
+                {
+                    Debug.Log("Player " + playerID + " B button (controller) pressed");
+                    canPush = false;
+                }
+                if (Input.GetButtonDown("Fire3_" + playerID)) // "X" button
+                {
+                    Debug.Log("Player " + playerID + " X button (controller) pressed");
 
-            if (Input.GetKeyDown(keyCodeOne) && isGrounded && !isCarrying && !isGrabbing && canPush)
-            {
-                Debug.Log(keyCodeOne + " : Y button pressed");
-                _playerJump.Jump();
-            }
-            if (Input.GetKeyDown(keyCodeTwo) && isGrounded && !isGrabbing && canPush)
-            {
-                Debug.Log(keyCodeTwo + " : A button pressed");
-                if (!isCarrying)
-                {
-                    isGrabbing = true;
-                }
-                else
-                {
-                    canThrow = false;
                 }
             }
-            if (Input.GetKeyDown(keyCodeThree) && isGrounded && !isGrabbing && !isCarrying && canPush)
+            else if (isKeyboard)
             {
-                Debug.Log(keyCodeThree + " : B button pressed");
-                canPush = false;
+                // KEYBOARD CONTROLS =================================
+                float horizontalKeyboard = Input.GetAxis("HorizontalKeyboard");
+                float verticalKeyboard = Input.GetAxis("VerticalKeyboard");
+                moveDirection = new Vector3(horizontalKeyboard, 0, verticalKeyboard).normalized;
+
+                if (Input.GetKeyDown(keyCodeOne) && isGrounded && !isCarrying && !isGrabbing && canPush)
+                {
+                    Debug.Log(keyCodeOne + " : Y button pressed");
+                    _playerJump.Jump();
+                }
+                if (Input.GetKeyDown(keyCodeTwo) && isGrounded && !isGrabbing && canPush)
+                {
+                    Debug.Log(keyCodeTwo + " : A button pressed");
+                    if (!isCarrying)
+                    {
+                        isGrabbing = true;
+                    }
+                    else
+                    {
+                        canThrow = false;
+                    }
+                }
+                if (Input.GetKeyDown(keyCodeThree) && isGrounded && !isGrabbing && !isCarrying && canPush)
+                {
+                    Debug.Log(keyCodeThree + " : B button pressed");
+                    canPush = false;
+                }
+                if (Input.GetKeyDown(keyCodeFour))
+                {
+                    Debug.Log(keyCodeFour + " : X button pressed");
+                }
             }
-            if (Input.GetKeyDown(keyCodeFour))
-            {
-                Debug.Log(keyCodeFour + " : X button pressed");
-            }
-        }
         
 
-        transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
-
-        // ANIMATOR =================================
-        UpdateAnimator(moveDirection);
-
-
-        if (isCarrying == true)
-        {
-            speed = 3f;
-        }
-        else
-        {
-            speed = 5f;
+            transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
+            // ANIMATOR =================================
+            UpdateAnimator(moveDirection);
+            if (isCarrying == true)
+            {
+                speed = 3f;
+            }
+            else
+            {
+                speed = 5f;
+            }
         }
         
     }

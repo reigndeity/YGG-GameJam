@@ -963,8 +963,6 @@ MonoBehaviour:
     m_Bits: 8
   holdPosition: {fileID: 340288718198948139}
   grabbedObject: {fileID: 0}
-  currentSpeed: 0
-  slowedSpeed: 0
 --- !u!1 &6214401906364821230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,7 +1473,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8903370020110986385}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ff38b1823348d4946a77aef8e1bea807, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

@@ -20,6 +20,7 @@ public class Freezer : MonoBehaviour
     }
     public void OnCollisionStay(Collision collision)
     {
+        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerMovement movement = collision.gameObject.GetComponent<PlayerMovement>();
@@ -34,6 +35,7 @@ public class Freezer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+
             PlayerMovement movement = collision.gameObject.GetComponent<PlayerMovement>();
             if (movement != null)
             {

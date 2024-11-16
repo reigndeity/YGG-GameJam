@@ -109,6 +109,7 @@ public void Release()
 
     public void AdjustIngredientPosition()
     {
+        if(grabbedObject == null) return;
         // BURGER ==================================================
         // Buns
         if (grabbedObject.tag == "Burger_Buns")

@@ -23,7 +23,7 @@ public class MopObstacle : MonoBehaviour
             Destroy(other.gameObject);
             if (other.gameObject.layer == 3)
             {
-                spawner.ingrCount--;
+                //spawner.ingrCount--;
             }
         }
         else if (other.gameObject.CompareTag("Border") || other.gameObject.CompareTag("Mop"))

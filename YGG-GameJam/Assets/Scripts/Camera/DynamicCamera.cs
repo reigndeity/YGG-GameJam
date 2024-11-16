@@ -22,13 +22,14 @@ public class DynamicCamera : MonoBehaviour
 
     void LateUpdate()
     {
-        if (players.Count == 0) return; //from players.Length
+        if (players.Count != 0)  //from players.Length
+        {
+            // Update the list of players (you can opt to add more logic to detect new player spawn)
+            UpdatePlayerList(); // Changes
 
-        // Update the list of players (you can opt to add more logic to detect new player spawn)
-        UpdatePlayerList(); // Changes
-
-        MoveCamera();
-        ZoomCamera();
+            MoveCamera();
+            ZoomCamera();
+        }     
     }
 
     void MoveCamera()

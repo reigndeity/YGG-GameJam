@@ -5,12 +5,6 @@ using UnityEngine;
 public class MopObstacle : MonoBehaviour
 {
     public float speed;
-    private IngrSpawner spawner;
-
-    private void Start()
-    {
-        spawner = FindObjectOfType<IngrSpawner>();
-    }
 
     private void Update()
     {
@@ -21,12 +15,8 @@ public class MopObstacle : MonoBehaviour
         if (other.gameObject.CompareTag("Player") || other.gameObject.layer == 3)
         {
             Destroy(other.gameObject);
-            if (other.gameObject.layer == 3)
-            {
-                //spawner.ingrCount--;
-            }
         }
-        else if (other.gameObject.CompareTag("Border") || other.gameObject.CompareTag("Mop"))
+        else if (other.gameObject.CompareTag("Border") || other.gameObject.CompareTag("Ground"))
         {
             Destroy(this.gameObject);
         }

@@ -13,6 +13,7 @@ public class PlayerJump : MonoBehaviour
     {
         _rigidbody = GetComponentInParent<Rigidbody>();
         _playerMovement = GetComponentInParent<PlayerMovement>();
+        jumpForce = 7.5f;
     }
 
     public void Jump()

@@ -29,6 +29,28 @@ public class OutlineBehavior : MonoBehaviour
             }
         }
     }
+    void OnTriggerStay(Collider other)
+    {
+        // Check if the colliding object has the tag "Player"
+        if (other.gameObject.CompareTag("Player") || other.gameObject.layer == 3)
+        {
+            // If this object is not already tracked, add it to the dictionary
+            if (!trackedObjectsOutlines.ContainsKey(other.gameObject))
+            {
+                // Get all Outline components on the GameObject
+                List<Outline> outlines = new List<Outline>(other.gameObject.GetComponents<Outline>());
+                trackedObjectsOutlines.Add(other.gameObject, outlines);
+
+                // Enable each Outline component
+                foreach (Outline outline in outlines)
+                {
+                    outline.enabled = true;
+                }
+
+                Debug.Log($"Enabled Outline components for: {other.gameObject.name} (Layer: {LayerMask.LayerToName(other.gameObject.layer)})");
+            }
+        }
+    }
 
     void OnTriggerExit(Collider other)
     {

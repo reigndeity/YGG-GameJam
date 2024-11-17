@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        gameModeType = PlayerPrefs.GetInt("gameMode");
         gameStart = false;
         StartCoroutine(GameBegins());
     }
@@ -61,9 +62,28 @@ public class GameManager : MonoBehaviour
                 timeRemaining = 0;
             }
         }
-        timerTxt.text = timeRemaining.ToString("F0");
-        playerOneScoreTxt.text = "Team One: " + playerOneScore.ToString("F0");
-        playerTwoScoreTxt.text = "Team Two: " + playerTwoScore.ToString("F0");
+        
+        switch (gameModeType)
+        {
+            case 1:
+                timerTxt.text = timeRemaining.ToString("F0");
+                playerOneScoreTxt.text = "P1 Score: " + playerOneScore.ToString("F0");
+                playerTwoScoreTxt.text = "P2 Score: " + playerTwoScore.ToString("F0");
+                break;
+            case 2:
+                timerTxt.text = timeRemaining.ToString("F0");
+                playerOneScoreTxt.text = "Team One Score: " + playerOneScore.ToString("F0");
+                playerTwoScoreTxt.text = "Team Two Score: " + playerTwoScore.ToString("F0");
+                break;
+            case 3:
+                timerTxt.text = timeRemaining.ToString("F0");
+                playerOneScoreTxt.text = "P1 Score: " + playerOneScore.ToString("F0");
+                playerTwoScoreTxt.text = "P2 Score: " + playerTwoScore.ToString("F0");
+                playerThreeScoreTxt.text = "P3 Score: " + playerThreeScore.ToString("F0");
+                playerFourScoreTxt.text = "P4 Score: " + playerFourScore.ToString("F0");
+                break;
+        }
+
     }
 
     IEnumerator GameBegins()
@@ -90,19 +110,46 @@ public class GameManager : MonoBehaviour
     public void CompareScores()
     {
         int highestScore = Mathf.Max(playerOneScore, playerTwoScore, playerThreeScore, playerFourScore);
-        if (highestScore == playerOneScore)
+        switch (gameModeType)
         {
-            winnerTxt.text = "Team One Wins";
-        }
-        if (highestScore == playerTwoScore)
-        {
-            winnerTxt.text = "Team Two Wins";
-        }
-        if (highestScore == playerThreeScore)
-        {
-        }
-        if (highestScore == playerFourScore)
-        {
+            case 1:
+                if (highestScore == playerOneScore)
+                {
+                    winnerTxt.text = "P1 One Wins";
+                }
+                if (highestScore == playerTwoScore)
+                {
+                    winnerTxt.text = "P2 Two Wins";
+                }
+                break;
+            case 2:
+                if (highestScore == playerOneScore)
+                {
+                    winnerTxt.text = "Team One Wins";
+                }
+                if (highestScore == playerTwoScore)
+                {
+                    winnerTxt.text = "Team Two Wins";
+                }
+                break;
+            case 3:
+                if (highestScore == playerOneScore)
+                {
+                    winnerTxt.text = "P1 Wins";
+                }
+                if (highestScore == playerTwoScore)
+                {
+                    winnerTxt.text = "P2 Wins";
+                }
+                if (highestScore == playerThreeScore)
+                {
+                    winnerTxt.text = "P3 Wins";
+                }
+                if (highestScore == playerFourScore)
+                {
+                    winnerTxt.text = "P4 Wins";
+                }
+                break;
         }
 
         // Check if there is a tie between players with the highest score

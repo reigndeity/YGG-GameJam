@@ -13,6 +13,7 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] GameObject playPanel;
     [SerializeField] Button startButton;
     [SerializeField] int currentGameMode;
+    [SerializeField] string sceneName;
 
 
     void Start()
@@ -35,7 +36,7 @@ public class ButtonManager : MonoBehaviour
         playPanel.SetActive(true);
     }
 
-    public void OnClickStart(string sceneName)
+    public void OnClickStart()
     {
         SceneManager.LoadSceneAsync(sceneName);
     }
@@ -43,5 +44,16 @@ public class ButtonManager : MonoBehaviour
     public void OnClickGameModeOne()
     {
         PlayerPrefs.SetInt("gameMode", 1);
+        sceneName = "GameModeOne";
+    }
+    public void OnClickGameModeTwo()
+    {
+        PlayerPrefs.SetInt("gameMode", 2);
+        sceneName = "GameModeTwo";
+    }
+    public void OnClickGameModeThree()
+    {
+        PlayerPrefs.SetInt("gameMode", 3);
+        sceneName = "GameModeThree";
     }
 }

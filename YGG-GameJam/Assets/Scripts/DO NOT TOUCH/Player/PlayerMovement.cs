@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public bool canThrow;
     public bool canPush;
     public bool isGrounded;
+    public bool isOnFreezer;
 
     [Header("Control Properties")]
     [SerializeField] private bool isKeyboard;  // Toggle to use keyboard or controller
@@ -30,13 +31,30 @@ public class PlayerMovement : MonoBehaviour
     private PlayerJump _playerJump;
     private PlayerGrab _playerGrab;
     private GamepadManager gamepadManager;
+    private Rigidbody _rigidBody;
 
+    [Header("Dash Properties")]
+    [SerializeField] GameObject trailRenderer;
+    [SerializeField] private float dashSpeed = 5f;
+    [SerializeField] private float dashDuration = 0.2f;
+    [SerializeField] private float dashCooldown = 2f;
+    private bool isDashing = false;
+    private float dashTimer = 0f;
+    private float cooldownTimer = 0f;
+    private Vector3 dashDirection = Vector3.zero; // Direction of the dash
+
+    [Header("Foot Trails")]
+    public bool canPlayFootTrailParticle;
+    public ParticleSystem footTrailParticleOne;
+    public ParticleSystem footTrailParticleTwo;
+    public ParticleSystem footTrailParticleThree;
     void Start()
     {
         _animator = GetComponent<Animator>();
         _playerJump = GetComponentInChildren<PlayerJump>();
         _playerGrab = GetComponentInChildren<PlayerGrab>();
         gamepadManager = FindObjectOfType<GamepadManager>();
+        _rigidBody = GetComponent<Rigidbody>();
         canPush = true;
 
     }
@@ -47,15 +65,16 @@ public class PlayerMovement : MonoBehaviour
         {
             // Decide input method based on GamepadManager assignment
             bool useController = gamepadManager != null && gamepadManager.IsControllerAssignedToPlayer(playerID);
-            
             Vector3 moveDirection = Vector3.zero;
-            
-            if (useController)
+            if (!isDashing)
+            {
+                if (useController)
             {
                 // GAMEPAD CONTROLS =================================
                 float horizontalInput = Input.GetAxis("Horizontal" + playerID);
                 float verticalInput = Input.GetAxis("Vertical" + playerID);
                 moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
+                
                 if (horizontalInput != 0 || verticalInput != 0)
                 {
                     Debug.Log("Player " + playerID + " is moving with controller input.");
@@ -83,10 +102,19 @@ public class PlayerMovement : MonoBehaviour
                     Debug.Log("Player " + playerID + " B button (controller) pressed");
                     canPush = false;
                 }
-                if (Input.GetButtonDown("Fire3_" + playerID)) // "X" button
+                if (Input.GetButtonDown("Fire3_" + playerID) && cooldownTimer <= 0f) // "X" button
                 {
                     Debug.Log("Player " + playerID + " X button (controller) pressed");
+                    isDashing = true;
+                    dashTimer = dashDuration;
+                    cooldownTimer = dashCooldown;
+                    dashDirection = moveDirection != Vector3.zero ? moveDirection : transform.forward; // Save dash direction
+                }
 
+                // Trail Effect
+                if (moveDirection != Vector3.zero && canPlayFootTrailParticle == true && isGrounded == true)
+                {
+                    FootTrailParticleOn();
                 }
             }
             else if (isKeyboard)
@@ -118,23 +146,58 @@ public class PlayerMovement : MonoBehaviour
                     Debug.Log(keyCodeThree + " : B button pressed");
                     canPush = false;
                 }
-                if (Input.GetKeyDown(keyCodeFour))
+                if (Input.GetKeyDown(keyCodeFour) && cooldownTimer <= 0f)
                 {
                     Debug.Log(keyCodeFour + " : X button pressed");
+                    isDashing = true;
+                    dashTimer = dashDuration;
+                    cooldownTimer = dashCooldown;
+                    dashDirection = moveDirection != Vector3.zero ? moveDirection : transform.forward; // Save dash direction
+                }
+
+                // Trail Effect
+                if (moveDirection != Vector3.zero && canPlayFootTrailParticle == true && isGrounded == true)
+                {
+                    FootTrailParticleOn();
                 }
             }
-        
-
-            transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
-            // ANIMATOR =================================
-            UpdateAnimator(moveDirection);
-            if (isCarrying == true)
+            }
+            // Handle dashing
+            if (isDashing)
             {
-                speed = 3f;
+                trailRenderer.SetActive(true);
+                moveDirection = dashDirection * dashSpeed; // Use the saved dash direction
+                dashTimer -= Time.deltaTime;
+                if (dashTimer <= 0f)
+                {
+                    isDashing = false;
+                    trailRenderer.SetActive(false);
+                }
             }
             else
             {
+                cooldownTimer -= Time.deltaTime;
+            }
+            
+            transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
+
+            // ANIMATOR =================================
+            UpdateAnimator(moveDirection);
+            if (isCarrying == true && isOnFreezer == false)
+            {
+                speed = 3f;
+            }
+            if (isCarrying == false && isOnFreezer == false)
+            {
                 speed = 5f;
+            }
+            if (isCarrying == true && isOnFreezer == true)
+            {
+                speed = 2f;
+            }
+            if (isCarrying == false && isOnFreezer == true)
+            {
+                speed = 3f;
             }
         }
         
@@ -204,6 +267,21 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Check if the player is dashing
+        if (isDashing)
+        {
+            // Stop dashing
+            isDashing = false;
+            trailRenderer.SetActive(false); // Turn off the trail effect
+
+            // Reset the dash timer
+            dashTimer = 0f;
+            dashDirection = Vector3.zero;
+        }
+    }
+
     // UNITY EVENT SYSTEM METHODS
     public void ResetGrab() => isGrabbing = false;
     public void ResetCarrying() => isCarrying = false;
@@ -229,5 +307,20 @@ public class PlayerMovement : MonoBehaviour
     public void AdjustItemPosition()
     {
         _playerGrab.AdjustIngredientPosition();
+    }
+    public void FootTrailParticleOn()
+    {
+        canPlayFootTrailParticle = false;
+        footTrailParticleOne.Play();
+        footTrailParticleTwo.Play();
+        footTrailParticleThree.Play();
+        Invoke("FootTrailParticleOff", 0.3f);
+    }
+    public void FootTrailParticleOff()
+    {
+        footTrailParticleOne.Stop();
+        footTrailParticleTwo.Stop();
+        footTrailParticleThree.Stop();
+        canPlayFootTrailParticle = true;
     }
 }

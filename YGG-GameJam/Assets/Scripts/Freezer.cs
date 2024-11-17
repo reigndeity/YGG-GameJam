@@ -4,43 +4,42 @@ using UnityEngine;
 
 public class Freezer : MonoBehaviour
 {
-    public float slowSpeed;
-    public float currentSpeed;
+    public Dictionary<GameObject, List<PlayerMovement>> trackedPlayer = new Dictionary<GameObject, List<PlayerMovement>>();
 
-    public void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            PlayerMovement movement = collision.gameObject.GetComponent<PlayerMovement>();
-            if (movement != null)
+            Debug.Log("Player is Slowed");
+            if (!trackedPlayer.ContainsKey(other.gameObject))
             {
-                currentSpeed = movement.speed;
-            }
-        }
-    }
-    public void OnCollisionStay(Collision collision)
-    {
-        Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            PlayerMovement movement = collision.gameObject.GetComponent<PlayerMovement>();
-            if(movement != null)
-            {
-                movement.speed = slowSpeed;
+                List<PlayerMovement> playerMovements = new List<PlayerMovement>(other.gameObject.GetComponents<PlayerMovement>());
+                trackedPlayer.Add(other.gameObject, playerMovements);
+                foreach (PlayerMovement playerMovement in playerMovements)
+                {
+                    playerMovement.isOnFreezer = true;
+                }
             }
         }
     }
 
-    public void OnCollisionExit(Collision collision)
+    void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
+        // You may not need to do anything here if OnTriggerEnter already handles the slowdown
+    }
 
-            PlayerMovement movement = collision.gameObject.GetComponent<PlayerMovement>();
-            if (movement != null)
+    void OnTriggerExit(Collider other)
+    {
+        if (trackedPlayer.ContainsKey(other.gameObject))
+        {
+            List<PlayerMovement> playerMovements = trackedPlayer[other.gameObject];
+
+            foreach (PlayerMovement playerMovement in playerMovements)
             {
-                movement.speed = currentSpeed;
+                playerMovement.isOnFreezer = false;
             }
+
+            trackedPlayer.Remove(other.gameObject); // Remove from dictionary
         }
     }
 }

@@ -24,6 +24,7 @@ public class IngredientChecker : MonoBehaviour
 
     void Update()
     {
+        recipeType = GameManager.instance.recipeChosen;
         switch (recipeType)
         {
             case 0:

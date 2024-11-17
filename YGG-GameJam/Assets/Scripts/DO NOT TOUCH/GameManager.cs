@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     {
         gameModeType = PlayerPrefs.GetInt("gameMode");
         gameStart = false;
-        StartCoroutine(GameBegins());
+        StartCoroutine(ShowRecipe());
     }
     void Update()
     {
@@ -62,25 +62,28 @@ public class GameManager : MonoBehaviour
                 timeRemaining = 0;
             }
         }
+        // Format the time as minutes and seconds
+        int minutes = Mathf.FloorToInt(timeRemaining / 60); // Calculate minutes
+        int seconds = Mathf.FloorToInt(timeRemaining % 60); // Calculate seconds
+
+        // Display the time as "mm:ss"
+        timerTxt.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         
         switch (gameModeType)
         {
             case 1:
-                timerTxt.text = timeRemaining.ToString("F0");
-                playerOneScoreTxt.text = "P1 Score: " + playerOneScore.ToString("F0");
-                playerTwoScoreTxt.text = "P2 Score: " + playerTwoScore.ToString("F0");
+                playerOneScoreTxt.text = playerOneScore.ToString("F0");
+                playerTwoScoreTxt.text = playerTwoScore.ToString("F0");
                 break;
             case 2:
-                timerTxt.text = timeRemaining.ToString("F0");
-                playerOneScoreTxt.text = "Team One Score: " + playerOneScore.ToString("F0");
-                playerTwoScoreTxt.text = "Team Two Score: " + playerTwoScore.ToString("F0");
+                playerOneScoreTxt.text = playerOneScore.ToString("F0");
+                playerTwoScoreTxt.text = playerTwoScore.ToString("F0");
                 break;
             case 3:
-                timerTxt.text = timeRemaining.ToString("F0");
-                playerOneScoreTxt.text = "P1 Score: " + playerOneScore.ToString("F0");
-                playerTwoScoreTxt.text = "P2 Score: " + playerTwoScore.ToString("F0");
-                playerThreeScoreTxt.text = "P3 Score: " + playerThreeScore.ToString("F0");
-                playerFourScoreTxt.text = "P4 Score: " + playerFourScore.ToString("F0");
+                playerOneScoreTxt.text = playerOneScore.ToString("F0");
+                playerTwoScoreTxt.text = playerTwoScore.ToString("F0");
+                playerThreeScoreTxt.text = playerThreeScore.ToString("F0");
+                playerFourScoreTxt.text = playerFourScore.ToString("F0");
                 break;
         }
 
@@ -105,6 +108,79 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3);
         recipePanel.SetActive(false);
         gameStart = true;
+    }
+
+    // TEST
+   IEnumerator ShowRecipe()
+    {
+        recipeChosen = Random.Range(0, 3);
+        recipePanel.SetActive(true);
+
+        // Deactivate all recipe images initially
+        foreach (GameObject img in recipeImg)
+        {
+            img.SetActive(false);
+        }
+
+        // Activate the chosen recipe image temporarily
+        recipeImg[recipeChosen].SetActive(true);
+
+        // Start the blinking effect for all images
+        yield return StartCoroutine(BlinkObjects(recipeImg, 5f, 0.1f, 0.5f));
+
+        // After blinking, deactivate all images except the chosen one
+        for (int i = 0; i < recipeImg.Length; i++)
+        {
+            if (i == recipeChosen)
+            {
+                recipeImg[i].SetActive(true);
+            }
+            else
+            {
+                recipeImg[i].SetActive(false);
+            }
+        }
+
+        // Hide the recipe panel after showing the chosen image
+        yield return new WaitForSeconds(3);
+        recipePanel.SetActive(false);
+        gameStart = true;
+    }
+
+    IEnumerator BlinkObjects(GameObject[] objects, float totalBlinkDuration, float minBlinkInterval, float maxBlinkInterval)
+        {
+        float elapsedTime = 0f;
+        float currentBlinkInterval = minBlinkInterval;
+        int currentIndex = 0;
+
+        while (elapsedTime < totalBlinkDuration)
+        {
+            // Deactivate all objects
+            foreach (GameObject obj in objects)
+            {
+                obj.SetActive(false);
+            }
+
+            // Activate the current object
+            objects[currentIndex].SetActive(true);
+
+            // Wait for the current interval before moving to the next object
+            yield return new WaitForSeconds(currentBlinkInterval);
+
+            // Move to the next object in the array
+            currentIndex = (currentIndex + 1) % objects.Length;
+
+            // Gradually increase the interval to slow down the blinking
+            elapsedTime += currentBlinkInterval;
+            currentBlinkInterval = Mathf.Lerp(minBlinkInterval, maxBlinkInterval, elapsedTime / totalBlinkDuration);
+        }
+
+        // Ensure all objects are set to inactive except the chosen one at the end
+        foreach (GameObject obj in objects)
+        {
+            obj.SetActive(false);
+        }
+        objects[currentIndex].SetActive(true); // Keep the last active object visible
     }
 
     public void CompareScores()
@@ -173,3 +249,4 @@ public class GameManager : MonoBehaviour
     }
     
 }
+

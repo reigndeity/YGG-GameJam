@@ -323,4 +323,5 @@ public class PlayerMovement : MonoBehaviour
         footTrailParticleThree.Stop();
         canPlayFootTrailParticle = true;
     }
+
 }

@@ -141,14 +141,14 @@ public class IngredientChecker : MonoBehaviour
         ingredientOne = false;
         ingredientTwo = false;
         ingredientThree = false;
-        
-        Invoke("DeactivateIngredients", 1f);
+        coverObject.SetActive(true);
+        Invoke("DeactivateIngredients", .8f);
     }
     void DeactivateIngredients()
     {
         for (int i = 0; i <= 8; i++)
         {
-            coverObject.SetActive(true);
+            
             ingredientObjs[i].SetActive(false);
             Invoke("RemoveCover", 1f);
         }

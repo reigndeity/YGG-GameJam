@@ -10,7 +10,7 @@ public class OutlineBehavior : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // Check if the colliding object has the tag "Player"
-        if (other.gameObject.CompareTag("Player") || other.gameObject.layer == 3)
+        if (other.gameObject.CompareTag("Player")) //|| other.gameObject.layer == 3
         {
             // If this object is not already tracked, add it to the dictionary
             if (!trackedObjectsOutlines.ContainsKey(other.gameObject))
@@ -32,7 +32,7 @@ public class OutlineBehavior : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         // Check if the colliding object has the tag "Player"
-        if (other.gameObject.CompareTag("Player") || other.gameObject.layer == 3)
+        if (other.gameObject.CompareTag("Player")) // || other.gameObject.layer == 3
         {
             // If this object is not already tracked, add it to the dictionary
             if (!trackedObjectsOutlines.ContainsKey(other.gameObject))

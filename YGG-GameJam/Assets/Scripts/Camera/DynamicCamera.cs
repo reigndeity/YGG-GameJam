@@ -29,7 +29,12 @@ public class DynamicCamera : MonoBehaviour
 
             MoveCamera();
             ZoomCamera();
-        }     
+        }
+        else
+        {
+            UpdatePlayerList();
+            CenterCamera();
+        }
     }
 
     void MoveCamera()
@@ -102,5 +107,17 @@ public class DynamicCamera : MonoBehaviour
 
         // Remove destroyed players (those who are no longer in the scene)
         players.RemoveAll(player => player == null);
+    }
+
+    void CenterCamera()
+    {
+        // Move the camera to a default centered position
+        Vector3 centeredPosition = Vector3.zero + offset; // You can adjust 'Vector3.zero' or the offset as needed
+        centeredPosition.y = transform.position.y; // Keep the current Y position of the camera
+        transform.position = Vector3.SmoothDamp(transform.position, centeredPosition, ref velocity, smoothTime);
+
+        // Zoom out the camera to a specific value
+        float customZoomOutSize = 20f; // Set your specific zoom-out value here
+        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, customZoomOutSize, Time.deltaTime);
     }
 }

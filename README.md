@@ -112,5 +112,5 @@ Our party game introduces an engaging rewards system where players earn points b
 
 <br>
 
-- # GITHUB REPOSITORY
-- [Public Download Link Here!](https://zenjlle.itch.io/kusinero)
+- # PUBLIC DOWNLOAD LINK
+- [Download From Here!](https://zenjlle.itch.io/kusinero)

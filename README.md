@@ -16,6 +16,15 @@ Kusinero is a  party game that combines gameplay elements from hits games like O
 
 In this fast-paced kitchen royale, players will need to push, shove, steal, and fight to out-cook your opponents in this fast-paced kitchen royale. With simple mechanics and unpredictable action, anyone can jump in and have fun, but only the best chef will claim victory.
 
+
+## TABLE OF CONTENTS
+- [PROJECT OBJECTIVES](#project-objectives)
+- [TECHNICAL STACK](#technical-stack)
+- [ON-CHAIN PROPOSAL](#on-chain-proposal)
+- [ROADMAP FOR ON-CHAIN INTEGRATION](#roadmap-for-on-chain-integration)
+- [GITHUB REPOSITORY](#github-repository)
+
+
 # PROJECT OBJECTIVES
 Kusinero aims to address the issues NFT games commonly has, such as being overly grindy, difficult to understand, and generally unenjoyable. By introducing a game that implements party-style gameplay, easy to grasp mechanics, and the use of already known digital asset-owning models, we provide a solution that could potentially bring more people to participate the NFT Game culture without having to sit through hour-long seminars and playing grindy games with little-to-no entertainment value.
 
@@ -96,5 +105,5 @@ Our party game introduces an engaging rewards system where players earn points b
 
 <br>
 
-# Github Repository
+# GITHUB REPOSITORY
 - 

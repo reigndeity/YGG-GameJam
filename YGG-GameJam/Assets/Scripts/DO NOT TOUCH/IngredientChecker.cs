@@ -24,6 +24,7 @@ public class IngredientChecker : MonoBehaviour
 
     void Start()
     {
+        sfxSource.volume = 0.25f;
         recipeType = GameManager.instance.recipeChosen;
     }
 

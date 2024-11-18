@@ -10410,6 +10410,7 @@ MonoBehaviour:
   dashSpeed: 5
   dashDuration: 0.2
   dashCooldown: 2
+  isDashing: 0
   canPlayFootTrailParticle: 1
   footTrailParticleOne: {fileID: 2631328615894418112}
   footTrailParticleTwo: {fileID: 8390426595513484842}
@@ -26523,7 +26524,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

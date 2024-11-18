@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashSpeed = 3f;
     [SerializeField] private float dashDuration = 0.2f;
     [SerializeField] private float dashCooldown = 3f;
-    private bool isDashing = false;
+    public bool isDashing = false;
     private float dashTimer = 0f;
     private float cooldownTimer = 0f;
     private Vector3 dashDirection = Vector3.zero; // Direction of the dash
@@ -65,6 +65,10 @@ public class PlayerMovement : MonoBehaviour
         dashSpeed = 3;
         dashCooldown = 3;
         Invoke("Spawned", 2f);
+
+        keyCodeOne = KeyCode.Space;
+        sfx = transform.Find("SFX")?.GetComponent<AudioSource>();
+        walkSfx = transform.Find("Walk SFX")?.GetComponent<AudioSource>();
     }
 
     private void Update()

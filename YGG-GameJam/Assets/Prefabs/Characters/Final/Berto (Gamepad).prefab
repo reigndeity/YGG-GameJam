@@ -140,7 +140,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -26522,6 +26522,7 @@ MonoBehaviour:
   dashSpeed: 5
   dashDuration: 0.2
   dashCooldown: 2
+  isDashing: 0
   canPlayFootTrailParticle: 1
   footTrailParticleOne: {fileID: 3101226449165537062}
   footTrailParticleTwo: {fileID: 3463496302366723891}

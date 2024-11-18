@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using TMPro;
 
 
 public class ButtonManager : MonoBehaviour
@@ -16,9 +17,18 @@ public class ButtonManager : MonoBehaviour
 
     [Header("Play Panel")]
     [SerializeField] GameObject playPanel;
-    [SerializeField] Button startButton;
+    [SerializeField] GameObject startButton;
     [SerializeField] int currentGameMode;
     [SerializeField] string sceneName;
+
+    [Header("Help Panel")]
+    [SerializeField] GameObject helpPanel;
+    [SerializeField] GameObject backHelpButton;
+    [SerializeField] GameObject helpButton;
+    [Header("Exit Panel")]
+    [SerializeField] GameObject exitPanel;
+    [SerializeField] GameObject exitNoButton;
+    [SerializeField] GameObject exitButton;
 
     [Header("Game Mode Pause")]
     public EventSystem eventSystem; 
@@ -30,21 +40,40 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] GameObject menuGameOverWarning;
     public GameObject noGameOverButton;
     public GameObject mainMenuGameOverButton;
+    public GameObject[] targetGameObject; // GameObject to activate
+    public GameObject[] gameObjectToDetect; // GameObject to check for selection
+    public TextMeshProUGUI hoverTxt;
 
-
-
-    void Start()
-    {
-        startButton.interactable = false;
-        PlayerPrefs.SetInt("gameMode", 0);
-        
-    }
     void Update()
     {
         currentGameMode = PlayerPrefs.GetInt("gameMode");
-        if (currentGameMode > 0)
+
+        if (eventSystem.currentSelectedGameObject == gameObjectToDetect[0]) 
         {
-            startButton.interactable = true;
+            targetGameObject[0].SetActive(true);
+            hoverTxt.text = "-2 PLAYERS\n-1vs1 STYLE";
+        }
+        else 
+        { 
+            targetGameObject[0].SetActive(false);
+        }
+        if (eventSystem.currentSelectedGameObject == gameObjectToDetect[1])
+        {
+            targetGameObject[1].SetActive(true);
+            hoverTxt.text = "-4 PLAYERS\n-TEAM STYLE";
+        }
+        else
+        {
+            targetGameObject[1].SetActive(false);
+        }
+        if (eventSystem.currentSelectedGameObject == gameObjectToDetect[2])
+        {
+            targetGameObject[2].SetActive(true);
+            hoverTxt.text = "-4 PLAYERS\n-FREE FOR ALL STYLE";
+        }
+        else
+        {
+            targetGameObject[2].SetActive(false);
         }
     }
 
@@ -70,6 +99,37 @@ public class ButtonManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("gameMode", 3);
         LoadScene();
+    }
+    public void OnClickBack() 
+    {
+        eventSystem.SetSelectedGameObject(startButton);
+        mainMenuPanel.SetActive(true);
+        playPanel.SetActive(false);
+    }
+
+    public void OnClickHelp() 
+    {
+        eventSystem.SetSelectedGameObject(backHelpButton);
+        helpPanel.SetActive(true);
+    }
+    public void OnClickHelpBack() 
+    {
+        eventSystem.SetSelectedGameObject(helpButton);
+        helpPanel.SetActive(false);
+    }
+    public void OnClickExit() 
+    {
+        eventSystem.SetSelectedGameObject(exitNoButton);
+        exitPanel.SetActive(true);
+    }
+    public void OnClickNoExit()
+    {
+        eventSystem.SetSelectedGameObject(exitButton);
+        exitPanel.SetActive(false);
+    }
+    public void OnClickYesExit()
+    {
+        Application.Quit();
     }
 
     public void LoadScene()

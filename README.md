@@ -108,4 +108,4 @@ Our party game introduces an engaging rewards system where players earn points b
 <br>
 
 # GITHUB REPOSITORY
-- 
+- [Public Repository Here!](https://github.com/reigndeity/YGG-GameJam)

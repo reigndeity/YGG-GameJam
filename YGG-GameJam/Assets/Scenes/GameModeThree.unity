@@ -269,9 +269,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1311644419}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -312,6 +324,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -689,6 +721,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -1359,7 +1395,7 @@ GameObject:
   - component: {fileID: 90303214}
   - component: {fileID: 90303213}
   - component: {fileID: 90303215}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: La mesa.002
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1739,7 +1775,7 @@ GameObject:
   - component: {fileID: 106670271}
   - component: {fileID: 106670273}
   - component: {fileID: 106670272}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: knives
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1820,9 +1856,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2104592563}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1863,6 +1911,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2024,9 +2092,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1311644419}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2068,6 +2148,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2086,9 +2186,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1311644419}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2129,6 +2241,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2638,9 +2770,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1311644419}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2682,6 +2826,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2703,7 +2867,7 @@ GameObject:
   - component: {fileID: 218615893}
   - component: {fileID: 218615895}
   - component: {fileID: 218615894}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shelves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3306,9 +3470,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2104592563}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3349,6 +3525,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3571,6 +3767,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -9241,7 +9441,7 @@ GameObject:
   - component: {fileID: 278344092}
   - component: {fileID: 278344094}
   - component: {fileID: 278344093}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Foset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9829,6 +10029,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Big One (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
@@ -9918,7 +10122,7 @@ GameObject:
   - component: {fileID: 309651395}
   - component: {fileID: 309651397}
   - component: {fileID: 309651396}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stove.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15190,9 +15394,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1311644419}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15233,6 +15449,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15473,6 +15709,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fridge (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 19045868446062806, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 577561172448914263, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 582260285081713471, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255946327157384774, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939906805171917380, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420397761462511328, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697269969468013853, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7395525344153185972, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.3500004
@@ -15513,6 +15777,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8023698534804705970, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898773812143223340, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967940402170574013, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15526,9 +15802,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2104592563}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15570,6 +15858,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15587,7 +15895,7 @@ GameObject:
   - component: {fileID: 381171968}
   - component: {fileID: 381171967}
   - component: {fileID: 381171969}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: La mesa.003
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -15986,9 +16294,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2104592563}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16029,6 +16349,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22262,6 +22602,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Small One (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
       value: 13
@@ -22925,6 +23269,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fridge
       objectReference: {fileID: 0}
+    - target: {fileID: 19045868446062806, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 577561172448914263, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 582260285081713471, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255946327157384774, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939906805171917380, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420397761462511328, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697269969468013853, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7395525344153185972, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40.29
@@ -22964,6 +23336,18 @@ PrefabInstance:
     - target: {fileID: 7395525344153185972, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8023698534804705970, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898773812143223340, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967940402170574013, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23222,7 +23606,7 @@ GameObject:
   - component: {fileID: 596480006}
   - component: {fileID: 596480008}
   - component: {fileID: 596480007}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23381,7 +23765,7 @@ GameObject:
   - component: {fileID: 600281521}
   - component: {fileID: 600281523}
   - component: {fileID: 600281522}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: oven
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24437,7 +24821,7 @@ GameObject:
   - component: {fileID: 677735299}
   - component: {fileID: 677735301}
   - component: {fileID: 677735300}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stobe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25021,6 +25405,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fridge (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 19045868446062806, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 577561172448914263, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 582260285081713471, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255946327157384774, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939906805171917380, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420397761462511328, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697269969468013853, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7395525344153185972, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.800001
@@ -25061,6 +25473,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8023698534804705970, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898773812143223340, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967940402170574013, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25082,7 +25506,7 @@ GameObject:
   - component: {fileID: 728272072}
   - component: {fileID: 728272074}
   - component: {fileID: 728272073}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foset.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25165,7 +25589,7 @@ GameObject:
   - component: {fileID: 730777873}
   - component: {fileID: 730777875}
   - component: {fileID: 730777874}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pot.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25643,7 +26067,7 @@ GameObject:
   - component: {fileID: 770430819}
   - component: {fileID: 770430818}
   - component: {fileID: 770430817}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top Cabbinet
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -26104,7 +26528,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 786988163}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kitchen Objs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26525,7 +26949,7 @@ GameObject:
   - component: {fileID: 823169558}
   - component: {fileID: 823169560}
   - component: {fileID: 823169559}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shelves.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26755,9 +27179,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1311644419}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26798,6 +27234,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27491,7 +27947,7 @@ GameObject:
   - component: {fileID: 913046620}
   - component: {fileID: 913046622}
   - component: {fileID: 913046621}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Chopping board.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27787,6 +28243,10 @@ PrefabInstance:
     - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
       propertyPath: m_Name
       value: Shelf Big One (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -28097,9 +28557,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1311644419}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28140,6 +28612,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28242,7 +28734,7 @@ GameObject:
   - component: {fileID: 950356190}
   - component: {fileID: 950356189}
   - component: {fileID: 950356188}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline Behavior
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -28600,6 +29092,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fridge (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 19045868446062806, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 577561172448914263, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 582260285081713471, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255946327157384774, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939906805171917380, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420397761462511328, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697269969468013853, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7395525344153185972, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
       propertyPath: m_LocalPosition.x
       value: -26.920002
@@ -28640,6 +29160,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8023698534804705970, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898773812143223340, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967940402170574013, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28657,7 +29189,7 @@ GameObject:
   - component: {fileID: 961513684}
   - component: {fileID: 961513683}
   - component: {fileID: 961513685}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: topcabinet
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -28763,7 +29295,7 @@ GameObject:
   - component: {fileID: 961583288}
   - component: {fileID: 961583290}
   - component: {fileID: 961583289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pot.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35075,7 +35607,7 @@ GameObject:
   - component: {fileID: 1071655498}
   - component: {fileID: 1071655497}
   - component: {fileID: 1071655499}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: La mesa.001
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -35433,6 +35965,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fridge (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 19045868446062806, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 577561172448914263, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 582260285081713471, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255946327157384774, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939906805171917380, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420397761462511328, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697269969468013853, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7395525344153185972, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40.38
@@ -35473,6 +36033,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8023698534804705970, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898773812143223340, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967940402170574013, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35486,9 +36058,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1311644419}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35529,6 +36113,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35689,7 +36293,7 @@ GameObject:
   - component: {fileID: 1086579849}
   - component: {fileID: 1086579848}
   - component: {fileID: 1086579851}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: oven.001
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -36355,9 +36959,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2104592563}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36399,6 +37015,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36415,7 +37051,7 @@ GameObject:
   - component: {fileID: 1134395364}
   - component: {fileID: 1134395366}
   - component: {fileID: 1134395365}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: knifessssss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36713,7 +37349,7 @@ GameObject:
   - component: {fileID: 1186197124}
   - component: {fileID: 1186197123}
   - component: {fileID: 1186197122}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Oven
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -36889,6 +37525,7 @@ MonoBehaviour:
   destroyPlayer: {fileID: 0}
   canMove: 0
   rb: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!64 &1189623175
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -42066,7 +42703,7 @@ GameObject:
   - component: {fileID: 1225333480}
   - component: {fileID: 1225333482}
   - component: {fileID: 1225333481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Condimmetns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42280,7 +42917,7 @@ GameObject:
   - component: {fileID: 1232259944}
   - component: {fileID: 1232259946}
   - component: {fileID: 1232259945}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: knivesss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53559,9 +54196,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1311644419}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -53602,6 +54251,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -53709,9 +54378,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2104592563}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -53752,6 +54433,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -53801,7 +54502,7 @@ GameObject:
   - component: {fileID: 1382030392}
   - component: {fileID: 1382030394}
   - component: {fileID: 1382030393}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: chopping board.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54567,7 +55268,7 @@ GameObject:
   - component: {fileID: 1456213081}
   - component: {fileID: 1456213083}
   - component: {fileID: 1456213082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54885,9 +55586,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1311644419}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54928,6 +55641,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -54985,6 +55718,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fridge (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 19045868446062806, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 577561172448914263, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 582260285081713471, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255946327157384774, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939906805171917380, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420397761462511328, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697269969468013853, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7395525344153185972, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.4000015
@@ -55024,6 +55785,18 @@ PrefabInstance:
     - target: {fileID: 7395525344153185972, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8023698534804705970, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898773812143223340, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967940402170574013, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -55072,7 +55845,7 @@ GameObject:
   - component: {fileID: 1498246289}
   - component: {fileID: 1498246291}
   - component: {fileID: 1498246290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline Behavior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55396,7 +56169,7 @@ GameObject:
   - component: {fileID: 1515125257}
   - component: {fileID: 1515125259}
   - component: {fileID: 1515125258}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pot.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55849,7 +56622,7 @@ GameObject:
   - component: {fileID: 1532467593}
   - component: {fileID: 1532467592}
   - component: {fileID: 1532467595}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline Behavior
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -56280,6 +57053,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fridge (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 19045868446062806, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 577561172448914263, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 582260285081713471, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255946327157384774, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939906805171917380, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420397761462511328, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697269969468013853, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7395525344153185972, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.810001
@@ -56319,6 +57120,18 @@ PrefabInstance:
     - target: {fileID: 7395525344153185972, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8023698534804705970, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898773812143223340, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967940402170574013, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -56778,7 +57591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1592963224}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kitchen Objs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57051,7 +57864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1604227183}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kitchen Objs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57200,7 +58013,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1619153728}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kitchen Objs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57274,7 +58087,7 @@ GameObject:
   - component: {fileID: 1631805279}
   - component: {fileID: 1631805281}
   - component: {fileID: 1631805280}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: condimanets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58291,9 +59104,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1311644419}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58334,6 +59159,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -58477,6 +59322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Big One (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
@@ -58499,7 +59348,7 @@ GameObject:
   - component: {fileID: 1697127041}
   - component: {fileID: 1697127043}
   - component: {fileID: 1697127042}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Chopping board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58833,7 +59682,7 @@ GameObject:
   - component: {fileID: 1710383823}
   - component: {fileID: 1710383825}
   - component: {fileID: 1710383824}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stove.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59348,7 +60197,7 @@ GameObject:
   - component: {fileID: 1733273983}
   - component: {fileID: 1733273985}
   - component: {fileID: 1733273984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: top Cabinet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70053,6 +70902,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Small One
       objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
       value: 12
@@ -75736,7 +76589,7 @@ GameObject:
   - component: {fileID: 1819062768}
   - component: {fileID: 1819062770}
   - component: {fileID: 1819062769}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: condiments.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81671,7 +82524,7 @@ GameObject:
   - component: {fileID: 1881904325}
   - component: {fileID: 1881904324}
   - component: {fileID: 1881904326}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: La mesa
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -81777,6 +82630,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fridge (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 19045868446062806, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 577561172448914263, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 582260285081713471, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255946327157384774, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939906805171917380, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420397761462511328, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697269969468013853, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7395525344153185972, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
       propertyPath: m_LocalPosition.x
       value: -26.94
@@ -81817,6 +82698,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8023698534804705970, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898773812143223340, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967940402170574013, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -81838,6 +82731,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -82032,9 +82929,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1311644419}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -82075,6 +82984,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -82302,9 +83231,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1311644419}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -82345,6 +83286,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -82619,7 +83580,7 @@ GameObject:
   - component: {fileID: 1952081887}
   - component: {fileID: 1952081889}
   - component: {fileID: 1952081888}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foset.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82737,7 +83698,7 @@ GameObject:
   - component: {fileID: 1959832313}
   - component: {fileID: 1959832315}
   - component: {fileID: 1959832314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: condiments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88027,6 +88988,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Big One (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
@@ -88661,6 +89626,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Small One (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
       value: 13
@@ -88912,9 +89881,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1311644419}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -88955,6 +89936,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -89471,7 +90472,7 @@ GameObject:
   - component: {fileID: 2086535043}
   - component: {fileID: 2086535042}
   - component: {fileID: 2086535041}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline Behavior
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -89591,7 +90592,7 @@ GameObject:
   - component: {fileID: 2090636881}
   - component: {fileID: 2090636880}
   - component: {fileID: 2090636882}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: oven.002
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -90105,6 +91106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Small One (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
       value: 11
@@ -90377,6 +91382,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Small One (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
       value: 13
@@ -90502,7 +91511,7 @@ GameObject:
   - component: {fileID: 2123766574}
   - component: {fileID: 2123766576}
   - component: {fileID: 2123766575}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90585,7 +91594,7 @@ GameObject:
   - component: {fileID: 2124787589}
   - component: {fileID: 2124787591}
   - component: {fileID: 2124787590}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90669,7 +91678,7 @@ GameObject:
   - component: {fileID: 2129408060}
   - component: {fileID: 2129408062}
   - component: {fileID: 2129408061}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: chopping board
   m_TagString: Untagged
   m_Icon: {fileID: 0}

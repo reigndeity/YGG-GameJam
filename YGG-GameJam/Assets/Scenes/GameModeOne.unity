@@ -1146,7 +1146,7 @@ GameObject:
   - component: {fileID: 90303214}
   - component: {fileID: 90303213}
   - component: {fileID: 90303215}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: La mesa.002
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1637,7 +1637,7 @@ GameObject:
   - component: {fileID: 106670271}
   - component: {fileID: 106670273}
   - component: {fileID: 106670272}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: knives
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2838,7 +2838,7 @@ GameObject:
   - component: {fileID: 218615893}
   - component: {fileID: 218615895}
   - component: {fileID: 218615894}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shelves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8634,7 +8634,7 @@ GameObject:
   - component: {fileID: 278344092}
   - component: {fileID: 278344094}
   - component: {fileID: 278344093}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Foset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9003,6 +9003,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Big One (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
@@ -9121,6 +9125,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -14459,7 +14467,7 @@ GameObject:
   - component: {fileID: 345774181}
   - component: {fileID: 345774180}
   - component: {fileID: 345774179}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline Behavior (Adjust The Collider Here Accordingly)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14979,6 +14987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Big One (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
@@ -15001,6 +15013,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -15476,6 +15492,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -20898,6 +20918,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Big One (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
@@ -20920,6 +20944,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -21757,7 +21785,7 @@ GameObject:
   - component: {fileID: 480485721}
   - component: {fileID: 480485720}
   - component: {fileID: 480485719}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline Behavior (Adjust The Collider Here Accordingly)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22684,9 +22712,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1678286466}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22727,6 +22767,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23536,7 +23596,7 @@ GameObject:
   - component: {fileID: 677735299}
   - component: {fileID: 677735301}
   - component: {fileID: 677735300}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stobe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23746,6 +23806,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -24116,7 +24180,7 @@ GameObject:
   - component: {fileID: 728272072}
   - component: {fileID: 728272074}
   - component: {fileID: 728272073}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foset.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24199,6 +24263,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -24664,6 +24732,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Big One (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
@@ -24688,7 +24760,7 @@ GameObject:
   - component: {fileID: 770430819}
   - component: {fileID: 770430818}
   - component: {fileID: 770430817}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top Cabbinet
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -25369,7 +25441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 786988163}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kitchen Objs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25592,6 +25664,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -26074,6 +26150,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -26680,6 +26760,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Big One (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
@@ -27004,9 +27088,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1678286466}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27047,6 +27143,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27253,6 +27369,10 @@ PrefabInstance:
     - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
       propertyPath: m_Name
       value: Shelf Big One (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -27629,6 +27749,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -32861,9 +32985,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1678286466}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32904,6 +33040,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33156,6 +33312,10 @@ PrefabInstance:
     - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
       propertyPath: m_Name
       value: Shelf Big One (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -33575,6 +33735,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Big One (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
@@ -33750,6 +33914,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Big One (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
@@ -33772,6 +33940,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -34009,6 +34181,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -34727,7 +34903,7 @@ GameObject:
   - component: {fileID: 1086579849}
   - component: {fileID: 1086579848}
   - component: {fileID: 1086579851}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: oven.001
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -35149,7 +35325,7 @@ GameObject:
   - component: {fileID: 1134395364}
   - component: {fileID: 1134395366}
   - component: {fileID: 1134395365}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: knifessssss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35447,6 +35623,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Big One (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
@@ -35622,6 +35802,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Big One (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
@@ -35722,6 +35906,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -36076,7 +36264,7 @@ GameObject:
   - component: {fileID: 1186197124}
   - component: {fileID: 1186197123}
   - component: {fileID: 1186197122}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Oven
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -36252,6 +36440,7 @@ MonoBehaviour:
   destroyPlayer: {fileID: 0}
   canMove: 0
   rb: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!64 &1189623175
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41494,7 +41683,7 @@ GameObject:
   - component: {fileID: 1225333480}
   - component: {fileID: 1225333482}
   - component: {fileID: 1225333481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Condimmetns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46889,6 +47078,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Big One (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
@@ -47172,6 +47365,10 @@ PrefabInstance:
     - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
       propertyPath: m_Name
       value: Shelf Big One (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -52928,6 +53125,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Big One (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
@@ -53250,6 +53451,10 @@ PrefabInstance:
     - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
       propertyPath: m_Name
       value: Shelf Big One (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -53815,7 +54020,7 @@ GameObject:
   - component: {fileID: 1456213081}
   - component: {fileID: 1456213083}
   - component: {fileID: 1456213082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54030,6 +54235,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -54830,7 +55039,7 @@ GameObject:
   - component: {fileID: 1515125257}
   - component: {fileID: 1515125259}
   - component: {fileID: 1515125258}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pot.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54914,6 +55123,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -55739,6 +55952,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Big One (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
@@ -56312,9 +56529,17 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -805679278090120548, guid: adb1a91c776fa814d96a2294d081b95d, type: 3}
+    - target: {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
       propertyPath: m_Name
       value: Shelf Big One
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -57243,7 +57468,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1619153728}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kitchen Objs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57722,6 +57947,10 @@ PrefabInstance:
     - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
       propertyPath: m_Name
       value: Shelf Big One (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -58301,7 +58530,7 @@ GameObject:
   - component: {fileID: 1697127041}
   - component: {fileID: 1697127043}
   - component: {fileID: 1697127042}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Chopping board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58502,6 +58731,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Small One (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
       value: 11
@@ -58624,6 +58857,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -59279,7 +59516,7 @@ GameObject:
   - component: {fileID: 1753801529}
   - component: {fileID: 1753801528}
   - component: {fileID: 1753801527}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Outline Behavior (Adjust The Collider Here Accordingly)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79459,9 +79696,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1678286466}
     m_Modifications:
+    - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Name
       value: Freezer (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2849660904148600233, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972572345173233536, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -79502,6 +79751,26 @@ PrefabInstance:
     - target: {fileID: 3745296451307110291, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986541705261573218, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522446375618175173, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429859242977159048, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635295523873038066, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901976969178404588, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -79599,6 +79868,10 @@ PrefabInstance:
     - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Name
       value: Shelf Small One (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
@@ -80295,6 +80568,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Small One (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
       value: 13
@@ -80780,7 +81057,7 @@ GameObject:
   - component: {fileID: 1881904325}
   - component: {fileID: 1881904324}
   - component: {fileID: 1881904326}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: La mesa
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -81921,6 +82198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Big One (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
@@ -82230,6 +82511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Big One
       objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7413770419646162948, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
@@ -82252,7 +82537,7 @@ GameObject:
   - component: {fileID: 1959832313}
   - component: {fileID: 1959832315}
   - component: {fileID: 1959832314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: condiments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82722,6 +83007,10 @@ PrefabInstance:
     - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
       propertyPath: m_Name
       value: Shelf Big One (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990331561981845633, guid: 6867b606b6bd63443b0e47f3b929db5c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -87997,6 +88286,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Small One (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
       value: 12
@@ -88758,6 +89051,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf Small One (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3311840642532224500, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5591718051797352620, guid: d9e6bc712af75b24c899de83d7abe7eb, type: 3}
       propertyPath: m_Materials.Array.size
       value: 13
@@ -88962,7 +89259,7 @@ GameObject:
   - component: {fileID: 2124787589}
   - component: {fileID: 2124787591}
   - component: {fileID: 2124787590}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89046,7 +89343,7 @@ GameObject:
   - component: {fileID: 2129408060}
   - component: {fileID: 2129408062}
   - component: {fileID: 2129408061}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: chopping board
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     [Header("Game Properties")]
     public bool gameStart;
     public bool canMove;
+    public AudioSource gameMusic;
+    public AudioClip[] gameMusicClip; // 0 = choosing recipe, 1 = chosen recipe, 2 = countdown, 3 = go!, 4 = bgm, 5 = win, 6 = lose
+
     [SerializeField] GameObject[] gamepadCharacters;
     [SerializeField] GameObject[] keyboardCharacters;
     public int gameModeType;
@@ -149,21 +152,34 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         _spotlightAnimator.SetTrigger("isRecipeChosen");
+        gameMusic.clip = gameMusicClip[1];
+        gameMusic.Play();
         yield return new WaitForSeconds(3);
         _recipePanelAnimator.SetTrigger("deactivateRecipe");
         yield return new WaitForSeconds(1.0f);
         recipePanel.SetActive(false);
         countdownTxt.enabled = true;
         countdownTxt.text = "3";
+        gameMusic.clip = gameMusicClip[2];
+        gameMusic.Play();
         yield return new WaitForSeconds(1f);
         countdownTxt.text = "2";
+        gameMusic.clip = gameMusicClip[2];
+        gameMusic.Play();
         yield return new WaitForSeconds(1f);
         countdownTxt.text = "1";
+        gameMusic.clip = gameMusicClip[2];
+        gameMusic.Play();
         yield return new WaitForSeconds(1f);
         countdownTxt.text = "GO!!!";
+        gameMusic.clip = gameMusicClip[3];
+        gameMusic.Play();
         gameStart = true;
         yield return new WaitForSeconds(1f);
         countdownTxt.enabled = false;
+        gameMusic.clip = gameMusicClip[4];
+        gameMusic.loop = enabled;
+        gameMusic.Play();
     }
 
     IEnumerator BlinkObjects(GameObject[] objects, float totalBlinkDuration, float minBlinkInterval, float maxBlinkInterval)
@@ -192,6 +208,10 @@ public class GameManager : MonoBehaviour
             // Gradually increase the interval to slow down the blinking
             elapsedTime += currentBlinkInterval;
             currentBlinkInterval = Mathf.Lerp(minBlinkInterval, maxBlinkInterval, elapsedTime / totalBlinkDuration);
+
+            gameMusic.clip = gameMusicClip[0];
+            gameMusic.Play();
+
         }
 
         // Ensure all objects are set to inactive except the chosen one at the end
@@ -200,6 +220,7 @@ public class GameManager : MonoBehaviour
             obj.SetActive(false);
         }
         objects[currentIndex].SetActive(true); // Keep the last active object visible
+        gameMusic.clip = gameMusicClip[1]; // final recipe
     }
 
     public void CompareScores()
@@ -212,11 +233,17 @@ public class GameManager : MonoBehaviour
                 {
                     soloWinners[0].SetActive(true);
                     winnerTxt.text = "PLAYER 1";
+                    gameMusic.clip = gameMusicClip[5];
+                    gameMusic.loop = !enabled;
+                    gameMusic.Play();
                 }
                 if (highestScore == playerTwoScore)
                 {
                     soloWinners[1].SetActive(true);
                     winnerTxt.text = "PLAYER 2";
+                    gameMusic.clip = gameMusicClip[5];
+                    gameMusic.loop = !enabled;
+                    gameMusic.Play();
                 }
                 break;
             case 2:
@@ -224,11 +251,17 @@ public class GameManager : MonoBehaviour
                 {
                     teamWinners[0].SetActive(true);
                     winnerTxt.text = "TEAM 1";
+                    gameMusic.clip = gameMusicClip[5];
+                    gameMusic.loop = !enabled;
+                    gameMusic.Play();
                 }
                 if (highestScore == playerTwoScore)
                 {
                     teamWinners[1].SetActive(true);
                     winnerTxt.text = "TEAM 2";
+                    gameMusic.clip = gameMusicClip[5];
+                    gameMusic.loop = !enabled;
+                    gameMusic.Play();
                 }
                 break;
             case 3:
@@ -236,21 +269,33 @@ public class GameManager : MonoBehaviour
                 {
                     soloWinners[0].SetActive(true);
                     winnerTxt.text = "PLAYER 1";
+                    gameMusic.clip = gameMusicClip[5];
+                    gameMusic.loop = !enabled;
+                    gameMusic.Play();
                 }
                 if (highestScore == playerTwoScore)
                 {
                     soloWinners[1].SetActive(true);
                     winnerTxt.text = "PLAYER 2";
+                    gameMusic.clip = gameMusicClip[5];
+                    gameMusic.loop = !enabled;
+                    gameMusic.Play();
                 }
                 if (highestScore == playerThreeScore)
                 {
                     soloWinners[2].SetActive(true);
                     winnerTxt.text = "PLAYER 3";
+                    gameMusic.clip = gameMusicClip[5];
+                    gameMusic.loop = !enabled;
+                    gameMusic.Play();
                 }
                 if (highestScore == playerFourScore)
                 {
                     soloWinners[3].SetActive(true);
                     winnerTxt.text = "PLAYER 4";
+                    gameMusic.clip = gameMusicClip[5];
+                    gameMusic.loop = !enabled;
+                    gameMusic.Play();
                 }
                 break;
         }
@@ -267,6 +312,9 @@ public class GameManager : MonoBehaviour
             drawWinners.SetActive(true);
             winnerHeaderTxt.text = "● TIE! ●";
             winnerTxt.text = "NOBODY WON...";
+            gameMusic.clip = gameMusicClip[6];
+            gameMusic.loop = !enabled;
+            gameMusic.Play();
         }
     }
 
@@ -276,6 +324,7 @@ public class GameManager : MonoBehaviour
         CompareScores();
         gameOverPanel.SetActive(true);
         _eventSystem.SetSelectedGameObject(mainMenuButton);
+        
     }
     
 }

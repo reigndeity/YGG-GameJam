@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         canPush = true;
         dashSpeed = 3;
         dashCooldown = 3;
+        Invoke("Spawned", 2f);
     }
 
     private void Update()
@@ -289,6 +290,11 @@ public class PlayerMovement : MonoBehaviour
             dashTimer = 0f;
             dashDirection = Vector3.zero;
         }
+    }
+
+    public void Spawned()
+    {
+        this.gameObject.tag = "Player";
     }
 
     // UNITY EVENT SYSTEM METHODS

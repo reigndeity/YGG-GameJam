@@ -129,18 +129,21 @@ public class IngredientChecker : MonoBehaviour
         if (other.gameObject.tag == ingredientsNeeded[0])
         {
             ingredientOne = true;
+            sfxSource.clip = sfxClip[0];
+            sfxSource.Play();
         }
         if (other.gameObject.tag == ingredientsNeeded[1])
         {
             ingredientTwo = true;
+            sfxSource.clip = sfxClip[0];
+            sfxSource.Play();
         }
         if (other.gameObject.tag == ingredientsNeeded[2])
         {
             ingredientThree = true;
+            sfxSource.clip = sfxClip[0];
+            sfxSource.Play();
         }
-
-        sfxSource.clip = sfxClip[0];
-        sfxSource.Play();
     }
 
     void ResetIngredientBools()

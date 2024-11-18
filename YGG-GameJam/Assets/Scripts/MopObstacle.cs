@@ -9,34 +9,46 @@ public class MopObstacle : MonoBehaviour
     [SerializeField] GameObject mopObj;
     private BoxCollider _boxCollider;
     public AudioSource destroyPlayer;
+    public bool canMove;
+    public Rigidbody rb;
 
     void Start()
     {
         _boxCollider = GetComponent<BoxCollider>();
+        Invoke("StartMoving", 2f);
     }
 
     private void Update()
     {
-        transform.Translate(transform.forward * speed* Time.deltaTime, Space.World);
+        if(canMove) transform.Translate(transform.forward * speed * Time.deltaTime, Space.World);
     }
     private void OnCollisionEnter(Collision other)
     {
-        int randomNumber = Random.Range(0, 3);
-        if (other.gameObject.CompareTag("Player") || other.gameObject.layer == 3)
+        if (canMove)
         {
-            poofEffect.Play();
-            Destroy(other.gameObject);
-            if (other.gameObject.CompareTag("Player")) destroyPlayer.Play();
-        }
-        else if (other.gameObject.CompareTag("Border") || other.gameObject.CompareTag("Ground"))
-        {
-            poofEffect.Play();
-            mopObj.SetActive(false);
-            _boxCollider.enabled = false;
-            Invoke("DestroyMop",1.5f);
-        }
+            int randomNumber = Random.Range(0, 3);
+            if (other.gameObject.CompareTag("Player") || other.gameObject.layer == 3)
+            {
+                poofEffect.Play();
+                Destroy(other.gameObject);
+                if (other.gameObject.CompareTag("Player")) destroyPlayer.Play();
+            }
+            else if (other.gameObject.CompareTag("Border") || other.gameObject.CompareTag("Ground"))
+            {
+                poofEffect.Play();
+                mopObj.SetActive(false);
+                _boxCollider.enabled = false;
+                Invoke("DestroyMop", 1.5f);
+            }
+        }     
     }
 
+    public void StartMoving()
+    {
+        canMove = true;
+        rb.constraints = RigidbodyConstraints.FreezePositionY;
+        rb.useGravity = false;
+    }
     public void DestroyMop()
     {
         Destroy(this.gameObject);

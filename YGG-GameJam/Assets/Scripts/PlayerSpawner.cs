@@ -8,6 +8,7 @@ public class PlayerSpawner : MonoBehaviour
     public float deathTimer;
     public float deathCountdown;
     public bool canSpawn = true;
+    public AudioSource sfx;
 
     [SerializeField] Image playerFill; // Image component for the fill effect
 
@@ -46,6 +47,7 @@ public class PlayerSpawner : MonoBehaviour
         // Wait for the countdown to finish
         yield return new WaitForSeconds(deathTimer);
 
+        sfx.Play();
         Instantiate(playerPrefab, transform.position, Quaternion.identity);
         playerFill.fillAmount = 1; // Set the fill amount to 1 when the player spawns
 

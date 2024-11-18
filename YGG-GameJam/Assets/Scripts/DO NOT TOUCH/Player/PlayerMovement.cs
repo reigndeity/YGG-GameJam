@@ -48,6 +48,12 @@ public class PlayerMovement : MonoBehaviour
     public ParticleSystem footTrailParticleOne;
     public ParticleSystem footTrailParticleTwo;
     public ParticleSystem footTrailParticleThree;
+
+    [Header("SFX")]
+    public AudioSource sfx;
+    public AudioSource walkSfx;
+    public AudioClip[] audioClips; // 0 = Walk, 1 = Grab, 2 = Throw, 3 = Push, 4 = Dash
+
     void Start()
     {
         _animator = GetComponent<Animator>();
@@ -106,6 +112,7 @@ public class PlayerMovement : MonoBehaviour
                 if (Input.GetButtonDown("Fire3_" + playerID) && cooldownTimer <= 0f) // "X" button
                 {
                     Debug.Log("Player " + playerID + " X button (controller) pressed");
+                    AudioForDash();
                     isDashing = true;
                     dashTimer = dashDuration;
                     cooldownTimer = dashCooldown;
@@ -150,6 +157,7 @@ public class PlayerMovement : MonoBehaviour
                 if (Input.GetKeyDown(keyCodeFour) && cooldownTimer <= 0f)
                 {
                     Debug.Log(keyCodeFour + " : X button pressed");
+                    AudioForDash();
                     isDashing = true;
                     dashTimer = dashDuration;
                     cooldownTimer = dashCooldown;
@@ -323,6 +331,34 @@ public class PlayerMovement : MonoBehaviour
         footTrailParticleTwo.Stop();
         footTrailParticleThree.Stop();
         canPlayFootTrailParticle = true;
+    }
+
+    public void AudioForWalk()
+    {
+        walkSfx.clip = audioClips[0];
+        walkSfx.pitch = Random.Range(0.8f, 1.2f);
+        walkSfx.Play();
+    }
+    public void AudioForGrab()
+    {
+        sfx.clip = audioClips[1];
+        sfx.Play();
+    }
+
+    public void AudioForThrow()
+    {
+        sfx.clip = audioClips[2];
+        sfx.Play();
+    }
+    public void AudioForPush()
+    {
+        sfx.clip = audioClips[3];
+        sfx.Play();
+    }
+    public void AudioForDash()
+    {
+        sfx.clip = audioClips[4];
+        sfx.Play();
     }
 
 }

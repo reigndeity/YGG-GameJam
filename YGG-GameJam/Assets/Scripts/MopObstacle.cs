@@ -8,6 +8,7 @@ public class MopObstacle : MonoBehaviour
     [SerializeField] ParticleSystem poofEffect;
     [SerializeField] GameObject mopObj;
     private BoxCollider _boxCollider;
+    public AudioSource destroyPlayer;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class MopObstacle : MonoBehaviour
         {
             poofEffect.Play();
             Destroy(other.gameObject);
+            if (other.gameObject.CompareTag("Player")) destroyPlayer.Play();
         }
         else if (other.gameObject.CompareTag("Border") || other.gameObject.CompareTag("Ground"))
         {

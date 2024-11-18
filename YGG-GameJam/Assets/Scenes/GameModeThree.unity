@@ -88187,7 +88187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03dc4871039d34f45a2031ae237f9ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 7828035380325580266, guid: fe18fdc7271e5ed40a0da4e605eda400, type: 3}
+  playerPrefab: {fileID: 6379112157000558243, guid: 387f7c8cb4614ac41981b47fd72e74f3, type: 3}
   deathTimer: 5
   deathCountdown: 0
   canSpawn: 1

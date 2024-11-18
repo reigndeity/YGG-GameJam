@@ -18,6 +18,7 @@ public class IngredientChecker : MonoBehaviour
     [Header("Visual ")]
     [SerializeField] float rotationSpeed;
     public GameObject coverObject;
+    public ParticleSystem coverParticle;
     void Start()
     {
         recipeType = GameManager.instance.recipeChosen;
@@ -150,12 +151,14 @@ public class IngredientChecker : MonoBehaviour
         {
             
             ingredientObjs[i].SetActive(false);
-            Invoke("RemoveCover", 1f);
+            StartCoroutine(RemoveCover());
         }
     }
 
-    void RemoveCover()
+    public IEnumerator RemoveCover()
     {
+        yield return new WaitForSeconds(1f);
+        coverParticle.Play();
         coverObject.SetActive(false);
     }
 }

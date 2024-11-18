@@ -35,9 +35,9 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Dash Properties")]
     [SerializeField] GameObject trailRenderer;
-    [SerializeField] private float dashSpeed = 5f;
+    [SerializeField] private float dashSpeed = 3f;
     [SerializeField] private float dashDuration = 0.2f;
-    [SerializeField] private float dashCooldown = 2f;
+    [SerializeField] private float dashCooldown = 3f;
     private bool isDashing = false;
     private float dashTimer = 0f;
     private float cooldownTimer = 0f;
@@ -56,7 +56,8 @@ public class PlayerMovement : MonoBehaviour
         gamepadManager = FindObjectOfType<GamepadManager>();
         _rigidBody = GetComponent<Rigidbody>();
         canPush = true;
-
+        dashSpeed = 3;
+        dashCooldown = 3;
     }
 
     private void Update()

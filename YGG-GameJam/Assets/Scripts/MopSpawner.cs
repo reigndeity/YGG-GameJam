@@ -17,7 +17,7 @@ public class MopSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (mopSpawn)
+        if (mopSpawn && GameManager.instance.gameStart == true)
         {
             StartCoroutine(MopSpawn());
         }

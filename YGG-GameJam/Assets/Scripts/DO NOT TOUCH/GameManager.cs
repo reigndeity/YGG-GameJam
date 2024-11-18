@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,13 +17,19 @@ public class GameManager : MonoBehaviour
     [Header("---------------------------------")]
     public GameObject recipePanel;
     public GameObject[] recipeImg;
+    [SerializeField] Animator _spotlightAnimator;
+    [SerializeField] Animator _recipePanelAnimator;
+    [SerializeField] TextMeshProUGUI countdownTxt;
     [Header("---------------------------------")]
     public float timeRemaining;
     public TextMeshProUGUI timerTxt;
     [Header("---------------------------------")]
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] TextMeshProUGUI winnerTxt;
-
+    [SerializeField] GameObject[] soloWinners;
+    [SerializeField] GameObject[] teamWinners;
+    [SerializeField] GameObject drawWinners;
+    [SerializeField] TextMeshProUGUI winnerHeaderTxt;
 
     [Header("Player Score Properties")]
     public int playerOneScore;
@@ -33,6 +40,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI playerTwoScoreTxt;
     [SerializeField] TextMeshProUGUI playerThreeScoreTxt;
     [SerializeField] TextMeshProUGUI playerFourScoreTxt;
+
+    [Header("Script Refernces")]
+    [SerializeField] ButtonManager _buttonManager;
+    [SerializeField] EventSystem _eventSystem;
+    [SerializeField] GameObject mainMenuButton;
 
     void Awake()
     {
@@ -49,10 +61,17 @@ public class GameManager : MonoBehaviour
     {
         gameModeType = PlayerPrefs.GetInt("gameMode");
         gameStart = false;
+        countdownTxt.enabled = false;
         StartCoroutine(ShowRecipe());
+
+        _buttonManager = FindObjectOfType<ButtonManager>();
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7))
+        {
+            _buttonManager.OnClickPause();
+        }
         if (gameStart == true)
         {
             timeRemaining -= Time.deltaTime;
@@ -89,26 +108,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    IEnumerator GameBegins()
-    {
-        recipeChosen = Random.Range (0,3);
-        recipePanel.SetActive(true);
-        switch(recipeChosen)
-        {
-            case 0:
-                recipeImg[0].SetActive(true);
-                break;
-            case 1:
-                recipeImg[1].SetActive(true);
-                break;
-            case 2:
-                recipeImg[2].SetActive(true);
-                break;
-        }
-        yield return new WaitForSeconds(3);
-        recipePanel.SetActive(false);
-        gameStart = true;
-    }
+
 
     // TEST
    IEnumerator ShowRecipe()
@@ -142,9 +142,28 @@ public class GameManager : MonoBehaviour
         }
 
         // Hide the recipe panel after showing the chosen image
+        StartCoroutine(BeforeRoundStart());
+
+    }
+        IEnumerator BeforeRoundStart()
+    {
+        yield return new WaitForSeconds(1);
+        _spotlightAnimator.SetTrigger("isRecipeChosen");
         yield return new WaitForSeconds(3);
+        _recipePanelAnimator.SetTrigger("deactivateRecipe");
+        yield return new WaitForSeconds(1.0f);
         recipePanel.SetActive(false);
+        countdownTxt.enabled = true;
+        countdownTxt.text = "3";
+        yield return new WaitForSeconds(1f);
+        countdownTxt.text = "2";
+        yield return new WaitForSeconds(1f);
+        countdownTxt.text = "1";
+        yield return new WaitForSeconds(1f);
+        countdownTxt.text = "GO!!!";
         gameStart = true;
+        yield return new WaitForSeconds(1f);
+        countdownTxt.enabled = false;
     }
 
     IEnumerator BlinkObjects(GameObject[] objects, float totalBlinkDuration, float minBlinkInterval, float maxBlinkInterval)
@@ -191,39 +210,47 @@ public class GameManager : MonoBehaviour
             case 1:
                 if (highestScore == playerOneScore)
                 {
-                    winnerTxt.text = "P1 One Wins";
+                    soloWinners[0].SetActive(true);
+                    winnerTxt.text = "PLAYER 1";
                 }
                 if (highestScore == playerTwoScore)
                 {
-                    winnerTxt.text = "P2 Two Wins";
+                    soloWinners[1].SetActive(true);
+                    winnerTxt.text = "PLAYER 2";
                 }
                 break;
             case 2:
                 if (highestScore == playerOneScore)
                 {
-                    winnerTxt.text = "Team One Wins";
+                    teamWinners[0].SetActive(true);
+                    winnerTxt.text = "TEAM 1";
                 }
                 if (highestScore == playerTwoScore)
                 {
-                    winnerTxt.text = "Team Two Wins";
+                    teamWinners[1].SetActive(true);
+                    winnerTxt.text = "TEAM 2";
                 }
                 break;
             case 3:
                 if (highestScore == playerOneScore)
                 {
-                    winnerTxt.text = "P1 Wins";
+                    soloWinners[0].SetActive(true);
+                    winnerTxt.text = "PLAYER 1";
                 }
                 if (highestScore == playerTwoScore)
                 {
-                    winnerTxt.text = "P2 Wins";
+                    soloWinners[1].SetActive(true);
+                    winnerTxt.text = "PLAYER 2";
                 }
                 if (highestScore == playerThreeScore)
                 {
-                    winnerTxt.text = "P3 Wins";
+                    soloWinners[2].SetActive(true);
+                    winnerTxt.text = "PLAYER 3";
                 }
                 if (highestScore == playerFourScore)
                 {
-                    winnerTxt.text = "P4 Wins";
+                    soloWinners[3].SetActive(true);
+                    winnerTxt.text = "PLAYER 4";
                 }
                 break;
         }
@@ -237,7 +264,9 @@ public class GameManager : MonoBehaviour
 
         if (tieCount > 1)
         {
-            winnerTxt.text = "There is a Tie!";
+            drawWinners.SetActive(true);
+            winnerHeaderTxt.text = "● TIE! ●";
+            winnerTxt.text = "NOBODY WON...";
         }
     }
 
@@ -246,6 +275,7 @@ public class GameManager : MonoBehaviour
         gameStart = false;
         CompareScores();
         gameOverPanel.SetActive(true);
+        _eventSystem.SetSelectedGameObject(mainMenuButton);
     }
     
 }

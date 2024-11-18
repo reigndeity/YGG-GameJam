@@ -6,6 +6,13 @@ public class MopObstacle : MonoBehaviour
 {
     public float speed;
     [SerializeField] ParticleSystem poofEffect;
+    [SerializeField] GameObject mopObj;
+    private BoxCollider _boxCollider;
+
+    void Start()
+    {
+        _boxCollider = GetComponent<BoxCollider>();
+    }
 
     private void Update()
     {
@@ -21,7 +28,15 @@ public class MopObstacle : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Border") || other.gameObject.CompareTag("Ground"))
         {
-            Destroy(this.gameObject);
+            poofEffect.Play();
+            mopObj.SetActive(false);
+            _boxCollider.enabled = false;
+            Invoke("DestroyMop",1.5f);
         }
+    }
+
+    public void DestroyMop()
+    {
+        Destroy(this.gameObject);
     }
 }

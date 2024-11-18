@@ -1,4 +1,23 @@
-# TECHNICAL STACK FOR KUSINERO
+![Kusinero Header](https://imgur.com/a/ULtg8bD)
+# KUSINERO BY MATAHUM
+- [Angeles, Timothy Joseph](https://github.com/RavenFraust12)
+- [Cedeno, Aaron Jason](https://github.com/Aaron-Jason)
+- [Cedeno, Vince Julius](https://github.com/VinJ712)
+- [Ramirez, Randall Jay](https://github.com/reigndeity)
+- [Sasil, Kyrsten Shaen](https://github.com/zenjlle)
+
+<br>
+
+# DESCRIPTION
+### Kusinero is a  party game that combines gameplay elements from overcooked and fall guys. Players start in their own kitchen zones as a randomized recipe is revealed, and ingredients spawn across the arena. The goal? Collect ingredients, assemble your dish, and score points—while dealing with all-out kitchen chaos!
+
+### In this fast-paced kitchen royale, players will need to Push, shove, steal, and fight to out-cook your opponents in this fast-paced kitchen royale. With simple mechanics and unpredictable action, anyone can jump in and have fun, but only the craftiest chef will claim victory.
+
+# INTRODUCTION
+
+# PROJECT OBJECTIVES
+
+# TECHNICAL STACK
 ### Game Engine:
 - **Unity**: A powerful cross-platform game engine used for creating 2D and 3D games. It provides a robust ecosystem for game development with features like physics simulation, real-time rendering, animation systems, and asset management.
 - **Version**: Unity 2022.3.37f1

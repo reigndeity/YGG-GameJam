@@ -1,4 +1,6 @@
-![Kusinero Header](https://imgur.com/a/ULtg8bD)
+<img src = "https://github.com/zenjlle/zenjlle/blob/main/Images/Kusinero%20Pitch%20Deck.png">
+
+
 # KUSINERO BY MATAHUM
 - [Angeles, Timothy Joseph](https://github.com/RavenFraust12)
 - [Cedeno, Aaron Jason](https://github.com/Aaron-Jason)
@@ -9,13 +11,13 @@
 <br>
 
 # DESCRIPTION
-### Kusinero is a  party game that combines gameplay elements from overcooked and fall guys. Players start in their own kitchen zones as a randomized recipe is revealed, and ingredients spawn across the arena. The goal? Collect ingredients, assemble your dish, and score points—while dealing with all-out kitchen chaos!
+Kusinero is a  party game that combines gameplay elements from hits games like Overcooked and Fall Guys. Players start in their own kitchen zones as a randomized recipe is revealed, and ingredients spawn across the arena. The goal? Collect ingredients, assemble your dish, and score points—while dealing with all-out kitchen chaos!
 
-### In this fast-paced kitchen royale, players will need to Push, shove, steal, and fight to out-cook your opponents in this fast-paced kitchen royale. With simple mechanics and unpredictable action, anyone can jump in and have fun, but only the craftiest chef will claim victory.
 
-# INTRODUCTION
+In this fast-paced kitchen royale, players will need to push, shove, steal, and fight to out-cook your opponents in this fast-paced kitchen royale. With simple mechanics and unpredictable action, anyone can jump in and have fun, but only the best chef will claim victory.
 
 # PROJECT OBJECTIVES
+Kusinero aims to address the issues NFT games commonly has, such as being overly grindy, difficult to understand, and generally unenjoyable. By introducing a game that implements party-style gameplay, easy to grasp mechanics, and the use of already known digital asset-owning models, we provide a solution that could potentially bring more people to participate the NFT Game culture without having to sit through hour-long seminars and playing grindy games with little-to-no entertainment value.
 
 # TECHNICAL STACK
 ### Game Engine:
@@ -75,7 +77,7 @@ Our party game introduces an engaging rewards system where players earn points b
 
 <br>
 
-# Roadmap for On-Chain Integration
+# ROADMAP FOR ON-CHAIN INTEGRATION
 #### **1. Initial Setup and Smart Contract Development**
 - Develop and deploy the core NFT smart contracts.
 - Implement basic trading features and in-game wallet integration.

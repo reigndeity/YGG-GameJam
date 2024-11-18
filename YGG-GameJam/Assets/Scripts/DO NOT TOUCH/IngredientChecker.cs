@@ -15,10 +15,13 @@ public class IngredientChecker : MonoBehaviour
     public bool ingredientTwo;
     public bool ingredientThree;
 
-    [Header("Visual ")]
+    [Header("Visual & Audio")]
     [SerializeField] float rotationSpeed;
     public GameObject coverObject;
     public ParticleSystem coverParticle;
+    public AudioSource sfxSource;
+    public AudioClip[] sfxClip; // 0 = Add Item, 1 = Complete Item
+
     void Start()
     {
         recipeType = GameManager.instance.recipeChosen;
@@ -135,6 +138,9 @@ public class IngredientChecker : MonoBehaviour
         {
             ingredientThree = true;
         }
+
+        sfxSource.clip = sfxClip[0];
+        sfxSource.Play();
     }
 
     void ResetIngredientBools()
@@ -143,6 +149,8 @@ public class IngredientChecker : MonoBehaviour
         ingredientTwo = false;
         ingredientThree = false;
         coverObject.SetActive(true);
+        sfxSource.clip = sfxClip[1];
+        sfxSource.Play();
         Invoke("DeactivateIngredients", .8f);
     }
     void DeactivateIngredients()

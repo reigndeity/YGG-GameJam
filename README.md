@@ -26,7 +26,7 @@ In this fast-paced kitchen royale, players will need to push, shove, steal, and 
 
 <br>
 
-Disclaimer: All aseets of the game are original and created within the gamejam proper, except for Music and Sounds.
+Disclaimer: All assets of the game are original and created within the gamejam proper, except for Music and Sounds.
 
 <br>
 

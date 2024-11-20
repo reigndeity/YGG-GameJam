@@ -1,6 +1,5 @@
 <img src = "https://github.com/zenjlle/zenjlle/blob/main/Images/Kusinero%20Pitch%20Deck.png">
 
-
 # KUSINERO BY MATAHUM
 - [Angeles, Timothy Joseph](https://github.com/RavenFraust12)
 - [Cedeno, Aaron Jason](https://github.com/Aaron-Jason)
@@ -24,6 +23,10 @@ In this fast-paced kitchen royale, players will need to push, shove, steal, and 
 - [ON-CHAIN PROPOSAL](#on-chain-proposal)
 - [ROADMAP FOR ON-CHAIN INTEGRATION](#roadmap-for-on-chain-integration)
 - [GITHUB REPOSITORY](#github-repository)
+
+<br>
+
+Disclaimer: All aseets of the game are original and created within the gamejam proper, except for Music and Sounds.
 
 <br>
 

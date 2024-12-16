@@ -9,6 +9,9 @@ using TMPro;
 
 public class ButtonManager : MonoBehaviour
 {
+    [Header("Audio")]
+    public AudioSource buttonAudioSource;
+    public AudioClip buttonAudioClip;
     [Header("Main Menu")]
     [SerializeField] GameObject mainMenuPanel;
     public GameObject loadingScreen;
@@ -44,6 +47,10 @@ public class ButtonManager : MonoBehaviour
     public GameObject[] gameObjectToDetect; // GameObject to check for selection
     public TextMeshProUGUI hoverTxt;
 
+    void Start()
+    {
+        buttonAudioSource = GetComponent<AudioSource>();
+    }
     void Update()
     {
         currentGameMode = PlayerPrefs.GetInt("gameMode");
@@ -51,7 +58,8 @@ public class ButtonManager : MonoBehaviour
         if (eventSystem.currentSelectedGameObject == gameObjectToDetect[0]) 
         {
             targetGameObject[0].SetActive(true);
-            hoverTxt.text = "-2 PLAYERS\n-1vs1 STYLE";
+            hoverTxt.text = "-2 PLAYERS\n-FREE FOR ALL";
+            PlayButtonClickSound();
         }
         else 
         { 
@@ -60,7 +68,8 @@ public class ButtonManager : MonoBehaviour
         if (eventSystem.currentSelectedGameObject == gameObjectToDetect[1])
         {
             targetGameObject[1].SetActive(true);
-            hoverTxt.text = "-4 PLAYERS\n-TEAM STYLE";
+            hoverTxt.text = "-4 PLAYERS\n-DUO KITCHEN ROYALE";
+            PlayButtonClickSound();
         }
         else
         {
@@ -69,7 +78,8 @@ public class ButtonManager : MonoBehaviour
         if (eventSystem.currentSelectedGameObject == gameObjectToDetect[2])
         {
             targetGameObject[2].SetActive(true);
-            hoverTxt.text = "-4 PLAYERS\n-FREE FOR ALL STYLE";
+            hoverTxt.text = "-4 PLAYERS\n-FREE FOR ALL";
+            PlayButtonClickSound();
         }
         else
         {
@@ -83,59 +93,72 @@ public class ButtonManager : MonoBehaviour
         eventSystem.SetSelectedGameObject(gameModeOneButton);
         mainMenuPanel.SetActive(false);
         playPanel.SetActive(true);
+        PlayButtonClickSound();
     }
 
     public void OnClickGameModeOne()
     {
         PlayerPrefs.SetInt("gameMode", 1);
         LoadScene();
+        PlayButtonClickSound();
     }
     public void OnClickGameModeTwo()
     {
         PlayerPrefs.SetInt("gameMode", 2);
         LoadScene();
+        PlayButtonClickSound();
     }
     public void OnClickGameModeThree()
     {
         PlayerPrefs.SetInt("gameMode", 3);
         LoadScene();
+        PlayButtonClickSound();
     }
     public void OnClickBack() 
     {
         eventSystem.SetSelectedGameObject(startButton);
         mainMenuPanel.SetActive(true);
         playPanel.SetActive(false);
+        PlayButtonClickSound();
     }
 
     public void OnClickHelp() 
     {
         eventSystem.SetSelectedGameObject(backHelpButton);
+        mainMenuPanel.SetActive(false);
         helpPanel.SetActive(true);
+        PlayButtonClickSound();
     }
     public void OnClickHelpBack() 
     {
         eventSystem.SetSelectedGameObject(helpButton);
+        mainMenuPanel.SetActive(true);
         helpPanel.SetActive(false);
+        PlayButtonClickSound();
     }
     public void OnClickExit() 
     {
         eventSystem.SetSelectedGameObject(exitNoButton);
         exitPanel.SetActive(true);
+        PlayButtonClickSound();
     }
     public void OnClickNoExit()
     {
         eventSystem.SetSelectedGameObject(exitButton);
         exitPanel.SetActive(false);
+        PlayButtonClickSound();
     }
     public void OnClickYesExit()
     {
         Application.Quit();
+        PlayButtonClickSound();
     }
 
     public void LoadScene()
     {
-        int sceneId = PlayerPrefs.GetInt("gameMode");
+        int sceneId = PlayerPrefs.GetInt("gameMode") + 1;
         StartCoroutine(LoadSceneAsync(sceneId));
+        PlayButtonClickSound();
     }
 
     IEnumerator LoadSceneAsync(int sceneId)
@@ -156,27 +179,33 @@ public class ButtonManager : MonoBehaviour
     {
         pausePanel.SetActive(true);
         Time.timeScale = 0;
+        PlayButtonClickSound();
     }
     public void OnClickResume()
     {
         pausePanel.SetActive(false);
+        GameManager.instance.gameMusic.Play();
         Time.timeScale = 1;
+        PlayButtonClickSound();
     }
     public void OnClickMenu()
     {
         eventSystem.SetSelectedGameObject(noButton);
         menuWarning.SetActive(true);
+        PlayButtonClickSound();
     }
     public void OnClickYes()
     {
-        int sceneId = 0;
+        int sceneId = 1;
         Time.timeScale = 1;
         StartCoroutine(LoadSceneAsync(sceneId));
+        PlayButtonClickSound();
     }
     public void OnClickNo()
     {
         eventSystem.SetSelectedGameObject(mainMenuButton);
         menuWarning.SetActive(false);
+        PlayButtonClickSound();
     }
 
     // GAME OVER
@@ -184,17 +213,26 @@ public class ButtonManager : MonoBehaviour
     {
         menuGameOverWarning.SetActive(true);
         eventSystem.SetSelectedGameObject(noGameOverButton);
+        PlayButtonClickSound();
     }
     public void OnClickGameOverNo()
     {
         eventSystem.SetSelectedGameObject(mainMenuGameOverButton);
         menuGameOverWarning.SetActive(false);
+        PlayButtonClickSound();
     }
     public void OnClickGameOverYes()
     {
-        int sceneId = 0;
+        int sceneId = 1;
         StartCoroutine(LoadSceneAsync(sceneId));
+        PlayButtonClickSound();
     }
 
-
+    public void PlayButtonClickSound()
+    {
+        float randomPitch = Random.Range(0.7f, 1);
+        buttonAudioSource.pitch = randomPitch;
+        buttonAudioSource.clip = buttonAudioClip;
+        buttonAudioSource.Play();
+    }
 }

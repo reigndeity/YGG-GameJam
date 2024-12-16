@@ -12,6 +12,11 @@ public class PlayerSpawner : MonoBehaviour
 
     [SerializeField] Image playerFill; // Image component for the fill effect
 
+    void Start()
+    {
+        sfx.volume = 0.25f;
+    }
+
     private void Update()
     {
         if (GameManager.instance.gameStart == true)

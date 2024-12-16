@@ -74,6 +74,8 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7))
         {
             _buttonManager.OnClickPause();
+            Time.timeScale = 0;
+            gameMusic.Pause();
         }
         if (gameStart == true)
         {
@@ -152,8 +154,6 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         _spotlightAnimator.SetTrigger("isRecipeChosen");
-        gameMusic.clip = gameMusicClip[1];
-        gameMusic.Play();
         yield return new WaitForSeconds(3);
         _recipePanelAnimator.SetTrigger("deactivateRecipe");
         yield return new WaitForSeconds(1.0f);
@@ -184,6 +184,8 @@ public class GameManager : MonoBehaviour
 
     IEnumerator BlinkObjects(GameObject[] objects, float totalBlinkDuration, float minBlinkInterval, float maxBlinkInterval)
         {
+        gameMusic.clip = gameMusicClip[0];
+        gameMusic.Play();
         float elapsedTime = 0f;
         float currentBlinkInterval = minBlinkInterval;
         int currentIndex = 0;
@@ -209,8 +211,7 @@ public class GameManager : MonoBehaviour
             elapsedTime += currentBlinkInterval;
             currentBlinkInterval = Mathf.Lerp(minBlinkInterval, maxBlinkInterval, elapsedTime / totalBlinkDuration);
 
-            gameMusic.clip = gameMusicClip[0];
-            gameMusic.Play();
+
 
         }
 
@@ -220,7 +221,6 @@ public class GameManager : MonoBehaviour
             obj.SetActive(false);
         }
         objects[currentIndex].SetActive(true); // Keep the last active object visible
-        gameMusic.clip = gameMusicClip[1]; // final recipe
     }
 
     public void CompareScores()

@@ -11,7 +11,7 @@ public class MopObstacle : MonoBehaviour
     public AudioSource destroyPlayer;
     public bool canMove;
     public Rigidbody rb;
-
+    public Animator animator;
     void Start()
     {
         _boxCollider = GetComponent<BoxCollider>();
@@ -24,8 +24,7 @@ public class MopObstacle : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (canMove)
-        {
+        
             int randomNumber = Random.Range(0, 3);
             if (other.gameObject.CompareTag("Player") || other.gameObject.layer == 3)
             {
@@ -33,19 +32,20 @@ public class MopObstacle : MonoBehaviour
                 Destroy(other.gameObject);
                 if (other.gameObject.CompareTag("Player")) destroyPlayer.Play();
             }
-            else if (other.gameObject.CompareTag("Border") || other.gameObject.CompareTag("Ground"))
+            else if (other.gameObject.CompareTag("Border") || other.gameObject.layer == 6 || other.gameObject.CompareTag("Mop"))
             {
                 poofEffect.Play();
                 mopObj.SetActive(false);
                 _boxCollider.enabled = false;
                 Invoke("DestroyMop", 1.5f);
             }
-        }     
+             
     }
 
     public void StartMoving()
     {
         canMove = true;
+        _boxCollider.enabled = true;
         rb.constraints = RigidbodyConstraints.FreezePositionY;
         rb.useGravity = false;
     }

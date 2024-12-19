@@ -5,51 +5,56 @@ using UnityEngine;
 public class PlayerJump : MonoBehaviour
 {
     public Rigidbody _rigidbody;
-    [SerializeField] float jumpForce;
+    [SerializeField] float jumpForce; // Increased default value for faster jump
+    [SerializeField] float extraGravity; // Additional gravity for faster descent
     public PlayerMovement _playerMovement;
-
 
     void Start()
     {
         _rigidbody = GetComponentInParent<Rigidbody>();
         _playerMovement = GetComponentInParent<PlayerMovement>();
-        jumpForce = 7.5f;
+
+        jumpForce = 15;
+        extraGravity = 30;
     }
 
     public void Jump()
     {
-        if (_playerMovement.isGrounded == true)
+        Debug.Log(jumpForce);
+        if (_playerMovement.isGrounded)
         {
-            _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, jumpForce, _rigidbody.velocity.z);
+            _rigidbody.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
             _playerMovement.isGrounded = false;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (!_playerMovement.isGrounded)
+        {
+            _rigidbody.AddForce(Vector3.down * extraGravity, ForceMode.Acceleration);
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Ground")
+        if (other.gameObject.tag == "Ground" || other.gameObject.layer == 3)
         {
             _playerMovement.isGrounded = true;
         }
     }
+
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Ground")
-        {
-            _playerMovement.isGrounded = true;
-        }
-        if (other.gameObject.layer == 3)
+        if (other.gameObject.tag == "Ground" || other.gameObject.layer == 3)
         {
             _playerMovement.isGrounded = true;
         }
     }
+
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Ground")
-        {
-            _playerMovement.isGrounded = false;
-        }
-        if (other.gameObject.layer == 3)
+        if (other.gameObject.tag == "Ground" || other.gameObject.layer == 3)
         {
             _playerMovement.isGrounded = false;
         }

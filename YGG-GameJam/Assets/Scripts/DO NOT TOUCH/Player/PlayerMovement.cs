@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int playerID = 1; // Player ID (1, 2, 3, or 4)
     public float speed = 5f; // Speed of the player movement
     [SerializeField] private float rotationSpeed = 10f; // Speed of rotation towards the movement direction
-    [SerializeField] private float jumpForce;
     [SerializeField] private GameObject pushObject;
 
     [Header("----------------")]
@@ -69,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         keyCodeOne = KeyCode.Space;
         sfx = transform.Find("SFX")?.GetComponent<AudioSource>();
         walkSfx = transform.Find("Walk SFX")?.GetComponent<AudioSource>();
+
     }
 
     private void Update()
@@ -199,19 +199,19 @@ public class PlayerMovement : MonoBehaviour
             UpdateAnimator(moveDirection);
             if (isCarrying == true && isOnFreezer == false)
             {
-                speed = 3f;
+                speed = 5.5f;
             }
             if (isCarrying == false && isOnFreezer == false)
             {
-                speed = 5f;
+                speed = 7f;
             }
             if (isCarrying == true && isOnFreezer == true)
             {
-                speed = 2f;
+                speed = 5f;
             }
             if (isCarrying == false && isOnFreezer == true)
             {
-                speed = 3f;
+                speed = 6.5f;
             }
         }
         

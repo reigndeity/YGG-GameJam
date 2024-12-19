@@ -14,7 +14,7 @@ public class PlayerJump : MonoBehaviour
         _rigidbody = GetComponentInParent<Rigidbody>();
         _playerMovement = GetComponentInParent<PlayerMovement>();
 
-        jumpForce = 15;
+        jumpForce = 18;
         extraGravity = 30;
     }
 

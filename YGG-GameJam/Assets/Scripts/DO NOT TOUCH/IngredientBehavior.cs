@@ -6,12 +6,16 @@ public class IngredientBehavior : MonoBehaviour
 {
     [SerializeField] float timeBeforeDestroyed;
     [SerializeField] float timer;           
-    public bool isGrabbed;       
+    public bool isGrabbed;
+    public MeshCollider _meshCollider;
 
     private void Start()
     {
         timeBeforeDestroyed = 15;
         timer = timeBeforeDestroyed;
+        _meshCollider = GetComponent<MeshCollider>();
+        _meshCollider.enabled = false;
+        Invoke("EnableCollider", 1f);
     }
 
     void Update()
@@ -47,5 +51,10 @@ public class IngredientBehavior : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void EnableCollider() 
+    {
+        _meshCollider.enabled = true;
     }
 }

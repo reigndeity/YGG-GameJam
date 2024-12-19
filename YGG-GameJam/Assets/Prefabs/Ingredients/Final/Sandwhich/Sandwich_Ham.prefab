@@ -175,6 +175,7 @@ MonoBehaviour:
   timeBeforeDestroyed: 0
   timer: 0
   isGrabbed: 0
+  _meshCollider: {fileID: 0}
 --- !u!114 &4941058439678923850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1734,7 +1735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4144813850327009650
 Transform:
   m_ObjectHideFlags: 0

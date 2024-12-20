@@ -3123,7 +3123,6 @@ MonoBehaviour:
   playerID: 2
   speed: 5
   rotationSpeed: 10
-  jumpForce: 0
   pushObject: {fileID: 1858428854}
   isGrabbing: 0
   isCarrying: 0
@@ -15594,6 +15593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 0}
   jumpForce: 7
+  extraGravity: 0
   _playerMovement: {fileID: 0}
 --- !u!65 &371959849
 BoxCollider:
@@ -25413,6 +25413,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 577561172448914263, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 582260285081713471, guid: 54363d7e4b22eb1438569200e109d724, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -26418,7 +26422,6 @@ MonoBehaviour:
   playerID: 1
   speed: 5
   rotationSpeed: 10
-  jumpForce: 0
   pushObject: {fileID: 1866619203}
   isGrabbing: 0
   isCarrying: 0
@@ -56055,6 +56058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 0}
   jumpForce: 7
+  extraGravity: 0
   _playerMovement: {fileID: 0}
 --- !u!65 &1510347057
 BoxCollider:
@@ -92194,7 +92198,6 @@ MonoBehaviour:
   playerID: 3
   speed: 5
   rotationSpeed: 10
-  jumpForce: 0
   pushObject: {fileID: 3203714257468414678}
   isGrabbing: 0
   isCarrying: 0
@@ -98572,6 +98575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 0}
   jumpForce: 7
+  extraGravity: 0
   _playerMovement: {fileID: 0}
 --- !u!1 &2398905063084397215
 GameObject:
@@ -113614,7 +113618,6 @@ MonoBehaviour:
   playerID: 4
   speed: 5
   rotationSpeed: 10
-  jumpForce: 0
   pushObject: {fileID: 6830917876265626786}
   isGrabbing: 0
   isCarrying: 0
@@ -149649,6 +149652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 0}
   jumpForce: 7
+  extraGravity: 0
   _playerMovement: {fileID: 0}
 --- !u!23 &8257332819210686235
 MeshRenderer:

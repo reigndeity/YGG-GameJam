@@ -19,13 +19,11 @@ public class IngredientChecker : MonoBehaviour
     [SerializeField] float rotationSpeed;
     public GameObject coverObject;
     public ParticleSystem coverParticle;
-    public AudioSource sfxSource;
-    public AudioClip[] sfxClip; // 0 = Add Item, 1 = Complete Item
-
+    [SerializeField] AudioManager _audioManager;
     void Start()
     {
-        sfxSource.volume = 0.25f;
         recipeType = GameManager.instance.recipeChosen;
+        _audioManager = FindObjectOfType<AudioManager>();
     }
 
     void Update()
@@ -130,20 +128,17 @@ public class IngredientChecker : MonoBehaviour
         if (other.gameObject.tag == ingredientsNeeded[0])
         {
             ingredientOne = true;
-            sfxSource.clip = sfxClip[0];
-            sfxSource.Play();
+            _audioManager.PlayAddedItemSound();
         }
         if (other.gameObject.tag == ingredientsNeeded[1])
         {
             ingredientTwo = true;
-            sfxSource.clip = sfxClip[0];
-            sfxSource.Play();
+            _audioManager.PlayAddedItemSound();
         }
         if (other.gameObject.tag == ingredientsNeeded[2])
         {
             ingredientThree = true;
-            sfxSource.clip = sfxClip[0];
-            sfxSource.Play();
+            _audioManager.PlayAddedItemSound();
         }
     }
 
@@ -153,8 +148,7 @@ public class IngredientChecker : MonoBehaviour
         ingredientTwo = false;
         ingredientThree = false;
         coverObject.SetActive(true);
-        sfxSource.clip = sfxClip[1];
-        sfxSource.Play();
+        _audioManager.PlayCompletedItemSound();
         Invoke("DeactivateIngredients", .8f);
     }
     void DeactivateIngredients()

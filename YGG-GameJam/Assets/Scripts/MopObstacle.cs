@@ -8,14 +8,16 @@ public class MopObstacle : MonoBehaviour
     [SerializeField] ParticleSystem poofEffect;
     [SerializeField] GameObject mopObj;
     private BoxCollider _boxCollider;
-    public AudioSource destroyPlayer;
     public bool canMove;
     public Rigidbody rb;
     public Animator animator;
+
+    [SerializeField] AudioManager _audioManager;
     void Start()
     {
         _boxCollider = GetComponent<BoxCollider>();
         Invoke("StartMoving", 2f);
+        _audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void Update()
@@ -30,7 +32,7 @@ public class MopObstacle : MonoBehaviour
             {
                 poofEffect.Play();
                 Destroy(other.gameObject);
-                if (other.gameObject.CompareTag("Player")) destroyPlayer.Play();
+                if (other.gameObject.CompareTag("Player")) _audioManager.PlayPlayerDeathSound();
             }
             else if (other.gameObject.CompareTag("Border") || other.gameObject.layer == 6 || other.gameObject.CompareTag("Mop"))
             {

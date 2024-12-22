@@ -48,10 +48,8 @@ public class PlayerMovement : MonoBehaviour
     public ParticleSystem footTrailParticleTwo;
     public ParticleSystem footTrailParticleThree;
 
-    [Header("SFX")]
-    public AudioSource sfx;
-    public AudioSource walkSfx;
-    public AudioClip[] audioClips; // 0 = Walk, 1 = Grab, 2 = Throw, 3 = Push, 4 = Dash
+    [Header("Player Audio")]
+    public AudioManager _audioManager;
 
     void Start()
     {
@@ -66,8 +64,8 @@ public class PlayerMovement : MonoBehaviour
         Invoke("Spawned", 2f);
 
         keyCodeOne = KeyCode.Space;
-        sfx = transform.Find("SFX")?.GetComponent<AudioSource>();
-        walkSfx = transform.Find("Walk SFX")?.GetComponent<AudioSource>();
+
+        _audioManager = FindObjectOfType<AudioManager>();
 
     }
 
@@ -345,30 +343,24 @@ public class PlayerMovement : MonoBehaviour
 
     public void AudioForWalk()
     {
-        walkSfx.clip = audioClips[0];
-        walkSfx.pitch = Random.Range(0.8f, 1.2f);
-        walkSfx.Play();
+        _audioManager.PlayWalkSound();
     }
     public void AudioForGrab()
     {
-        sfx.clip = audioClips[1];
-        sfx.Play();
+        _audioManager.PlayGrabSound();
     }
 
     public void AudioForThrow()
     {
-        sfx.clip = audioClips[2];
-        sfx.Play();
+        _audioManager.PlayThrowSound();
     }
     public void AudioForPush()
     {
-        sfx.clip = audioClips[3];
-        sfx.Play();
+        _audioManager.PlayPushSound();
     }
     public void AudioForDash()
     {
-        sfx.clip = audioClips[4];
-        sfx.Play();
+        _audioManager.PlayDashSound();
     }
 
 }

@@ -10,11 +10,6 @@ public class GameManager : MonoBehaviour
     [Header("Game Properties")]
     public bool gameStart;
     public bool canMove;
-    public AudioSource gameMusic;
-    public AudioClip[] gameMusicClip; // 0 = choosing recipe, 1 = chosen recipe, 2 = countdown, 3 = go!, 4 = bgm, 5 = win, 6 = lose
-
-    [SerializeField] GameObject[] gamepadCharacters;
-    [SerializeField] GameObject[] keyboardCharacters;
     public int gameModeType;
     public int recipeChosen;
     [Header("---------------------------------")]
@@ -48,6 +43,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] ButtonManager _buttonManager;
     [SerializeField] EventSystem _eventSystem;
     [SerializeField] GameObject mainMenuButton;
+    [SerializeField] AudioManager _audioManager;
 
     void Awake()
     {
@@ -59,6 +55,8 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+
+        _audioManager = FindObjectOfType<AudioManager>();
     }
     void Start()
     {
@@ -66,7 +64,7 @@ public class GameManager : MonoBehaviour
         gameStart = false;
         countdownTxt.enabled = false;
         StartCoroutine(ShowRecipe());
-
+        _audioManager.PlayRouletteSound();
         _buttonManager = FindObjectOfType<ButtonManager>();
     }
     void Update()
@@ -75,7 +73,6 @@ public class GameManager : MonoBehaviour
         {
             _buttonManager.OnClickPause();
             Time.timeScale = 0;
-            gameMusic.Pause();
         }
         if (gameStart == true)
         {
@@ -118,6 +115,7 @@ public class GameManager : MonoBehaviour
     // TEST
    IEnumerator ShowRecipe()
     {
+        
         recipeChosen = Random.Range(0, 3);
         recipePanel.SetActive(true);
 
@@ -160,32 +158,25 @@ public class GameManager : MonoBehaviour
         recipePanel.SetActive(false);
         countdownTxt.enabled = true;
         countdownTxt.text = "3";
-        gameMusic.clip = gameMusicClip[2];
-        gameMusic.Play();
+        _audioManager.PlayCountdownSound();
         yield return new WaitForSeconds(1f);
         countdownTxt.text = "2";
-        gameMusic.clip = gameMusicClip[2];
-        gameMusic.Play();
+        _audioManager.PlayCountdownSound();
         yield return new WaitForSeconds(1f);
         countdownTxt.text = "1";
-        gameMusic.clip = gameMusicClip[2];
-        gameMusic.Play();
+        _audioManager.PlayCountdownSound();
         yield return new WaitForSeconds(1f);
         countdownTxt.text = "GO!!!";
-        gameMusic.clip = gameMusicClip[3];
-        gameMusic.Play();
+        _audioManager.PlayGoSound();
         gameStart = true;
         yield return new WaitForSeconds(1f);
         countdownTxt.enabled = false;
-        gameMusic.clip = gameMusicClip[4];
-        gameMusic.loop = enabled;
-        gameMusic.Play();
+        _audioManager.PlayInGameMusic();
     }
 
     IEnumerator BlinkObjects(GameObject[] objects, float totalBlinkDuration, float minBlinkInterval, float maxBlinkInterval)
         {
-        gameMusic.clip = gameMusicClip[0];
-        gameMusic.Play();
+        
         float elapsedTime = 0f;
         float currentBlinkInterval = minBlinkInterval;
         int currentIndex = 0;
@@ -233,17 +224,13 @@ public class GameManager : MonoBehaviour
                 {
                     soloWinners[0].SetActive(true);
                     winnerTxt.text = "PLAYER 1";
-                    gameMusic.clip = gameMusicClip[5];
-                    gameMusic.loop = !enabled;
-                    gameMusic.Play();
+                    _audioManager.PlayWinSound();
                 }
                 if (highestScore == playerTwoScore)
                 {
                     soloWinners[1].SetActive(true);
                     winnerTxt.text = "PLAYER 2";
-                    gameMusic.clip = gameMusicClip[5];
-                    gameMusic.loop = !enabled;
-                    gameMusic.Play();
+                    _audioManager.PlayWinSound();
                 }
                 break;
             case 2:
@@ -251,17 +238,13 @@ public class GameManager : MonoBehaviour
                 {
                     teamWinners[0].SetActive(true);
                     winnerTxt.text = "TEAM 1";
-                    gameMusic.clip = gameMusicClip[5];
-                    gameMusic.loop = !enabled;
-                    gameMusic.Play();
+                    _audioManager.PlayWinSound();
                 }
                 if (highestScore == playerTwoScore)
                 {
                     teamWinners[1].SetActive(true);
                     winnerTxt.text = "TEAM 2";
-                    gameMusic.clip = gameMusicClip[5];
-                    gameMusic.loop = !enabled;
-                    gameMusic.Play();
+                    _audioManager.PlayWinSound();
                 }
                 break;
             case 3:
@@ -269,33 +252,25 @@ public class GameManager : MonoBehaviour
                 {
                     soloWinners[0].SetActive(true);
                     winnerTxt.text = "PLAYER 1";
-                    gameMusic.clip = gameMusicClip[5];
-                    gameMusic.loop = !enabled;
-                    gameMusic.Play();
+                    _audioManager.PlayWinSound();
                 }
                 if (highestScore == playerTwoScore)
                 {
                     soloWinners[1].SetActive(true);
                     winnerTxt.text = "PLAYER 2";
-                    gameMusic.clip = gameMusicClip[5];
-                    gameMusic.loop = !enabled;
-                    gameMusic.Play();
+                    _audioManager.PlayWinSound();
                 }
                 if (highestScore == playerThreeScore)
                 {
                     soloWinners[2].SetActive(true);
                     winnerTxt.text = "PLAYER 3";
-                    gameMusic.clip = gameMusicClip[5];
-                    gameMusic.loop = !enabled;
-                    gameMusic.Play();
+                    _audioManager.PlayWinSound();
                 }
                 if (highestScore == playerFourScore)
                 {
                     soloWinners[3].SetActive(true);
                     winnerTxt.text = "PLAYER 4";
-                    gameMusic.clip = gameMusicClip[5];
-                    gameMusic.loop = !enabled;
-                    gameMusic.Play();
+                    _audioManager.PlayWinSound();
                 }
                 break;
         }
@@ -312,9 +287,7 @@ public class GameManager : MonoBehaviour
             drawWinners.SetActive(true);
             winnerHeaderTxt.text = "● TIE! ●";
             winnerTxt.text = "NOBODY WON...";
-            gameMusic.clip = gameMusicClip[6];
-            gameMusic.loop = !enabled;
-            gameMusic.Play();
+            _audioManager.PlayTieSound();
         }
     }
 
@@ -324,7 +297,6 @@ public class GameManager : MonoBehaviour
         CompareScores();
         gameOverPanel.SetActive(true);
         _eventSystem.SetSelectedGameObject(mainMenuButton);
-        
     }
     
 }

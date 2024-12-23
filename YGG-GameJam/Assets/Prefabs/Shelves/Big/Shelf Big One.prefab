@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 6685989816241543776}
   - component: {fileID: 6547137007530531496}
   - component: {fileID: 1925192796043892297}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shelf Big One
   m_TagString: Ground
   m_Icon: {fileID: 0}

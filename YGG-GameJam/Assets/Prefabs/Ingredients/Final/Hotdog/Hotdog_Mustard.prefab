@@ -156,8 +156,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.03, y: 0.03, z: 0.026242098}
-  m_Center: {x: 0, y: 0, z: 0.013121049}
+  m_Size: {x: 0.046716984, y: 0.04712464, z: 0.036093693}
+  m_Center: {x: 0.00006796867, y: -0.00013592096, z: 0.018046862}
 --- !u!114 &8936889925339549005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +173,7 @@ MonoBehaviour:
   timeBeforeDestroyed: 0
   timer: 0
   isGrabbed: 0
+  _meshCollider: {fileID: 0}
 --- !u!114 &1592421666126491875
 MonoBehaviour:
   m_ObjectHideFlags: 0

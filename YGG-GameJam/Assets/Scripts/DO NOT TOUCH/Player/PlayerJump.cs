@@ -20,7 +20,6 @@ public class PlayerJump : MonoBehaviour
 
     public void Jump()
     {
-        Debug.Log(jumpForce);
         if (_playerMovement.isGrounded)
         {
             _rigidbody.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);

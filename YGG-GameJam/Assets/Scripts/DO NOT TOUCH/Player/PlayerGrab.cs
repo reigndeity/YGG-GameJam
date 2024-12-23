@@ -25,6 +25,7 @@ public class PlayerGrab : MonoBehaviour
     private void Start()
     {
         _playerMovement = GetComponentInParent<PlayerMovement>();
+        throwForce = 12f;
     }
     
 

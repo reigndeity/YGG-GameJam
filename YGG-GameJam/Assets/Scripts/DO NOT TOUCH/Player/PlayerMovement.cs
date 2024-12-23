@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -53,19 +54,22 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        canPush = true;
+        Invoke("Spawned", 2f);
+        keyCodeOne = KeyCode.Space;
+
+        // Script References
         _animator = GetComponent<Animator>();
         _playerJump = GetComponentInChildren<PlayerJump>();
         _playerGrab = GetComponentInChildren<PlayerGrab>();
         gamepadManager = FindObjectOfType<GamepadManager>();
         _rigidBody = GetComponent<Rigidbody>();
-        canPush = true;
-        dashSpeed = 3;
-        dashCooldown = 3;
-        Invoke("Spawned", 2f);
-
-        keyCodeOne = KeyCode.Space;
-
         _audioManager = FindObjectOfType<AudioManager>();
+
+        // Dash Values
+        dashSpeed = 40;
+        dashDuration = 0.15f;
+        dashCooldown = 3;
 
     }
 
@@ -79,118 +83,125 @@ public class PlayerMovement : MonoBehaviour
             if (!isDashing)
             {
                 if (useController)
-            {
-                // GAMEPAD CONTROLS =================================
-                float horizontalInput = Input.GetAxis("Horizontal" + playerID);
-                float verticalInput = Input.GetAxis("Vertical" + playerID);
-                moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
-                
-                if (horizontalInput != 0 || verticalInput != 0)
                 {
-                    Debug.Log("Player " + playerID + " is moving with controller input.");
-                }
-                // Controller Button Inputs
-                if (Input.GetButtonDown("Jump" + playerID) && isGrounded && !isCarrying && !isGrabbing && canPush) // "Y" button
-                {
-                    Debug.Log("Player " + playerID + " Y button (controller) pressed");
-                    _playerJump.Jump();
-                }
-                if (Input.GetButtonDown("Fire1_" + playerID) && isGrounded && !isGrabbing && canPush) // "A" button
-                {
-                    Debug.Log("Player " + playerID + " A button (controller) pressed");
-                    if (!isCarrying)
-                    {
-                        isGrabbing = true;
-                    }
-                    else
-                    {
-                        canThrow = false;
-                    } 
-                }
-                if (Input.GetButtonDown("Fire2_" + playerID) && isGrounded && !isGrabbing && !isCarrying && canPush) // "B" button
-                {
-                    Debug.Log("Player " + playerID + " B button (controller) pressed");
-                    canPush = false;
-                }
-                if (Input.GetButtonDown("Fire3_" + playerID) && cooldownTimer <= 0f) // "X" button
-                {
-                    Debug.Log("Player " + playerID + " X button (controller) pressed");
-                    AudioForDash();
-                    isDashing = true;
-                    dashTimer = dashDuration;
-                    cooldownTimer = dashCooldown;
-                    dashDirection = moveDirection != Vector3.zero ? moveDirection : transform.forward; // Save dash direction
-                }
+                    // GAMEPAD CONTROLS =================================
+                    float horizontalInput = Input.GetAxis("Horizontal" + playerID);
+                    float verticalInput = Input.GetAxis("Vertical" + playerID);
+                    moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
 
-                // Trail Effect
-                if (moveDirection != Vector3.zero && canPlayFootTrailParticle == true && isGrounded == true)
-                {
-                    FootTrailParticleOn();
-                }
-            }
-            else if (isKeyboard)
-            {
-                // KEYBOARD CONTROLS =================================
-                float horizontalKeyboard = Input.GetAxis("HorizontalKeyboard");
-                float verticalKeyboard = Input.GetAxis("VerticalKeyboard");
-                moveDirection = new Vector3(horizontalKeyboard, 0, verticalKeyboard).normalized;
-
-                if (Input.GetKeyDown(keyCodeOne) && isGrounded && !isCarrying && !isGrabbing && canPush)
-                {
-                    Debug.Log(keyCodeOne + " : Y button pressed");
-                    _playerJump.Jump();
-                }
-                if (Input.GetKeyDown(keyCodeTwo) && isGrounded && !isGrabbing && canPush)
-                {
-                    Debug.Log(keyCodeTwo + " : A button pressed");
-                    if (!isCarrying)
+                    if (horizontalInput != 0 || verticalInput != 0)
                     {
-                        isGrabbing = true;
+                        Debug.Log("Player " + playerID + " is moving with controller input.");
                     }
-                    else
+                    // Controller Button Inputs
+                    if (Input.GetButtonDown("Jump" + playerID) && isGrounded && !isCarrying && !isGrabbing && canPush) // "Y" button
                     {
-                        canThrow = false;
+                        Debug.Log("Player " + playerID + " Y button (controller) pressed");
+                        _playerJump.Jump();
+                    }
+                    if (Input.GetButtonDown("Fire1_" + playerID) && isGrounded && !isGrabbing && canPush) // "A" button
+                    {
+                        Debug.Log("Player " + playerID + " A button (controller) pressed");
+                        if (!isCarrying)
+                        {
+                            isGrabbing = true;
+                        }
+                        else
+                        {
+                            canThrow = false;
+                        }
+                    }
+                    if (Input.GetButtonDown("Fire2_" + playerID) && isGrounded && !isGrabbing && !isCarrying && canPush) // "B" button
+                    {
+                        Debug.Log("Player " + playerID + " B button (controller) pressed");
+                        canPush = false;
+                    }
+                    if (Input.GetButtonDown("Fire3_" + playerID) && cooldownTimer <= 0f) // "X" button
+                    {
+                        Debug.Log("Player " + playerID + " X button (controller) pressed");
+                        AudioForDash();
+                        isDashing = true;
+                        dashTimer = dashDuration;
+                        cooldownTimer = dashCooldown;
+                        dashDirection = moveDirection != Vector3.zero ? moveDirection : transform.forward; // Save dash direction
+                    }
+
+                    // Trail Effect
+                    if (moveDirection != Vector3.zero && canPlayFootTrailParticle == true && isGrounded == true)
+                    {
+                        FootTrailParticleOn();
                     }
                 }
-                if (Input.GetKeyDown(keyCodeThree) && isGrounded && !isGrabbing && !isCarrying && canPush)
+                else if (isKeyboard)
                 {
-                    Debug.Log(keyCodeThree + " : B button pressed");
-                    canPush = false;
-                }
-                if (Input.GetKeyDown(keyCodeFour) && cooldownTimer <= 0f)
-                {
-                    Debug.Log(keyCodeFour + " : X button pressed");
-                    AudioForDash();
-                    isDashing = true;
-                    dashTimer = dashDuration;
-                    cooldownTimer = dashCooldown;
-                    dashDirection = moveDirection != Vector3.zero ? moveDirection : transform.forward; // Save dash direction
-                }
+                    // KEYBOARD CONTROLS =================================
+                    float horizontalKeyboard = Input.GetAxis("HorizontalKeyboard");
+                    float verticalKeyboard = Input.GetAxis("VerticalKeyboard");
+                    moveDirection = new Vector3(horizontalKeyboard, 0, verticalKeyboard).normalized;
 
-                // Trail Effect
-                if (moveDirection != Vector3.zero && canPlayFootTrailParticle == true && isGrounded == true)
-                {
-                    FootTrailParticleOn();
+                    if (Input.GetKeyDown(keyCodeOne) && isGrounded && !isCarrying && !isGrabbing && canPush)
+                    {
+                        Debug.Log(keyCodeOne + " : Y button pressed");
+                        _playerJump.Jump();
+                    }
+                    if (Input.GetKeyDown(keyCodeTwo) && isGrounded && !isGrabbing && canPush)
+                    {
+                        Debug.Log(keyCodeTwo + " : A button pressed");
+                        if (!isCarrying)
+                        {
+                            isGrabbing = true;
+                        }
+                        else
+                        {
+                            canThrow = false;
+                        }
+                    }
+                    if (Input.GetKeyDown(keyCodeThree) && isGrounded && !isGrabbing && !isCarrying && canPush)
+                    {
+                        Debug.Log(keyCodeThree + " : B button pressed");
+                        canPush = false;
+                    }
+                    if (Input.GetKeyDown(keyCodeFour) && cooldownTimer <= 0f)
+                    {
+                        Debug.Log(keyCodeFour + " : X button pressed");
+                        AudioForDash();
+                        isDashing = true;
+                        dashTimer = dashDuration;
+                        cooldownTimer = dashCooldown;
+                        dashDirection = moveDirection != Vector3.zero ? moveDirection : transform.forward; // Save dash direction
+                    }
+
+                    // Trail Effect
+                    if (moveDirection != Vector3.zero && canPlayFootTrailParticle == true && isGrounded == true)
+                    {
+                        FootTrailParticleOn();
+                    }
                 }
-            }
             }
             // Handle dashing
             if (isDashing)
             {
+                if (dashTimer == dashDuration) // Apply the dash force only once
+                {
+                    _rigidBody.velocity = Vector3.zero; // Reset velocity before dashing
+                    _rigidBody.AddForce(dashDirection * dashSpeed, ForceMode.Impulse); // Apply dash force
+                }
+
                 trailRenderer.SetActive(true);
-                moveDirection = dashDirection * dashSpeed; // Use the saved dash direction
                 dashTimer -= Time.deltaTime;
+
                 if (dashTimer <= 0f)
                 {
                     isDashing = false;
                     trailRenderer.SetActive(false);
+                    _rigidBody.velocity = Vector3.zero; // Stop any residual movement after dash
                 }
             }
             else
             {
                 cooldownTimer -= Time.deltaTime;
             }
-            
+
             transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
 
             // ANIMATOR =================================
@@ -212,7 +223,7 @@ public class PlayerMovement : MonoBehaviour
                 speed = 6.5f;
             }
         }
-        
+
     }
 
     private void UpdateAnimator(Vector3 moveDirection)
@@ -230,6 +241,7 @@ public class PlayerMovement : MonoBehaviour
         if (moveDirection == Vector3.zero && !isGrounded && !isCarrying && !isGrabbing) // STATIONARY JUMP
         {
             _animator.SetInteger("animState", 2);
+
         }
         if (moveDirection != Vector3.zero && !isGrounded && !isCarrying && !isGrabbing) // MOVING WHILE JUMPING
         {
@@ -279,35 +291,29 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        // Check if the player is dashing
-        if (isDashing)
-        {
-            // Stop dashing
-            isDashing = false;
-            trailRenderer.SetActive(false); // Turn off the trail effect
-
-            // Reset the dash timer
-            dashTimer = 0f;
-            dashDirection = Vector3.zero;
-        }
-    }
-
     public void Spawned()
     {
         this.gameObject.tag = "Player";
     }
 
     // UNITY EVENT SYSTEM METHODS
-    public void ResetGrab() => isGrabbing = false;
-    public void ResetCarrying() => isCarrying = false;
+    public void ResetGrab()
+    {
+        isGrabbing = false;
+    }
+    public void ResetCarrying()
+    {
+        isCarrying = false;
+    }
     public void GrabItem()
     {
         _playerGrab.GrabIngredient();
         AdjustItemPosition();
+    }
+    public void ReleaseItem()
+    { 
+        _playerGrab.Release();
     } 
-    public void ReleaseItem() => _playerGrab.Release();
     public void ReleaseIngredient()
     {
         isGrounded = true;
@@ -315,7 +321,10 @@ public class PlayerMovement : MonoBehaviour
         isGrabbing = false;
         canThrow = false;
     }
-    public void ActivatePush() => pushObject.SetActive(true);
+    public void ActivatePush() 
+    {
+        pushObject.SetActive(true);
+    }
     public void DeactivatePush()
     {
         pushObject.SetActive(false);

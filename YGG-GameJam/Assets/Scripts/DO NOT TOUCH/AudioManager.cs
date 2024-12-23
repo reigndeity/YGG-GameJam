@@ -48,8 +48,7 @@ public class AudioManager : MonoBehaviour
     // SFX PROPERTIES =================================
     public void PlayButtonClickSound()
     {
-        float randomPitch = Random.Range(0.7f, 1);
-        apSfxSource.pitch = randomPitch;
+        apSfxSource.pitch = Random.Range(0.7f, 1);
         apSfxSource.PlayOneShot(soundEffects[0]);
     }
     public void PlayRouletteSound()
@@ -80,8 +79,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayWalkSound()
     {
-        float randomPitch = Random.Range(0.8f, 1);
-        apSfxSource.pitch = randomPitch;
+        apSfxSource.pitch = Random.Range(0.8f, 1);
         apSfxSource.PlayOneShot(soundEffects[6]);
     }
     public void PlayGrabSound()

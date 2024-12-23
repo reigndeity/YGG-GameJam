@@ -25775,6 +25775,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 308674434}
     m_Modifications:
+    - target: {fileID: 1099160502081237495, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f40fe9358171736488a6e4b26c3ee1bc, type: 2}
     - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -46501,6 +46505,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 308674434}
     m_Modifications:
+    - target: {fileID: 1099160502081237495, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52925dface3ed5f4782b49febc650cd8, type: 2}
     - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -47298,6 +47306,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 308674434}
     m_Modifications:
+    - target: {fileID: 1099160502081237495, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 47813c3d537144c40b86ca0e4b610953, type: 2}
     - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -47872,6 +47884,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 308674434}
     m_Modifications:
+    - target: {fileID: 1099160502081237495, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cac0ab69ba7cc194daaf4588d781b1d5, type: 2}
     - target: {fileID: 2335188216612958087, guid: 9fd8244137d5bb44ab8407fa763b7d78, type: 3}
       propertyPath: m_Layer
       value: 6

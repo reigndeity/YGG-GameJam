@@ -338,9 +338,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64898d3546f3884b9f18ea26201fb44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeDestroyed: 0
-  timer: 0
   isGrabbed: 0
+  isBurgerBuns: 1
+  _burgerBunRenderers:
+  - {fileID: 4765429102382528445}
+  - {fileID: 3148123936759157994}
+  - {fileID: 6294318418483065463}
 --- !u!114 &1017453190264707580
 MonoBehaviour:
   m_ObjectHideFlags: 0

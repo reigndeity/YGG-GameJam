@@ -69,12 +69,12 @@ public class AudioManager : MonoBehaviour
     public void PlayWinSound()
     {
         upSfxSource.PlayOneShot(soundEffects[4]);
-        upSfxSource.volume = 0.5f;
+        upSfxSource.volume = 0.3f;
     }
     public void PlayTieSound()
     {
         upSfxSource.PlayOneShot(soundEffects[5]);
-        upSfxSource.volume = 0.5f;
+        upSfxSource.volume = 0.3f;
     }
 
     public void PlayWalkSound()

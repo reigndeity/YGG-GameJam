@@ -28,6 +28,14 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] GameObject helpPanel;
     [SerializeField] GameObject backHelpButton;
     [SerializeField] GameObject helpButton;
+    [Header("About Panel")]
+    [SerializeField] GameObject aboutPanel;
+    [SerializeField] GameObject aboutPanelOne;
+    [SerializeField] GameObject aboutPanelTwo;
+    [SerializeField] GameObject backAboutButton;
+    [SerializeField] GameObject aboutButton;
+    [SerializeField] GameObject aboutNextButton;
+    [SerializeField] GameObject aboutPreviousButton;
     [Header("Exit Panel")]
     [SerializeField] GameObject exitPanel;
     [SerializeField] GameObject exitNoButton;
@@ -130,6 +138,38 @@ public class ButtonManager : MonoBehaviour
         eventSystem.SetSelectedGameObject(helpButton);
         mainMenuPanel.SetActive(true);
         helpPanel.SetActive(false);
+        _audioManager.PlayButtonClickSound();
+    }
+    public void OnClickAbout() 
+    {
+        eventSystem.SetSelectedGameObject(backAboutButton);
+        mainMenuPanel.SetActive(false);
+        aboutPanel.SetActive(true);
+        aboutPanelOne.SetActive(true);
+        aboutPanelTwo.SetActive(false);
+        _audioManager.PlayButtonClickSound();
+    }
+    public void OnClickAboutBack()
+    {
+        eventSystem.SetSelectedGameObject(aboutButton);
+        mainMenuPanel.SetActive(true);
+        aboutPanel.SetActive(false);
+        aboutPanelOne.SetActive(false);
+        aboutPanelTwo.SetActive(false);
+        _audioManager.PlayButtonClickSound();
+    }
+    public void OnClickAboutNext()
+    {
+        eventSystem.SetSelectedGameObject(aboutPreviousButton);
+        aboutPanelOne.SetActive(false);
+        aboutPanelTwo.SetActive(true);
+        _audioManager.PlayButtonClickSound();
+    }
+    public void OnClickAboutPrevious()
+    {
+        eventSystem.SetSelectedGameObject(backAboutButton);
+        aboutPanelOne.SetActive(true);
+        aboutPanelTwo.SetActive(false);
         _audioManager.PlayButtonClickSound();
     }
     public void OnClickExit() 

@@ -67,8 +67,8 @@ public class PlayerMovement : MonoBehaviour
         _audioManager = FindObjectOfType<AudioManager>();
 
         // Dash Values
-        dashSpeed = 40;
-        dashDuration = 0.15f;
+        dashSpeed = 30;
+        dashDuration = 0.10f;
         dashCooldown = 3;
 
     }

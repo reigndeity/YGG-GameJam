@@ -7215,7 +7215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &648171701
@@ -10065,6 +10065,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 1597361441}
+  grabRadius: 1
+  grabRange: 3
+  grabAngle: 360
   grabbedObject: {fileID: 0}
 --- !u!65 &817814524
 BoxCollider:
@@ -72116,6 +72119,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 2892686751389183367}
+  grabRadius: 1
+  grabRange: 3
+  grabAngle: 360
   grabbedObject: {fileID: 0}
 --- !u!4 &2086499358527111601
 Transform:
@@ -134689,6 +134695,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 3918461146255605191}
+  grabRadius: 1
+  grabRange: 3
+  grabAngle: 360
   grabbedObject: {fileID: 0}
 --- !u!4 &7720250138778793605
 Transform:
@@ -144905,6 +144914,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 5243534544577821691}
+  grabRadius: 1
+  grabRange: 3
+  grabAngle: 360
   grabbedObject: {fileID: 0}
 --- !u!4 &8464478536564013973
 Transform:

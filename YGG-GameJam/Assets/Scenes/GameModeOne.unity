@@ -25970,6 +25970,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 1597361441}
+  grabRadius: 1
+  grabRange: 3
+  grabAngle: 360
   grabbedObject: {fileID: 0}
 --- !u!65 &817814524
 BoxCollider:
@@ -88454,6 +88457,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 1553766115}
+  grabRadius: 1
+  grabRange: 3
+  grabAngle: 360
   grabbedObject: {fileID: 0}
 --- !u!65 &2037704842
 BoxCollider:
@@ -98594,6 +98600,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 2256766209297432030}
+  grabRadius: 1
+  grabRange: 2
+  grabAngle: 30
   grabbedObject: {fileID: 0}
 --- !u!1 &3423487319641033539
 GameObject:
@@ -145833,6 +145842,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 3547395935572340544}
+  grabRadius: 1
+  grabRange: 2
+  grabAngle: 30
   grabbedObject: {fileID: 0}
 --- !u!1 &6947774288847619794
 GameObject:

@@ -10446,6 +10446,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 3765438531769343172}
+  grabRadius: 1
+  grabRange: 3
+  grabAngle: 360
   grabbedObject: {fileID: 0}
 --- !u!1 &2198381490352662777
 GameObject:

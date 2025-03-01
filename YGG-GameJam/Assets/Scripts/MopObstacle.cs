@@ -46,8 +46,11 @@ public class MopObstacle : MonoBehaviour
     {
         canMove = true;
         _boxCollider.enabled = true;
-        rb.constraints = RigidbodyConstraints.FreezePositionY;
-        rb.useGravity = false;
+        if (rb != null)
+        {
+            rb.constraints = RigidbodyConstraints.FreezePositionY;
+            rb.useGravity = false;
+        }    
     }
     public void DestroyMop()
     {

@@ -15,20 +15,43 @@ public class GrabMechanic : MonoBehaviour
     public float slowedSpeed;
     public float throwForce = 8f; // Adjust this value as needed for throw strength
 
+    [Header("Raycast Variables")]
+    public float grabRadius = 1f;
+    public float grabRange = 2f;
+    public float grabAngle = 30f;
+
     private void Start()
     {
         playerController = GetComponentInParent<PlayerController>();
         currentSpeed = playerController.speed;
         slowedSpeed = playerController.speed - 1.5f;
     }
-    
 
-    public void GrabIngredient()
+    //Original GrabIngredient Code
+    /*public void GrabIngredient()
     {
         Vector3 rayOrigin = transform.position + new Vector3(0, -0.5f, 0);
         if (Physics.Raycast(rayOrigin, transform.forward, out RaycastHit hit, rayDistance, interactableLayer))
             Grab(hit.collider.gameObject);
+    }*/
+
+    public void GrabIngredient()
+    {
+        Vector3 rayOrigin = transform.position + new Vector3(0, -0.5f, 0);
+        RaycastHit hit;
+
+        // SphereCast to detect objects within grabRadius along forward direction
+        if (Physics.SphereCast(rayOrigin, grabRadius, transform.forward, out hit, grabRange, interactableLayer))
+        {
+            // Check if the object is within the allowed grab angle
+            Vector3 toTarget = (hit.collider.transform.position - transform.position).normalized;
+            if (Vector3.Angle(transform.forward, toTarget) <= grabAngle)
+            {
+                Grab(hit.collider.gameObject);
+            }
+        }
     }
+
 
     public void Grab(GameObject objectToGrab)
     {
@@ -84,17 +107,12 @@ public class GrabMechanic : MonoBehaviour
             grabbedObjectCollider = null;
         }
 
-        // Clear references and reset parent
-        /*grabbedObject.transform.parent = null;
-        grabbedObject = null;
-        grabbedObjectRb = null;
-        grabbedObjectCollider = null;*/
-
         playerController.speed = currentSpeed;
     }
 
     // Method to draw the ray in the Scene view
-    void OnDrawGizmos()
+    //Original Gizmo Code
+    /*void OnDrawGizmos()
     {
         // Set the Gizmo color to blue for visibility
         Gizmos.color = Color.blue;
@@ -105,5 +123,23 @@ public class GrabMechanic : MonoBehaviour
 
         // Optional: Draw a sphere at the end of the ray to indicate the maximum reach
         Gizmos.DrawWireSphere(rayOrigin + transform.forward * rayDistance, 0.2f);
-    } 
+    } */
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+
+        Vector3 rayOrigin = transform.position + new Vector3(0, -0.5f, 0);
+        Vector3 rayDirection = transform.forward * grabRange;
+
+        // Draw the initial sphere at the start position
+        Gizmos.DrawWireSphere(rayOrigin, grabRadius);
+
+        // Draw the line representing the cast direction
+        Gizmos.DrawRay(rayOrigin, rayDirection);
+
+        // Draw the sphere at the end of the cast range
+        Gizmos.DrawWireSphere(rayOrigin + rayDirection, grabRadius);
+    }
+
 }

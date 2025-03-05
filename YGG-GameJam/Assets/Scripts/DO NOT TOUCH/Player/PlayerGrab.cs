@@ -10,6 +10,9 @@ public class PlayerGrab : MonoBehaviour
     [SerializeField] float throwForce = 8f; // Adjust this value as needed for throw strength
     [SerializeField] LayerMask interactableLayer; // Layer of the interactable objects
     [SerializeField] Transform holdPosition;      // The position where the object will be held
+    [SerializeField] float grabRadius = 1f;
+    [SerializeField] float grabRange = 2f;
+    [SerializeField] float grabAngle = 30f;
 
     [Header("Display Properties")]
     [SerializeField] GameObject grabbedObject;    // The object currently being held
@@ -25,11 +28,10 @@ public class PlayerGrab : MonoBehaviour
     private void Start()
     {
         _playerMovement = GetComponentInParent<PlayerMovement>();
-        throwForce = 12f;
     }
-    
 
-    public void GrabIngredient()
+    //Original Code for GrabIngredient
+    /*public void GrabIngredient()
     {
         Vector3 rayOrigin = transform.position + new Vector3(0, -0.5f, 0);
         if (Physics.Raycast(rayOrigin, transform.forward, out RaycastHit hit, rayDistance, interactableLayer))
@@ -37,9 +39,28 @@ public class PlayerGrab : MonoBehaviour
             Grab(hit.collider.gameObject);
         }
             
+    }*/
+    public void GrabIngredient()
+    {
+        Vector3 rayOrigin = transform.position + new Vector3(0, -0.5f, 0);
+        RaycastHit hit;
+
+        // First, check objects already inside grab range
+        Collider[] colliders = Physics.OverlapSphere(transform.position, grabRadius, interactableLayer);
+        foreach (Collider col in colliders)
+        {
+            Grab(col.gameObject);
+            return;
+        }
+
+        // Then, check objects further ahead
+        if (Physics.SphereCast(transform.position, grabRadius, transform.forward, out hit, grabRange, interactableLayer))
+        {
+            Grab(hit.collider.gameObject);
+        }
     }
 
-public void Grab(GameObject objectToGrab)
+    public void Grab(GameObject objectToGrab)
 {
     grabbedObject = objectToGrab;
     _rigidbody = grabbedObject.GetComponent<Rigidbody>();
@@ -95,7 +116,8 @@ public void Release()
 }
 
     // Method to draw the ray in the Scene view
-    void OnDrawGizmos()
+    //Original Gizmo Code
+    /*void OnDrawGizmos()
     {
         // Set the Gizmo color to blue for visibility
         Gizmos.color = Color.blue;
@@ -106,6 +128,28 @@ public void Release()
 
         // Optional: Draw a sphere at the end of the ray to indicate the maximum reach
         Gizmos.DrawWireSphere(rayOrigin + transform.forward * rayDistance, 0.2f);
+    }*/
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+
+        Vector3 rayOrigin = transform.position + new Vector3(0, -0.5f, 0);
+        Vector3 rayDirection = transform.forward * grabRange;
+
+        // Draw the sphere at the start of the cast
+        //Gizmos.DrawWireSphere(rayOrigin, grabRadius);
+
+        // Draw the cast direction
+        Gizmos.DrawRay(rayOrigin, rayDirection);
+
+        // Draw multiple spheres along the cast to represent the full range of the SphereCast
+        int segments = 3; // Number of spheres along the ray to visualize the cast area
+        for (int i = 1; i <= segments; i++)
+        {
+            float t = (float)i / segments;
+            Vector3 pointAlongRay = rayOrigin + (rayDirection * t);
+            Gizmos.DrawWireSphere(pointAlongRay, grabRadius);
+        }
     }
 
     public void AdjustIngredientPosition()

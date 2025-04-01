@@ -10531,6 +10531,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 1597361441}
+  grabRadius: 1
+  grabRange: 2
+  grabAngle: 30
   grabbedObject: {fileID: 0}
 --- !u!65 &817814524
 BoxCollider:
@@ -20098,7 +20101,6 @@ MonoBehaviour:
   poofEffect: {fileID: 0}
   mopObj: {fileID: 0}
   canMove: 0
-  rb: {fileID: 0}
   animator: {fileID: 0}
   _audioManager: {fileID: 0}
 --- !u!64 &1189623175
@@ -71034,6 +71036,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 2892686751389183367}
+  grabRadius: 1
+  grabRange: 2
+  grabAngle: 30
   grabbedObject: {fileID: 0}
 --- !u!4 &2086499358527111601
 Transform:
@@ -71102,7 +71107,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2551930446503009277}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ff38b1823348d4946a77aef8e1bea807, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -117267,7 +117272,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4339663280275093328}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ff38b1823348d4946a77aef8e1bea807, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -133589,6 +133594,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 3918461146255605191}
+  grabRadius: 1
+  grabRange: 2
+  grabAngle: 30
   grabbedObject: {fileID: 0}
 --- !u!4 &7720250138778793605
 Transform:
@@ -143805,6 +143813,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 5243534544577821691}
+  grabRadius: 1
+  grabRange: 2
+  grabAngle: 30
   grabbedObject: {fileID: 0}
 --- !u!4 &8464478536564013973
 Transform:

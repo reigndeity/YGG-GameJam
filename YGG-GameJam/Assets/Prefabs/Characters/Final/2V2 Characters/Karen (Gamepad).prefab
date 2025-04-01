@@ -781,7 +781,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2307021146364958608}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ff38b1823348d4946a77aef8e1bea807, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -860,14 +860,7 @@ MonoBehaviour:
   footTrailParticleOne: {fileID: 1030612411202930597}
   footTrailParticleTwo: {fileID: 7782566622059222499}
   footTrailParticleThree: {fileID: 4412698559132462623}
-  sfx: {fileID: 0}
-  walkSfx: {fileID: 0}
-  audioClips:
-  - {fileID: 8300000, guid: f3976f7835eff5a48b3b5bd954dd891a, type: 3}
-  - {fileID: 8300000, guid: 88753070114ffe64d8d7fadcdaa1d8b7, type: 3}
-  - {fileID: 8300000, guid: 8037a54f6c261c94c9f37dddce2d5d49, type: 3}
-  - {fileID: 8300000, guid: 2f394d423600fa74aa011a10b6b5269b, type: 3}
-  - {fileID: 8300000, guid: f3a654c4aeef87c4e81d6969c3f1aa52, type: 3}
+  _audioManager: {fileID: 0}
 --- !u!114 &238484487185593171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12104,6 +12097,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 5452361996365854614}
+  grabRadius: 1
+  grabRange: 2
+  grabAngle: 30
   grabbedObject: {fileID: 0}
 --- !u!1 &7793095515837132827
 GameObject:

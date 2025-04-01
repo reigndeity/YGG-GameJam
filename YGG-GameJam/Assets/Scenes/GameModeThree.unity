@@ -3069,7 +3069,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224148346}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ff38b1823348d4946a77aef8e1bea807, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -26325,6 +26325,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 1597361441}
+  grabRadius: 1
+  grabRange: 2
+  grabAngle: 30
   grabbedObject: {fileID: 0}
 --- !u!65 &817814524
 BoxCollider:
@@ -37041,7 +37044,6 @@ MonoBehaviour:
   poofEffect: {fileID: 0}
   mopObj: {fileID: 0}
   canMove: 0
-  rb: {fileID: 0}
   animator: {fileID: 0}
   _audioManager: {fileID: 0}
 --- !u!64 &1189623175
@@ -88599,6 +88601,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 1553766115}
+  grabRadius: 1
+  grabRange: 2
+  grabAngle: 30
   grabbedObject: {fileID: 0}
 --- !u!65 &2037704842
 BoxCollider:
@@ -97698,6 +97703,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 3765438531068330692}
+  grabRadius: 1
+  grabRange: 2
+  grabAngle: 30
   grabbedObject: {fileID: 0}
 --- !u!4 &2728177069217716021
 Transform:
@@ -112867,6 +112875,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 1854392953280808517}
+  grabRadius: 1
+  grabRange: 2
+  grabAngle: 30
   grabbedObject: {fileID: 0}
 --- !u!137 &4052301466377478470
 SkinnedMeshRenderer:
@@ -113102,7 +113113,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5472082887823254525}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ff38b1823348d4946a77aef8e1bea807, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

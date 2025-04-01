@@ -29,8 +29,8 @@ public class IngredientSpawner : MonoBehaviour
     {
         if (canIngredientSpawn && GameManager.instance.gameStart)
         {
+            canIngredientSpawn = false;
             SpawnIngredient();
-            Invoke("SpawnTimeInterval", currentSpawnTimeInterval);
         }
     }
 
@@ -67,11 +67,10 @@ public class IngredientSpawner : MonoBehaviour
         int randomSpawnPoint = GetRandomSpawnPoint();
         int ingredientIndex = 0;
 
-        switch (GameManager.instance.recipeChosen) // 0:Burger | 1:Hotdogs | 2:Sandwich
+        switch (GameManager.instance.recipeChosen)
         {
-            case 0: // Burger
-                ingredientIndex = burgerCycle[currentBurgerIndex];
-                currentBurgerIndex++;
+            case 0: 
+                ingredientIndex = burgerCycle[currentBurgerIndex++];
                 if (currentBurgerIndex >= burgerCycle.Count)
                 {
                     currentBurgerIndex = 0;
@@ -79,19 +78,17 @@ public class IngredientSpawner : MonoBehaviour
                 }
                 break;
 
-            case 1: // Hotdog
-                ingredientIndex = hotdogCycle[currentHotdogIndex];
-                currentHotdogIndex++;
+            case 1:
+                ingredientIndex = hotdogCycle[currentHotdogIndex++];
                 if (currentHotdogIndex >= hotdogCycle.Count)
                 {
                     currentHotdogIndex = 0;
-                    hotdogCycle = GetShuffledList(3, 6);
+                    hotdogCycle = GetShuffledList(3, 3);
                 }
                 break;
 
-            case 2: // Sandwich
-                ingredientIndex = sandwichCycle[currentSandwichIndex];
-                currentSandwichIndex++;
+            case 2:
+                ingredientIndex = sandwichCycle[currentSandwichIndex++];
                 if (currentSandwichIndex >= sandwichCycle.Count)
                 {
                     currentSandwichIndex = 0;
@@ -100,9 +97,11 @@ public class IngredientSpawner : MonoBehaviour
                 break;
         }
 
-        Instantiate(ingredientObjs[ingredientIndex], ingredientSpawnPoints[randomSpawnPoint]);
+        Instantiate(ingredientObjs[ingredientIndex], ingredientSpawnPoints[randomSpawnPoint].position, Quaternion.identity);
+        
+        // Delay before next spawn
         currentSpawnTimeInterval = Random.Range(0, spawnTimeInterval);
-        canIngredientSpawn = false;
+        Invoke(nameof(SpawnTimeInterval), currentSpawnTimeInterval);
     }
 
     int GetRandomSpawnPoint()

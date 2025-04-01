@@ -9,7 +9,7 @@ public class MopObstacle : MonoBehaviour
     [SerializeField] GameObject mopObj;
     private BoxCollider _boxCollider;
     public bool canMove;
-    public Rigidbody rb;
+    //public Rigidbody rb;
     public Animator animator;
 
     [SerializeField] AudioManager _audioManager;
@@ -48,8 +48,8 @@ public class MopObstacle : MonoBehaviour
     {
         canMove = true;
         _boxCollider.enabled = true;
-        rb.constraints = RigidbodyConstraints.FreezePositionY;
-        rb.useGravity = false;
+        // rb.constraints = RigidbodyConstraints.FreezePositionY;
+        // rb.useGravity = false;
     }
     public void DestroyMop()
     {

@@ -14,6 +14,7 @@ public class IngredientChecker : MonoBehaviour
     public bool ingredientOne;
     public bool ingredientTwo;
     public bool ingredientThree;
+    private Dictionary<GameObject, Vector3> originalScales = new Dictionary<GameObject, Vector3>();
 
     [Header("Visual & Audio")]
     [SerializeField] float rotationSpeed;
@@ -149,7 +150,10 @@ public class IngredientChecker : MonoBehaviour
         ingredientThree = false;
         coverObject.SetActive(true);
         _audioManager.PlayCompletedItemSound();
-        Invoke("DeactivateIngredients", .8f);
+        Vector3 expandScale = new Vector3(1.3f, 1.3f, 1.3f); // Scale to expand to
+        Vector3 shrinkScale = new Vector3(0.1f, 0.1f, 0.1f); // Scale to shrink to
+        ExpandShrinkRestoreIngredients(0.3f, expandScale, 0.2f, 0.3f, shrinkScale, 0.2f);
+        Invoke("DeactivateIngredients", 0.8f);
     }
     void DeactivateIngredients()
     {
@@ -166,5 +170,84 @@ public class IngredientChecker : MonoBehaviour
         yield return new WaitForSeconds(1f);
         coverParticle.Play();
         coverObject.SetActive(false);
+    }
+    public void ExpandShrinkRestoreIngredients(float expandTime, Vector3 expandScale, float airTime, float shrinkTime, Vector3 shrinkScale, float restoreTime)
+    {
+        StartCoroutine(ExpandShrinkRestoreCoroutine(expandTime, expandScale, airTime, shrinkTime, shrinkScale, restoreTime));
+    }
+    private IEnumerator ExpandShrinkRestoreCoroutine(float expandTime, Vector3 expandScale, float airTime, float shrinkTime, Vector3 shrinkScale, float restoreTime)
+    {
+        float elapsedTime = 0;
+
+        // Track the original scale of the ingredients before expanding
+        Dictionary<GameObject, Vector3> originalScales = new Dictionary<GameObject, Vector3>();
+        foreach (GameObject ingredient in ingredientObjs)
+        {
+            originalScales[ingredient] = ingredient.transform.localScale;
+        }
+
+        // Expand the ingredients to the specified expandScale
+        while (elapsedTime < expandTime)
+        {
+            float scaleFactor = elapsedTime / expandTime; // Gradually increase scale
+            foreach (GameObject ingredient in ingredientObjs)
+            {
+                ingredient.transform.localScale = Vector3.Lerp(originalScales[ingredient], expandScale, scaleFactor);
+            }
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure they are fully expanded to expandScale
+        foreach (GameObject ingredient in ingredientObjs)
+        {
+            ingredient.transform.localScale = expandScale;
+        }
+
+        // Wait for the air time (optional pause after expanding)
+        yield return new WaitForSeconds(airTime);
+
+        // Shrink the ingredients from expandScale to the specified shrinkScale
+        elapsedTime = 0;
+        while (elapsedTime < shrinkTime)
+        {
+            float scaleFactor = elapsedTime / shrinkTime; // Gradually reduce scale
+            foreach (GameObject ingredient in ingredientObjs)
+            {
+                ingredient.transform.localScale = Vector3.Lerp(expandScale, shrinkScale, scaleFactor);
+            }
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure they are fully shrunk to shrinkScale
+        foreach (GameObject ingredient in ingredientObjs)
+        {
+            ingredient.transform.localScale = shrinkScale;
+        }
+
+        // Wait for the air time (optional pause after shrinking before restoring)
+        yield return new WaitForSeconds(airTime);
+
+        // Restore the ingredients to their original scale after shrinking
+        foreach (GameObject ingredient in ingredientObjs)
+        {
+            StartCoroutine(RestoreScale(ingredient, restoreTime, originalScales[ingredient]));
+        }
+    }
+
+    private IEnumerator RestoreScale(GameObject ingredient, float time, Vector3 originalScale)
+    {
+        float elapsedTime = 0;
+
+        while (elapsedTime < time)
+        {
+            ingredient.transform.localScale = Vector3.Lerp(ingredient.transform.localScale, originalScale, elapsedTime / time);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure they are fully restored to original scale
+        ingredient.transform.localScale = originalScale;
     }
 }

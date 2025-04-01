@@ -851,6 +851,10 @@ MonoBehaviour:
   keyCodeTwo: 106
   keyCodeThree: 107
   keyCodeFour: 108
+  isGnarscif: 0
+  isMarites: 0
+  isBerto: 0
+  isKaren: 0
   trailRenderer: {fileID: 7174347895621423389}
   dashSpeed: 5
   dashDuration: 0.2
@@ -11901,7 +11905,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.14901961, g: 0.6313726, b: 0.81960785, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}

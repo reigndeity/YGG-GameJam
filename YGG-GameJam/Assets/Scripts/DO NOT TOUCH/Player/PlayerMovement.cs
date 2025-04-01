@@ -34,6 +34,10 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody _rigidBody;
 
     [Header("Dash Properties")]
+    [SerializeField] bool isGnarscif;
+    [SerializeField] bool isMarites;
+    [SerializeField] bool isBerto;
+    [SerializeField] bool isKaren;
     [SerializeField] GameObject trailRenderer;
     [SerializeField] private float dashSpeed = 3f;
     [SerializeField] private float dashDuration = 0.2f;
@@ -68,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Dash Values
         dashSpeed = 30;
-        dashDuration = 0.10f;
+        dashDuration = 0.15f;
         dashCooldown = 3;
 
     }
@@ -371,5 +375,4 @@ public class PlayerMovement : MonoBehaviour
     {
         _audioManager.PlayDashSound();
     }
-
 }

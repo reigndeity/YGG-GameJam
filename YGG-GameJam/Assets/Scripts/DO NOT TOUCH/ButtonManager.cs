@@ -57,6 +57,8 @@ public class ButtonManager : MonoBehaviour
     void Start()
     {
         _audioManager = FindObjectOfType<AudioManager>();
+        Cursor.visible = false;
+
     }
     void Update()
     {

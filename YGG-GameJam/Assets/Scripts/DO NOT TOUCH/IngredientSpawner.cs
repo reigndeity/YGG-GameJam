@@ -5,24 +5,24 @@ using UnityEngine;
 public class IngredientSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] ingredientObjs;
-    [SerializeField] Transform[] ingredientSpawnPoints;
+    [SerializeField] Transform spawnCenter; // Center of the spawn area
+    [SerializeField] float spawnSize = 5f; // Size of the square area
     [SerializeField] bool canIngredientSpawn;
     [SerializeField] int spawnTimeInterval;
     [SerializeField] int currentSpawnTimeInterval;
 
-    private List<int> burgerCycle = new List<int>(); // For Burger Recipe
-    private List<int> hotdogCycle = new List<int>(); // For Hotdog Recipe
-    private List<int> sandwichCycle = new List<int>(); // For Sandwich Recipe
+    [SerializeField] float rotationAngle = 0f; // Rotation angle of the square (in degrees)
+
+    private List<int> burgerCycle = new List<int>();
+    private List<int> hotdogCycle = new List<int>();
+    private List<int> sandwichCycle = new List<int>();
     private int currentBurgerIndex = 0;
     private int currentHotdogIndex = 0;
     private int currentSandwichIndex = 0;
 
-    // To keep track of the last used spawn points (avoid using the same one three times)
-    private List<int> lastUsedSpawnPoints = new List<int>();
-
     void Start()
     {
-        InitializeCycles(); // Set up the shuffled lists for each recipe type
+        InitializeCycles();
     }
 
     void Update()
@@ -36,11 +36,8 @@ public class IngredientSpawner : MonoBehaviour
 
     void InitializeCycles()
     {
-        // Burger Cycle
         burgerCycle = GetShuffledList(0, 3);
-        // Hotdog Cycle
         hotdogCycle = GetShuffledList(3, 6);
-        // Sandwich Cycle
         sandwichCycle = GetShuffledList(6, 9);
     }
 
@@ -51,7 +48,6 @@ public class IngredientSpawner : MonoBehaviour
         {
             list.Add(i);
         }
-        // Shuffle the list
         for (int i = list.Count - 1; i > 0; i--)
         {
             int randomIndex = Random.Range(0, i + 1);
@@ -64,7 +60,7 @@ public class IngredientSpawner : MonoBehaviour
 
     public void SpawnIngredient()
     {
-        int randomSpawnPoint = GetRandomSpawnPoint();
+        Vector3 spawnPosition = GetRandomPositionInRotatedSquare(); // Get position in rotated square
         int ingredientIndex = 0;
 
         switch (GameManager.instance.recipeChosen)
@@ -83,7 +79,7 @@ public class IngredientSpawner : MonoBehaviour
                 if (currentHotdogIndex >= hotdogCycle.Count)
                 {
                     currentHotdogIndex = 0;
-                    hotdogCycle = GetShuffledList(3, 3);
+                    hotdogCycle = GetShuffledList(3, 6);
                 }
                 break;
 
@@ -97,34 +93,39 @@ public class IngredientSpawner : MonoBehaviour
                 break;
         }
 
-        Instantiate(ingredientObjs[ingredientIndex], ingredientSpawnPoints[randomSpawnPoint].position, Quaternion.identity);
-        
-        // Delay before next spawn
+        Instantiate(ingredientObjs[ingredientIndex], spawnPosition, Quaternion.identity);
+
         currentSpawnTimeInterval = Random.Range(0, spawnTimeInterval);
         Invoke(nameof(SpawnTimeInterval), currentSpawnTimeInterval);
     }
 
-    int GetRandomSpawnPoint()
+    Vector3 GetRandomPositionInRotatedSquare()
     {
-        int randomSpawnPoint;
-        do
-        {
-            randomSpawnPoint = Random.Range(0, ingredientSpawnPoints.Length);
-        }
-        while (lastUsedSpawnPoints.Contains(randomSpawnPoint)); // Avoid the spawn point being used 3 times in a row
+        // Random X and Z positions within the square range
+        float randomX = Random.Range(-spawnSize / 2f, spawnSize / 2f);
+        float randomZ = Random.Range(-spawnSize / 2f, spawnSize / 2f);
 
-        // Add the new spawn point to the last used list
-        if (lastUsedSpawnPoints.Count >= 2)
-        {
-            lastUsedSpawnPoints.RemoveAt(0); // Remove the oldest entry if there are 3 spawn points in the list
-        }
-        lastUsedSpawnPoints.Add(randomSpawnPoint);
+        // Calculate the random position in world space with rotation applied
+        Vector3 randomPosition = new Vector3(randomX, 0f, randomZ);
 
-        return randomSpawnPoint;
+        // Apply rotation to the random position around the spawn center
+        randomPosition = Quaternion.Euler(0f, rotationAngle, 0f) * randomPosition;
+
+        // Use the spawnCenter as the base position and add the rotated random position
+        return spawnCenter.position + randomPosition;
     }
 
     void SpawnTimeInterval()
     {
         canIngredientSpawn = true;
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green; // Set the gizmo color
+
+        // Draw the square with rotation
+        Gizmos.matrix = Matrix4x4.TRS(spawnCenter.position, Quaternion.Euler(0f, rotationAngle, 0f), Vector3.one);
+        Gizmos.DrawWireCube(Vector3.zero, new Vector3(spawnSize, 0.1f, spawnSize)); // Draw a square at the center
     }
 }

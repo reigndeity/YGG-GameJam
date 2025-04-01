@@ -6160,6 +6160,10 @@ MonoBehaviour:
   keyCodeTwo: 106
   keyCodeThree: 107
   keyCodeFour: 108
+  isGnarscif: 0
+  isMarites: 0
+  isBerto: 0
+  isKaren: 0
   trailRenderer: {fileID: 7789645919612061379}
   dashSpeed: 5
   dashDuration: 0.2
@@ -6169,14 +6173,7 @@ MonoBehaviour:
   footTrailParticleOne: {fileID: 4245815130307201256}
   footTrailParticleTwo: {fileID: 5583651351206084961}
   footTrailParticleThree: {fileID: 2271166507978823379}
-  sfx: {fileID: 0}
-  walkSfx: {fileID: 0}
-  audioClips:
-  - {fileID: 8300000, guid: f3976f7835eff5a48b3b5bd954dd891a, type: 3}
-  - {fileID: 8300000, guid: 88753070114ffe64d8d7fadcdaa1d8b7, type: 3}
-  - {fileID: 8300000, guid: 8037a54f6c261c94c9f37dddce2d5d49, type: 3}
-  - {fileID: 8300000, guid: 2f394d423600fa74aa011a10b6b5269b, type: 3}
-  - {fileID: 8300000, guid: f3a654c4aeef87c4e81d6969c3f1aa52, type: 3}
+  _audioManager: {fileID: 0}
 --- !u!114 &7507852749240697654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31450,7 +31447,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.8627451, g: 0.1254902, b: 0.14901961, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -31881,6 +31878,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   holdPosition: {fileID: 3805181240395225296}
+  grabRadius: 1
+  grabRange: 2
+  grabAngle: 30
   grabbedObject: {fileID: 0}
 --- !u!1 &8873995776081035012
 GameObject:

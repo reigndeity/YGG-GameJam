@@ -19742,12 +19742,12 @@ MonoBehaviour:
   - {fileID: 8706655473825506473, guid: 9eefb427c068a314eb28bef5b7d787b0, type: 3}
   - {fileID: 709868493780149287, guid: 7feb39842e22e374d97f1ab87e0397db, type: 3}
   - {fileID: 4178502496570465845, guid: edbf8d7228892ba4a8f141b9561fc57e, type: 3}
-  spawnCenter: {fileID: 0}
-  spawnSize: 5
+  spawnCenter: {fileID: 1096419773}
+  spawnSize: 27
   canIngredientSpawn: 1
   spawnTimeInterval: 8
   currentSpawnTimeInterval: 0
-  rotationAngle: 0
+  rotationAngle: 45
 --- !u!1 &1107985998
 GameObject:
   m_ObjectHideFlags: 0

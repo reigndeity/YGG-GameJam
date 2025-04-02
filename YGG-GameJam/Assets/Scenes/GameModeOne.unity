@@ -752,10 +752,12 @@ MonoBehaviour:
   - {fileID: 8706655473825506473, guid: 9eefb427c068a314eb28bef5b7d787b0, type: 3}
   - {fileID: 709868493780149287, guid: 7feb39842e22e374d97f1ab87e0397db, type: 3}
   - {fileID: 4178502496570465845, guid: edbf8d7228892ba4a8f141b9561fc57e, type: 3}
-  ingredientSpawnPoints: []
+  spawnCenter: {fileID: 0}
+  spawnSize: 5
   canIngredientSpawn: 1
   spawnTimeInterval: 8
   currentSpawnTimeInterval: 0
+  rotationAngle: 0
 --- !u!1 &76531431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,7 +1406,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.14901961, g: 0.6313726, b: 0.81960785, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 0}
+      key1: {r: 0.14901961, g: 0.6313726, b: 0.81960785, a: 1}
       key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -3148,6 +3150,10 @@ MonoBehaviour:
   keyCodeTwo: 106
   keyCodeThree: 107
   keyCodeFour: 108
+  isGnarscif: 0
+  isMarites: 0
+  isBerto: 0
+  isKaren: 0
   trailRenderer: {fileID: 92944258}
   dashSpeed: 5
   dashDuration: 0.2
@@ -25279,6 +25285,10 @@ MonoBehaviour:
   keyCodeTwo: 106
   keyCodeThree: 107
   keyCodeFour: 108
+  isGnarscif: 0
+  isMarites: 0
+  isBerto: 0
+  isKaren: 0
   trailRenderer: {fileID: 1850619216}
   dashSpeed: 3.3
   dashDuration: 0.2
@@ -80094,7 +80104,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.8627451, g: 0.1254902, b: 0.14901961, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 0}
+      key1: {r: 0.8627451, g: 0.1254902, b: 0.14901961, a: 1}
       key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -90253,6 +90263,10 @@ MonoBehaviour:
   keyCodeTwo: 106
   keyCodeThree: 107
   keyCodeFour: 108
+  isGnarscif: 0
+  isMarites: 0
+  isBerto: 0
+  isKaren: 0
   trailRenderer: {fileID: 5153663290889970637}
   dashSpeed: 5
   dashDuration: 0.2
@@ -96429,6 +96443,10 @@ MonoBehaviour:
   keyCodeTwo: 106
   keyCodeThree: 107
   keyCodeFour: 108
+  isGnarscif: 0
+  isMarites: 0
+  isBerto: 0
+  isKaren: 0
   trailRenderer: {fileID: 7333915123117223223}
   dashSpeed: 5
   dashDuration: 0.2

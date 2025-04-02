@@ -565,10 +565,12 @@ MonoBehaviour:
   - {fileID: 8706655473825506473, guid: 9eefb427c068a314eb28bef5b7d787b0, type: 3}
   - {fileID: 709868493780149287, guid: 7feb39842e22e374d97f1ab87e0397db, type: 3}
   - {fileID: 4178502496570465845, guid: edbf8d7228892ba4a8f141b9561fc57e, type: 3}
-  ingredientSpawnPoints: []
+  spawnCenter: {fileID: 0}
+  spawnSize: 5
   canIngredientSpawn: 1
   spawnTimeInterval: 8
   currentSpawnTimeInterval: 0
+  rotationAngle: 0
 --- !u!1 &71313439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,7 +1494,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.14901961, g: 0.6313726, b: 0.81960785, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 0}
+      key1: {r: 0.14901961, g: 0.6313726, b: 0.81960785, a: 1}
       key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -3172,6 +3174,10 @@ MonoBehaviour:
   keyCodeTwo: 106
   keyCodeThree: 107
   keyCodeFour: 108
+  isGnarscif: 0
+  isMarites: 0
+  isBerto: 0
+  isKaren: 0
   trailRenderer: {fileID: 92944258}
   dashSpeed: 5
   dashDuration: 0.2
@@ -22468,6 +22474,111 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1335238792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &479647003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 479647004}
+  - component: {fileID: 479647007}
+  - component: {fileID: 479647006}
+  - component: {fileID: 479647005}
+  m_Layer: 6
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &479647004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479647003}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.01126, y: -0.003164, z: -0.00105}
+  m_LocalScale: {x: 0.0045435047, y: 0.012544202, z: 0.0030575404}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 600281521}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &479647005
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479647003}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &479647006
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479647003}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &479647007
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479647003}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &487405337
 GameObject:
   m_ObjectHideFlags: 0
@@ -24015,6 +24126,7 @@ GameObject:
   - component: {fileID: 600281521}
   - component: {fileID: 600281523}
   - component: {fileID: 600281522}
+  - component: {fileID: 600281524}
   m_Layer: 6
   m_Name: oven
   m_TagString: Untagged
@@ -24034,7 +24146,8 @@ Transform:
   m_LocalPosition: {x: 0.006624459, y: 0.0033765745, z: 0.00031184673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 479647004}
   m_Father: {fileID: 1604227183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &600281522
@@ -24090,6 +24203,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600281520}
   m_Mesh: {fileID: 1754544700954064156, guid: cfa5c74a73b6c724ca092481565e0f46, type: 3}
+--- !u!65 &600281524
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600281520}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.018820535, y: 0.0031351354, z: 0.003586698}
+  m_Center: {x: -0.004121899, y: 0.0011863591, z: -0.00075267337}
 --- !u!1001 &602049766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26397,6 +26531,10 @@ MonoBehaviour:
   keyCodeTwo: 106
   keyCodeThree: 107
   keyCodeFour: 108
+  isGnarscif: 0
+  isMarites: 0
+  isBerto: 0
+  isKaren: 0
   trailRenderer: {fileID: 1850619216}
   dashSpeed: 5
   dashDuration: 0.2
@@ -26911,6 +27049,7 @@ GameObject:
   - component: {fileID: 823169558}
   - component: {fileID: 823169560}
   - component: {fileID: 823169559}
+  - component: {fileID: 823169561}
   m_Layer: 6
   m_Name: shelves.001
   m_TagString: Untagged
@@ -26983,6 +27122,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823169557}
   m_Mesh: {fileID: -38044874116616035, guid: cfa5c74a73b6c724ca092481565e0f46, type: 3}
+--- !u!65 &823169561
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823169557}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.007811459, y: 0.0015510648, z: 0.0024656462}
+  m_Center: {x: -0.000000011082824, y: -0.000000014676528, z: 0.0011038315}
 --- !u!1001 &824209915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59942,6 +60102,7 @@ GameObject:
   - component: {fileID: 1733273983}
   - component: {fileID: 1733273985}
   - component: {fileID: 1733273984}
+  - component: {fileID: 1733273986}
   m_Layer: 6
   m_Name: top Cabinet
   m_TagString: Untagged
@@ -60016,6 +60177,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733273982}
   m_Mesh: {fileID: -3679449359439352090, guid: cfa5c74a73b6c724ca092481565e0f46, type: 3}
+--- !u!65 &1733273986
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733273982}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.007995042, y: 0.0029118909, z: 0.0029218171}
+  m_Center: {x: 0.00002033306, y: 0.0007949306, z: -1.6348317e-10}
 --- !u!1 &1742972031
 GameObject:
   m_ObjectHideFlags: 0
@@ -81645,7 +81827,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.8627451, g: 0.1254902, b: 0.14901961, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 0}
+      key1: {r: 0.8627451, g: 0.1254902, b: 0.14901961, a: 1}
       key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -92147,6 +92329,10 @@ MonoBehaviour:
   keyCodeTwo: 106
   keyCodeThree: 107
   keyCodeFour: 108
+  isGnarscif: 0
+  isMarites: 0
+  isBerto: 0
+  isKaren: 0
   trailRenderer: {fileID: 7272118871764948015}
   dashSpeed: 5
   dashDuration: 0.2
@@ -97686,14 +97872,14 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.90588236, g: 0.8862745, b: 0.12941177, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 0}
+      key1: {r: 0.90588236, g: 0.8862745, b: 0.12941177, a: 1}
       key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 193
+      ctime0: 0
       ctime1: 65535
       ctime2: 65535
       ctime3: 0
@@ -98951,7 +99137,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.5176471, g: 0.7254902, b: 0.24705882, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 0}
+      key1: {r: 0.5176471, g: 0.7254902, b: 0.24705882, a: 1}
       key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -113563,6 +113749,10 @@ MonoBehaviour:
   keyCodeTwo: 106
   keyCodeThree: 107
   keyCodeFour: 108
+  isGnarscif: 0
+  isMarites: 0
+  isBerto: 0
+  isKaren: 0
   trailRenderer: {fileID: 3761412348347350107}
   dashSpeed: 5
   dashDuration: 0.2

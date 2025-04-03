@@ -459,6 +459,81 @@ Transform:
   - {fileID: 433738273}
   m_Father: {fileID: 1652056367}
   m_LocalEulerAnglesHint: {x: -10.018681, y: 1.4467432, z: 6.7482495}
+--- !u!1 &35632921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 35632922}
+  - component: {fileID: 35632924}
+  - component: {fileID: 35632923}
+  m_Layer: 5
+  m_Name: PS Instructions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &35632922
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35632921}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5050502, y: 0.5050502, z: 0.5050502}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1644807828}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -9.999878, y: 10.000008}
+  m_SizeDelta: {x: 999, y: 51}
+  m_Pivot: {x: 1, y: 0}
+--- !u!114 &35632923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35632921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -516761221, guid: de64a8077d961924cb6ee06ad4b7b96d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &35632924
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35632921}
+  m_CullTransparentMesh: 1
 --- !u!1 &48428606
 GameObject:
   m_ObjectHideFlags: 0
@@ -21979,7 +22054,11 @@ MonoBehaviour:
   currentGameMode: 0
   sceneName: 
   helpPanel: {fileID: 0}
-  backHelpButton: {fileID: 0}
+  helpOnePanel: {fileID: 0}
+  backHelpOneButton: {fileID: 0}
+  nextHelpOneButton: {fileID: 0}
+  HelpTwoPanel: {fileID: 0}
+  backHelpTwoButton: {fileID: 0}
   helpButton: {fileID: 0}
   aboutPanel: {fileID: 0}
   aboutPanelOne: {fileID: 0}
@@ -35244,7 +35323,7 @@ GameObject:
   - component: {fileID: 1008694301}
   - component: {fileID: 1008694300}
   m_Layer: 5
-  m_Name: Instructions
+  m_Name: Xbox Instructions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58556,6 +58635,7 @@ RectTransform:
   - {fileID: 48428607}
   - {fileID: 1909609561}
   - {fileID: 1008694299}
+  - {fileID: 35632922}
   - {fileID: 219730403}
   m_Father: {fileID: 86008096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

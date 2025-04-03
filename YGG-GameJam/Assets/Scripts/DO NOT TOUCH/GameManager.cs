@@ -284,6 +284,8 @@ public class GameManager : MonoBehaviour
 
         if (tieCount > 1)
         {
+            teamWinners[0].SetActive(false);
+            teamWinners[1].SetActive(false);
             drawWinners.SetActive(true);
             winnerHeaderTxt.text = "● TIE! ●";
             winnerTxt.text = "NOBODY WON...";

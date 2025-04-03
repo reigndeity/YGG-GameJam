@@ -26,7 +26,11 @@ public class ButtonManager : MonoBehaviour
 
     [Header("Help Panel")]
     [SerializeField] GameObject helpPanel;
-    [SerializeField] GameObject backHelpButton;
+    [SerializeField] GameObject helpOnePanel;
+    [SerializeField] GameObject backHelpOneButton;
+    [SerializeField] GameObject nextHelpOneButton;
+    [SerializeField] GameObject HelpTwoPanel;
+    [SerializeField] GameObject backHelpTwoButton;
     [SerializeField] GameObject helpButton;
     [Header("About Panel")]
     [SerializeField] GameObject aboutPanel;
@@ -130,7 +134,7 @@ public class ButtonManager : MonoBehaviour
 
     public void OnClickHelp() 
     {
-        eventSystem.SetSelectedGameObject(backHelpButton);
+        eventSystem.SetSelectedGameObject(backHelpOneButton);
         mainMenuPanel.SetActive(false);
         helpPanel.SetActive(true);
         _audioManager.PlayButtonClickSound();
@@ -139,7 +143,24 @@ public class ButtonManager : MonoBehaviour
     {
         eventSystem.SetSelectedGameObject(helpButton);
         mainMenuPanel.SetActive(true);
+        helpOnePanel.SetActive(false);
         helpPanel.SetActive(false);
+        _audioManager.PlayButtonClickSound();
+    }
+    public void OnClickHelpNext()
+    {
+        eventSystem.SetSelectedGameObject(backHelpTwoButton);
+        helpOnePanel.SetActive(false);
+        HelpTwoPanel.SetActive(true);
+        nextHelpOneButton.SetActive(false);
+        _audioManager.PlayButtonClickSound();
+    }
+    public void OnClickHelpBackTwo()
+    {
+        eventSystem.SetSelectedGameObject(backHelpOneButton);
+        helpOnePanel.SetActive(true);
+        HelpTwoPanel.SetActive(false);
+        nextHelpOneButton.SetActive(true);
         _audioManager.PlayButtonClickSound();
     }
     public void OnClickAbout() 
@@ -254,9 +275,11 @@ public class ButtonManager : MonoBehaviour
     // GAME OVER
     public void OnClickGameOverMenu()
     {
-        menuGameOverWarning.SetActive(true);
+        //menuGameOverWarning.SetActive(true);
         eventSystem.SetSelectedGameObject(noGameOverButton);
         _audioManager.PlayButtonClickSound();
+        int sceneId = 1;
+        StartCoroutine(LoadSceneAsync(sceneId));
     }
     public void OnClickGameOverNo()
     {

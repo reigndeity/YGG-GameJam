@@ -8284,8 +8284,8 @@ MonoBehaviour:
 
     -minimal obstacles'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 72d3a7ca4501a254a98ddba75896033d, type: 2}
-  m_sharedMaterial: {fileID: 8547274644295485442, guid: 72d3a7ca4501a254a98ddba75896033d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 688c1ae1a8c65a342bb01d488bbfb9ac, type: 2}
+  m_sharedMaterial: {fileID: -5315875596505835846, guid: 688c1ae1a8c65a342bb01d488bbfb9ac, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8321,7 +8321,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -3
+  m_lineSpacing: 25
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

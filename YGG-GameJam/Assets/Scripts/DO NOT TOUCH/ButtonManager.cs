@@ -164,6 +164,7 @@ public class ButtonManager : MonoBehaviour
         eventSystem.SetSelectedGameObject(backHelpOneButton);
         mainMenuPanel.SetActive(false);
         helpPanel.SetActive(true);
+        helpOnePanel.SetActive(true);
         _audioManager.PlayButtonClickSound();
     }
     public void OnClickHelpBack() 

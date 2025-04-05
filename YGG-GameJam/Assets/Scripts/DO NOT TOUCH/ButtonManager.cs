@@ -55,45 +55,72 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] GameObject menuGameOverWarning;
     public GameObject noGameOverButton;
     public GameObject mainMenuGameOverButton;
-    public GameObject[] targetGameObject; // GameObject to activate
     public GameObject[] gameObjectToDetect; // GameObject to check for selection
+    public GameObject[] mapPlacement; //0 = left, 1 = middle, 2 = right
     public TextMeshProUGUI hoverTxt;
     void Start()
     {
         _audioManager = FindObjectOfType<AudioManager>();
         Cursor.visible = false;
-
     }
     void Update()
     {
         currentGameMode = PlayerPrefs.GetInt("gameMode");
 
-        if (eventSystem.currentSelectedGameObject == gameObjectToDetect[0]) 
+        MapSelection();               
+    }
+
+    // MAP SELECTION =========================================
+    void MapSelection()
+    {
+        if (gameObjectToDetect != null)
         {
-            targetGameObject[0].SetActive(true);
-            hoverTxt.text = "-2 PLAYERS\n-FREE FOR ALL";
-        }
-        else 
-        { 
-            targetGameObject[0].SetActive(false);
-        }
-        if (eventSystem.currentSelectedGameObject == gameObjectToDetect[1])
-        {
-            targetGameObject[1].SetActive(true);
-            hoverTxt.text = "-4 PLAYERS\n-DUO KITCHEN ROYALE";
-        }
-        else
-        {
-            targetGameObject[1].SetActive(false);
-        }
-        if (eventSystem.currentSelectedGameObject == gameObjectToDetect[2])
-        {
-            targetGameObject[2].SetActive(true);
-            hoverTxt.text = "-4 PLAYERS\n-FREE FOR ALL";
-        }
-        else
-        {
-            targetGameObject[2].SetActive(false);
+            RectTransform mapOne = gameObjectToDetect[0].GetComponent<RectTransform>();
+            RectTransform mapTwo = gameObjectToDetect[1].GetComponent<RectTransform>();
+            RectTransform mapThree = gameObjectToDetect[2].GetComponent<RectTransform>();
+
+            RectTransform placementOne = mapPlacement[0].GetComponent<RectTransform>();
+            RectTransform placementTwo = mapPlacement[1].GetComponent<RectTransform>();
+            RectTransform placementThree = mapPlacement[2].GetComponent<RectTransform>();
+
+            if (eventSystem.currentSelectedGameObject == gameObjectToDetect[0])
+            {
+                mapOne.anchoredPosition = Vector2.Lerp(mapOne.anchoredPosition, placementTwo.anchoredPosition, Time.deltaTime * 10);
+                mapTwo.anchoredPosition = Vector2.Lerp(mapTwo.anchoredPosition, placementThree.anchoredPosition, Time.deltaTime * 10);
+                mapThree.anchoredPosition = Vector2.Lerp(mapThree.anchoredPosition, placementOne.anchoredPosition, Time.deltaTime * 10);
+
+                mapOne.sizeDelta = Vector2.Lerp(mapOne.rect.size, placementTwo.rect.size, Time.deltaTime * 10);
+                mapTwo.sizeDelta = Vector2.Lerp(mapTwo.rect.size, placementThree.rect.size, Time.deltaTime * 10);
+                mapThree.sizeDelta = Vector2.Lerp(mapThree.rect.size, placementOne.rect.size, Time.deltaTime * 10);
+
+                hoverTxt.text = "-2 PLAYERS\n-FREE FOR ALL";
+            }
+
+            if (eventSystem.currentSelectedGameObject == gameObjectToDetect[1])
+            {
+                mapTwo.anchoredPosition = Vector2.Lerp(mapTwo.anchoredPosition, placementTwo.anchoredPosition, Time.deltaTime * 10);
+                mapThree.anchoredPosition = Vector2.Lerp(mapThree.anchoredPosition, placementThree.anchoredPosition, Time.deltaTime * 10);
+                mapOne.anchoredPosition = Vector2.Lerp(mapOne.anchoredPosition, placementOne.anchoredPosition, Time.deltaTime * 10);
+
+                mapTwo.sizeDelta = Vector2.Lerp(mapTwo.rect.size, placementTwo.rect.size, Time.deltaTime * 10);
+                mapThree.sizeDelta = Vector2.Lerp(mapThree.rect.size, placementThree.rect.size, Time.deltaTime * 10);
+                mapOne.sizeDelta = Vector2.Lerp(mapOne.rect.size, placementOne.rect.size, Time.deltaTime * 10);
+
+                hoverTxt.text = "-4 PLAYERS\n-DUO KITCHEN ROYALE";
+            }
+
+            if (eventSystem.currentSelectedGameObject == gameObjectToDetect[2])
+            {
+                mapThree.anchoredPosition = Vector2.Lerp(mapThree.anchoredPosition, placementTwo.anchoredPosition, Time.deltaTime * 10);
+                mapOne.anchoredPosition = Vector2.Lerp(mapOne.anchoredPosition, placementThree.anchoredPosition, Time.deltaTime * 10);
+                mapTwo.anchoredPosition = Vector2.Lerp(mapTwo.anchoredPosition, placementOne.anchoredPosition, Time.deltaTime * 10);
+
+                mapThree.sizeDelta = Vector2.Lerp(mapThree.rect.size, placementTwo.rect.size, Time.deltaTime * 10);
+                mapOne.sizeDelta = Vector2.Lerp(mapOne.rect.size, placementThree.rect.size, Time.deltaTime * 10);
+                mapTwo.sizeDelta = Vector2.Lerp(mapTwo.rect.size, placementOne.rect.size, Time.deltaTime * 10);
+
+                hoverTxt.text = "-4 PLAYERS\n-FREE FOR ALL";
+            }
         }
     }
 

@@ -93,7 +93,7 @@ public class IngredientSpawner : MonoBehaviour
                 break;
         }
 
-        Instantiate(ingredientObjs[ingredientIndex], spawnPosition, Quaternion.identity);
+        Instantiate(ingredientObjs[ingredientIndex], spawnPosition, ingredientObjs[ingredientIndex].transform.rotation);
 
         currentSpawnTimeInterval = Random.Range(0, spawnTimeInterval);
         Invoke(nameof(SpawnTimeInterval), currentSpawnTimeInterval);

@@ -196,7 +196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8706655473825506473}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 80, y: 80, z: 80}
   m_ConstrainProportionsScale: 0
@@ -204,7 +204,7 @@ Transform:
   - {fileID: 8419220672441867260}
   - {fileID: 9049959308700738967}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &3081366315233586827
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -295,9 +295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64898d3546f3884b9f18ea26201fb44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeDestroyed: 0
-  timer: 0
   isGrabbed: 0
+  isBurgerBuns: 0
+  _burgerBunRenderers: []
 --- !u!114 &8236916567684869365
 MonoBehaviour:
   m_ObjectHideFlags: 0

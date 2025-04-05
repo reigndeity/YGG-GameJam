@@ -22078,8 +22078,8 @@ MonoBehaviour:
   menuGameOverWarning: {fileID: 461789077}
   noGameOverButton: {fileID: 1148715222}
   mainMenuGameOverButton: {fileID: 988829460}
-  targetGameObject: []
   gameObjectToDetect: []
+  mapPlacement: []
   hoverTxt: {fileID: 0}
 --- !u!4 &451957774
 Transform:
@@ -81593,7 +81593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1830829083
 Transform:
   m_ObjectHideFlags: 0

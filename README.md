@@ -23,12 +23,13 @@ Kusinero is a party game that combines gameplay elements from hit party games. P
 
 # GameOn Awards 2025 School Category
 Kusinero: Kitchen Royale was first created for the YGG Game Jam 2024. While it didn’t place there, we continued refining it and later submitted it to the Young Creatives Challenge: Season Two, where it earned 6th place in the Game Development category.
-<img width="512" height="512" alt="Untitled design (2)" src="https://github.com/user-attachments/assets/7ff67487-41ad-4303-8c8c-4de83a5cdb22" />
+<img width="1280" height="720" alt="Untitled design (1)" src="https://github.com/user-attachments/assets/be349c67-02c1-4aad-a662-bdbc5863f186" />
+
 
 
 
 # Game Link
-<br>Download it on itch.io: [**Kusinero**](https://matahum.itch.io/kusinero)
+<br>Play it on itch.io: [**Kusinero**](https://matahum.itch.io/kusinero)
 
 # Software Used
 - Unity

@@ -1,6 +1,6 @@
 # Kusinero: Kitchen Royale
 <p>Year Level: 3
-<br>Semester: 2md Semester
+<br>Semester: 2nd Semester
 <br>Project Type: YGG Game Jam 2024 / Young Creatives Challenge Season 2
 </p>
 
